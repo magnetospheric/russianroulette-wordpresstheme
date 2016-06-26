@@ -1,0 +1,16 @@
+[19-Jul-2015 18:10:56 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/404.php on line 8
+[12-Sep-2015 08:24:46 America/Chicago] PHP Fatal error:  Call to undefined function post_password_required() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/comments.php on line 18
+[05-Oct-2015 05:39:36 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/index.php on line 14
+[06-Dec-2015 16:28:24 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/index.php on line 14
+[01-Mar-2016 07:39:02 America/Chicago] PHP Fatal error:  Call to undefined function language_attributes() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/header.php on line 10
+[01-Mar-2016 07:39:02 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/functions.php on line 61
+[01-Mar-2016 07:39:02 America/Chicago] PHP Fatal error:  Call to undefined function _e() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/footer.php on line 17
+[01-Mar-2016 07:39:05 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/archive.php on line 10
+[01-Mar-2016 07:39:05 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/404.php on line 8
+[01-Mar-2016 07:39:05 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/404.php on line 8
+[12-Mar-2016 14:42:25 America/Chicago] PHP Fatal error:  Call to undefined function add_action() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/functions.php on line 61
+[12-Mar-2016 14:42:25 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/404.php on line 8
+[12-Mar-2016 14:42:25 America/Chicago] PHP Fatal error:  Call to undefined function _e() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/footer.php on line 17
+[21-May-2016 16:08:26 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/404.php on line 8
+[22-May-2016 02:16:12 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/404.php on line 8
+[08-Jun-2016 07:16:48 America/Chicago] PHP Fatal error:  Call to undefined function get_header() in /home/rambutan/public_html/renegade-revolution.com/wp-content/themes/russianroulette/404.php on line 8

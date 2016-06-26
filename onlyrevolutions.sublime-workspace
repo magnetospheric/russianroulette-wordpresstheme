@@ -1,0 +1,557 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"ar",
+				"archive"
+			],
+			[
+				"text",
+				"text-transform"
+			],
+			[
+				"page",
+				"page_title"
+			],
+			[
+				"att",
+				"attachmentID"
+			],
+			[
+				"get_post",
+				"get_post_meta"
+			],
+			[
+				"atta",
+				"attachmentID"
+			],
+			[
+				"nul",
+				"is_null"
+			],
+			[
+				"image",
+				"imageName"
+			],
+			[
+				"text-",
+				"text-decoration"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"screen",
+				"screen-reader-text"
+			],
+			[
+				"hsl",
+				"hsl()"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "style.css",
+			"settings":
+			{
+				"buffer_size": 49244,
+				"line_ending": "Windows"
+			}
+		},
+		{
+			"file": "/Users/holly/Documents/Programming/calculator/calculator/gtk-gui/gui.stetic",
+			"settings":
+			{
+				"buffer_size": 17731,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "functions.php",
+			"settings":
+			{
+				"buffer_size": 9342,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "footer.php",
+			"settings":
+			{
+				"buffer_size": 3397,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content-list.php",
+			"settings":
+			{
+				"buffer_size": 2804,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "content-medium.php",
+			"settings":
+			{
+				"buffer_size": 3008,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "search.php",
+			"settings":
+			{
+				"buffer_size": 960,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/header.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/style.css",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/functions.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/inc/template-tags.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/inc/extras.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/inc/tweaks.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/content-aside.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/sidebar.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/page.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/content-single.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/archive.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/functions.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/index.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/footer.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/content.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/content-medium.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/comments.php",
+		"/Users/holly/Sites/Webfonts/Linotte Webfont Pack/MyFontsWebfontsKit.css",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/single.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/inc/custom-header.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/inc/customizer.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/inc/functions.php",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette/style.css",
+		"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette2/style.css",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/style.css",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/page.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/footer.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/js/lightbox-settings.js",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/content.php",
+		"/Users/holly/Sites/Just About Travel/FINAL THEME/spiegelmagazine-pro-child/style.css",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/header.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/functions.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/header.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/layouts/orange-background.css",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/layouts/black-background.css",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/layouts/white-background.css",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/content-page.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/js/masonry-settings.js",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/footer.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/content-page.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/page.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/content.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/image-lightbox-styles.css",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/inc/custom-meta.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/content-page-backup.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/js/imagelightbox.min.js",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/single.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/content-portfolio.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/page-templates/page-black-background.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/index.php",
+		"/Users/holly/Sites/simple_cms/Gemfile",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/page-templates/page-orange-background.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/index.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/content-none.php",
+		"/Users/holly/Just About Travel-test.html",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-admin/options.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-admin/media.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-admin/options-permalink.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-admin/options-general.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-admin/options-media.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/inc/custom-header.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit/page-templates/page-white-background.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/layouts/no-sidebar.css",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/layouts/content-sidebar.css",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/content-single.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/inc/customizer.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/inc/template-tags.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/page-templates/page-nosidebar.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/page-nosidebar.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/404.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/search.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/content-search.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/archive.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/single.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/twentyfourteen/inc/template-tags.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/twentyfourteen/content.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/comments.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/inc/extras.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/inc/jetpack.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/sidebar.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/sidebar-footer.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/js/hide-search.js",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/js/superfish-settings.js",
+		"/Applications/MAMP/htdocs/wwwroot/wp-content/themes/spiegelmagazine-pro-child/entry_form.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan/js/customizer.js",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/convection/inc/customizer.php",
+		"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/convection/header.php",
+		"/Applications/MAMP/htdocs/wwwroot/wp-content/themes/spiegelmagazine-pro-child/form_processing.php",
+		"/Users/holly/Sites/Sandbox/bootstrap_sandbox/fonts/glyphicons-halflings-regular.svg",
+		"/Users/holly/Sites/Sandbox/bootstrap_sandbox/css/bootstrap.min.css"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/Applications/MAMP/htdocs/renegade-revolution-dev/wp-content/themes/russianroulette",
+			"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan,/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/juicyfruit",
+			"/Applications/MAMP/htdocs/rambu-test-2014/wp-content/themes/rambutan"
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"bg_inner",
+			"bg_inner_dark",
+			";\n",
+			"is_page",
+			"my_pagination",
+			"lightbox",
+			".blogpost.gallery,\n	.blogpost.clients{\n		margin:0 auto;\n		margin-bottom:20px;\n		float:none;\n	}",
+			"Gallery image",
+			"my-meta-box-id",
+			"gallery-caption",
+			"image_default_link_type",
+			"image_default",
+			"image",
+			"img",
+			"footer-widgets",
+			"comments",
+			"comments-area",
+			"footer",
+			"#content",
+			"page-content",
+			"entry-content",
+			"page-title",
+			"600",
+			"site-main",
+			"8px",
+			"content",
+			"content-await",
+			"says",
+			"caption",
+			"blockq",
+			"rambutan_entry_footer",
+			".site-content",
+			"entry_footer",
+			"entry-footer",
+			"entry-",
+			"screen-rea",
+			"register",
+			"button",
+			"jquery",
+			"media"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "style.css",
+					"settings":
+					{
+						"buffer_size": 49244,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								45923,
+								45923
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/CSS/CSS.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 25161.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "/Users/holly/Documents/Programming/calculator/calculator/gtk-gui/gui.stetic",
+					"settings":
+					{
+						"buffer_size": 17731,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Text/Plain text.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "functions.php",
+					"settings":
+					{
+						"buffer_size": 9342,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3224,
+								3224
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 3442.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "footer.php",
+					"settings":
+					{
+						"buffer_size": 3397,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								3357,
+								3357
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 249.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "content-list.php",
+					"settings":
+					{
+						"buffer_size": 2804,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								1221,
+								1221
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 488.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 5,
+					"file": "content-medium.php",
+					"settings":
+					{
+						"buffer_size": 3008,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								2089,
+								2089
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 600.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				},
+				{
+					"buffer": 6,
+					"file": "search.php",
+					"settings":
+					{
+						"buffer_size": 960,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								595,
+								595
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/PHP/PHP.tmLanguage",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 0.0
+	},
+	"input":
+	{
+		"height": 31.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"replace":
+	{
+		"height": 0.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 153.0,
+	"status_bar_visible": true
+}
