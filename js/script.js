@@ -17,5 +17,13 @@ $( document ).ready(function() {
          pauseOnFocus: true
     });
 
+    // add hover state for carousel articles
+    $('#carousel').hover( function(){
+        $(this).find('.featuredImage img').addClass('blur-focus');
+    });
+    $('#carousel').mouseleave( function(){
+        $(this).find('.featuredImage img').removeClass('blur-focus');
+    });
+
 
 });

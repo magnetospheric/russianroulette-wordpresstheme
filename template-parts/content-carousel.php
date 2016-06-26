@@ -8,10 +8,11 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('carousel'); ?> >
+<article id="post-<?php the_ID(); ?>" <?php post_class('carousel'); ?> onclick="window.open('<?php the_permalink(); ?>','_self');">
 
 
 	<div class="featuredImage">
+
 
 		<?php // check if the post has a Post Thumbnail assigned to it.
 		if ( has_post_thumbnail() ) {
@@ -29,7 +30,7 @@
 			</h3><!-- end entry-title -->
 
 			<div class="entry-meta">
-				<span class="author"><?php the_author(); //gets author name ?></span>
+				<span class="author">by <?php the_author(); //gets author name ?></span>
 				<span class="divider"><i class="fa fa-cog" aria-hidden="true"></i></span>
 				<span class="date"><?php russianroulette_posted_on(); //gets posted on date ?></span>
 			</div><!-- end entry-meta -->

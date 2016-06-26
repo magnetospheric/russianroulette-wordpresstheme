@@ -585,6 +585,7 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 	width:100%;
 	height:100%;
 	padding:0;
+    cursor:pointer;
 }
 #carousel .slick-arrow {
 	display:none!important;
@@ -606,6 +607,7 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 	width:100%;
 	position: absolute;
     bottom: 0;
+    z-index:9;
 }
 
 #carousel .slick-track {
@@ -669,6 +671,7 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 	width:96%;
 	padding:0 2%;
 	text-align:center;
+    z-index: 10;
 }
 
 #carousel .titles h3 {
@@ -687,8 +690,36 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 }
 
 #carousel .entry-meta span {
-	padding:5px;
+    float:left;
 }
+
+#carousel .entry-meta span.author {
+    width:48%;
+    text-align:right;
+}
+
+#carousel .entry-meta span.divider {
+    width:4%;
+    text-align:center;
+}
+
+#carousel .entry-meta span.date {
+    width:48%;
+    text-align:left;
+}
+
+/* carousel blur focus class - CSS3 animation */
+.blur-focus{
+    filter: blur(0.2px) brightness(130%) saturate(110%);
+    -webkit-filter: blur(0.2px) brightness(130%) saturate(110%);
+    -moz-filter: blur(0.2px) brightness(130%) saturate(110%);
+
+    transition: 0.7s;
+    -webkit-transition:0.7s;
+    -moz-transition:0.7s;
+
+}
+
 
 /* =ENTRIES
 ------------------------------ */
