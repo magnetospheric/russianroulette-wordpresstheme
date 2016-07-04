@@ -444,70 +444,48 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 .title-small { display:none; }
 
 .main-navigation {
-	clear: both;
-	display: block;
-	float: left;
-	width: 100%;
-  	background: /*url(images/nav-bg.png) repeat-y !deprecated in redesign!*/ #111;
-  	position:relative;
-  	height:auto;
+    border-top:2px solid #292828;
+    padding: 30px 30px 50px 30px;
+    text-transform:uppercase;
+    /* css gradient */
+    background: rgb(48, 46, 45); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1)) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302e2d', endColorstr='#383635',GradientType=0 ); /* IE6-9 */
 }
+
+.main-navigation h3 {
+    text-align:center;
+}
+
 .main-navigation ul {
 	list-style: none;
 	margin: 0;
 	padding-left: 0;
+    text-align:center;
 }
+
 .main-navigation li {
-	display: block;
-    float: left;
+	display: inline-block;
+    float: none;
     font-size: 115%;
     height: 100%;
     margin: 0;
     padding: 9px 18px 9px 9px;
     position: relative;
 }
-.main-navigation li:after {
-  	content:'/';
-	position:absolute;
-	top:20%;
-	right:0;
-}
+
 .main-navigation a {
-	display: block;
 	text-decoration: none;
 	color:#FAF6EF;
-  	font-style:normal;
-  	font-size:0.9em;
 }
-.main-navigation ul ul {
-	box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
-	display: none;
-	float: left;
-	left: 0;
-	position: absolute;
-	top: 1.5em;
-	z-index: 99999;
-}
-.main-navigation ul ul ul {
-	left: 100%;
-	top: 0;
-}
-.main-navigation ul ul a {
-	width: 200px;
-}
-.main-navigation ul ul li {
-}
+
 .main-navigation li:hover > a {
   	color:#f3f1e9;
   	text-shadow:0px 0px 1px #333;
 }
-.main-navigation ul ul :hover > a {
-}
-.main-navigation ul ul a:hover {
-}
-.main-navigation ul li:hover > ul {
-	display: block;
-}
+
 .main-navigation li.current_page_item a,
 .main-navigation li.current-menu-item a,
 .main-navigation li.current-page-ancestor a{
@@ -536,8 +514,6 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 
 /* =Content
 ----------------------------------------------- */
-.sticky {
-}
 .hentry {
 	margin: 0;
 }
@@ -560,26 +536,12 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 }
 
 
-/* =LAYOUT BASICS - MAIN AND SIDEBAR
----------- */
-#content { /* everything between header and footer */
-	position:relative;
-}
-
-#main { /* everything in content that's not the sidebar */
-
-}
-
-#sidebar { /* everything in the aside/sidebar element */
-
-}
-
-
 /* =CAROUSEL FEATURES
 ------------- */
 #carousel{
 	height:70vh;
 	max-height:775px;
+    border-bottom:1px solid #5d5c5b;
 }
 #carousel article {
 	width:100%;
@@ -616,8 +578,8 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 
 /* styles for dot navigation on Carousel */
 .slick-dots {
-	position:absolute;
-	top:50vh;
+    position: relative;
+    top: -124px;
 	width:100%;
 	text-align:center;
 }
@@ -666,9 +628,9 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 
 /* carousel title styles */
 #carousel .titles {
-	position:relative;
-	top:-20%;
-	width:96%;
+	position: relative;
+	top: -94px;
+	width: 96%;
 	padding:0 2%;
 	text-align:center;
     z-index: 10;
