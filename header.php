@@ -33,6 +33,8 @@
 
 </script>
 
+<!-- fonts.com css api -->
+<link type="text/css" rel="stylesheet" href="//fast.fonts.net/cssapi/c79fb7e9-f862-4533-8abd-f52081d13e7e.css"/>
 
 </head>
 

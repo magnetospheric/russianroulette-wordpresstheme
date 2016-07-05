@@ -53,7 +53,7 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 
 		<section id="site-navigation" class="main-navigation" role="navigation">
 			<h2 class="menu-toggle"><?php _e( 'Menu', 'russianroulette' ); ?></h2>
-			<h3>Navigate to</h3>
+			<h3>N<span class="threepixels">a</span>vi<span class="onepixel">ga</span>te to</h3>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</section><!-- #site-navigation -->
 
