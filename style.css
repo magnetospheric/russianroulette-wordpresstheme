@@ -83,18 +83,14 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 }
 
 .main-navigation h3 {
-    content: '';
-    background-image: url('images/rr-logo-greyscale.png');
-    background-size: 50%;
-    opacity: 0.3;
-    position: absolute;
-    top: 0;
-    display: block;
-    width: 141px;
-    height: 64px;
-    background-repeat: no-repeat;
-    background-position: 0px;
-    left: 47%;
+    font-size:110%;
+    text-align:center;
+    position:relative;
+    padding-top: 70px;
+    padding-bottom: 12px;
+    font-family:'RepublikSerifW01-03Alt', serif;
+    letter-spacing: 1px;
+    -webkit-font-smoothing: antialiased;
 }
 
 .main-navigation h3 span.threepixels {
@@ -108,15 +104,16 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 .main-navigation h3::before{
     content: '';
     background-image: url('images/rr-logo-greyscale.png');
-    background-size: 65%;
+    background-size: 50%;
     opacity: 0.3;
     position: absolute;
     top: 0;
-    display: inline-block;
-    width: 98px;
+    display: block;
+    width: 141px;
     height: 64px;
     background-repeat: no-repeat;
-    background-position: 18px;
+    background-position: 0px;
+    left: 47%;
 }
 
 .main-navigation ul {
