@@ -14,14 +14,8 @@
 
 		<div class="footer-logo"></div>
 		<nav id="site-navigation" class="footer-navigation" role="navigation">
-			<h1 class="menu-toggle"><?php _e( 'Menu', 'russianroulette' ); ?></h1>
-			<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'russianroulette' ); ?></a>
+			<h2 class="menu-toggle"><?php _e( 'Menu', 'russianroulette' ); ?></h2>
 			<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
-
-			<a href="https://twitter.com/revolutiongeeks" class="twitter-follow-button" data-show-count="true" show-screen-name="false" data-lang="en">Follow</a>
-			<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-			<div class="fb-like" data-href="https://www.facebook.com/RevolutionGeeks" data-layout="button_count" data-action="like" data-show-faces="true" data-share="false"></div>
-
 		</nav><!-- #site-navigation -->
 
 		<div class="site-info">

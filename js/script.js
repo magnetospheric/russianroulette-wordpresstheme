@@ -26,4 +26,9 @@ $( document ).ready(function() {
     });
 
 
+    // calculate height of blogroll articles
+
+    $("#blogroll article").height( $("#blogroll article").width() );
+
+
 });

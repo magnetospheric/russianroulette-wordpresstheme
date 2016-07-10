@@ -55,6 +55,37 @@ and Blueprint http://www.blueprintcss.org/
   font-style:italic;
 }
 
+@font-face {
+  font-family: 'RobotoThin';
+  src: url('/webfonts/Roboto-Thin.ttf')  format('truetype'), /* Safari, Android, iOS */
+}
+
+@font-face {
+  font-family: 'RobotoThin';
+  src: url('/webfonts/Roboto-ThinItalic.ttf')  format('truetype'), /* Safari, Android, iOS */
+  font-style:italic;
+}
+
+
+
+
+
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* MAIN HEADER
+----------------------------------------------- */
+
+header>div.site-branding{ background:url(images/header_title.jpg) no-repeat top left rgba(145, 39, 41, 1); width:100%; height:86px; position:relative; }
+header>div.site-branding h1, header>div.site-branding h2 { text-indent:-9999px; }
+header>div>div#search{ position:absolute; top:28px; right:28px; }
+header>div>div#search form { width:auto; border: 1px solid #000000; box-shadow: 1px 1px 7px #111111; border-radius:3px;  background:#fff; }
+header>div>div#search form label{ width:100%; height:100%; display:block; }
+input[type="search"] { border:none !important; margin:0; }
+
 
 
 /*--------------------------------------------- */
@@ -83,11 +114,11 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 }
 
 .main-navigation h3 {
-    font-size:110%;
+    font-size:100%;
     text-align:center;
     position:relative;
     padding-top: 70px;
-    padding-bottom: 12px;
+    padding-bottom: 34px;
     font-family:'RepublikSerifW01-03Alt', serif;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
@@ -126,10 +157,10 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 .main-navigation li {
 	display: inline-block;
     float: none;
-    font-size: 115%;
+    font-size: 125%;
     height: 100%;
     margin: 0;
-    padding: 9px 18px 9px 9px;
+    padding: 1% 2.5% 1% 1%;
     position: relative;
 }
 
@@ -179,28 +210,34 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 /*--------------------------------------------- */
 /* CONTENT
 ----------------------------------------------- */
-.hentry {
-	margin: 0;
-}
-.byline,
-.updated {
-	display: none;
-}
-.single .byline,
-.group-blog .byline {
-	display: inline;
-}
-.page-content,
-.entry-content,
-.entry-summary {
-	margin:0;
-}
-.page-links {
-	clear: both;
-	margin: 0 0 1.5em;
+
+#blogroll article {
+    width:25%;
+    margin:0;
+    padding:0;
+    display:block;
+    min-height:100px;
+    float:left;
 }
 
+#blogroll article:hover {
+    background-blend-mode:color-dodge!important;
+}
 
+#blogroll article img {
+    display:none;
+}
+
+#blogroll article .titles {
+    width:100%;
+    height:100%;
+    text-align:center;
+}
+
+#blogroll article .titles a {
+    color:#fff;
+    text-decoration:none;
+}
 
 
 /*--------------------------------------------- */
@@ -212,7 +249,7 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 /* CAROUSEL FEATURES
 ----------------------------------------------- */
 #carousel{
-	height:70vh;
+	height:90vh;
 	max-height:775px;
     border-bottom:1px solid #5d5c5b;
 }
@@ -356,8 +393,6 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 }
 
 
-/* ENTRIES
------------------------------------------------ */
 
 
 /*--------------------------------------------- */
@@ -559,6 +594,38 @@ object {
 .ik_fb_gallery_standard_title{ margin-bottom:1.5em; }
 
 
+
+
+
+
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* FOOTER
+----------------------------------------------- */
+
+footer {
+    background: rgba(32, 30, 29, 1);
+}
+
+footer nav li {
+    width:25%;
+    display:inline-block;
+    margin-right:-4px;
+}
+
+footer nav li a {
+    display:block;
+    padding:5%;
+    text-align:center;
+    color:#fff;
+    text-decoration:none;
+    font-family:'RepublikSerifW01-03Alt', serif;
+    -webkit-font-smoothing:antialiased;
+}
 
 
 

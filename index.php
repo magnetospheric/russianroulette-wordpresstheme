@@ -22,42 +22,15 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 
 	<main id="main" class="site-main" role="main">
 
-		<section id="carousel" class="carousel-init">
-			<?php
-			// Carousel query
-			$carousel_query= new WP_Query( array(
-					'posts_per_page' => 3,
-					'tag__not_in' => array($tag_exclude->term_id),
-				  	'category__not_in' => $category_excludes,
-					'post_type' => 'post',
-					'post_status' => 'publish'
-				)
-			);
-
-			if ( $carousel_query->have_posts() ) {
-				while ( $carousel_query->have_posts() ) {
-
-					$carousel_query->the_post();
-
-					include( locate_template('template-parts/content-carousel.php') );
-
-				}
-
-			}
-
-			/* Restore original Post Data */
-			wp_reset_postdata();
-
-			?>
-		</section><!-- end section CAROUSEL -->
+		<?php include(locate_template('template-parts/section-carousel.php')); ?>
 
 		<section id="site-navigation" class="main-navigation" role="navigation">
 			<h2 class="menu-toggle"><?php _e( 'Menu', 'russianroulette' ); ?></h2>
-			<h3>N<span class="threepixels">a</span>vi<span class="onepixel">ga</span>te to</h3>
+			<h3>N<span class="threepixels">a</span>vi<span class="onepixel">ga</span>te to:</h3>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</section><!-- #site-navigation -->
 
-		<section class="blogroll">
+		<section id="blogroll">
 			<?php
 			// The Query
 			$main_query = new WP_Query(array(
@@ -76,7 +49,7 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 
 					$main_query->the_post();
 
-					include(locate_template('template-parts/content-excerpt.php'));
+					include(locate_template('template-parts/content-blogroll.php'));
 
 				}
 
@@ -95,6 +68,8 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 			</div>
 
 		</section><!-- end blogroll -->
+
+		<div class="clear"></div>
 
 	</main><!-- #main -->
 
