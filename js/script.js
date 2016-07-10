@@ -3,9 +3,53 @@
    Main js file associated with RussianRoulette theme
 
    ========================================================================= =*/
+/* ********* */
+/* ********* */
+/* functions */
+/* ********* */
+/* ********* */
+
+// this sets the height to match the width of targeted element
+var squareRatioHeight = function(target) {
+    console.log('made it inside');
+    $(target).height( $(target).width() );
+}
+
+// this slides up contents of targeted element
+var revealIntro = function(target) {
+    console.log( $(target).attr('class'));
+    $( target ).children('.titles').animate({
+            top: "-=50%",
+        }, 500, function() { // Animation complete.
+    });
+    $( target ).children('.text').removeClass('hidden').animate({
+        top: "-=50%",
+    }, 500, function() { // Animation complete.
+    });
+}
+
+// animates sliding intro back down
+var hideIntro = function(target) {
+    console.log( $(target).attr('class'));
+    $( target ).children('.titles').animate({
+            top: "+=50%",
+        }, 500, function() { // Animation complete.
+    });
+    $( target ).children('.text').animate({
+        top: "+=50%",
+    }, 500, function() { // Animation complete.
+        $( this ).addClass('hidden');
+    });
+}
+
+
+/* *************** */
+/* *************** */
+/* implementations */
+/* *************** */
+/* *************** */
 
 $( document ).ready(function() {
-
 
     /* initialise slick slider for CAROUSEL */
     $('.carousel-init').slick({
@@ -25,10 +69,24 @@ $( document ).ready(function() {
         $(this).find('.featuredImage img').removeClass('blur-focus');
     });
 
-
     // calculate height of blogroll articles
+    squareRatioHeight("#blogroll article");
 
-    $("#blogroll article").height( $("#blogroll article").width() );
+    // slide up and reveal introduction on blogroll articles
+    $('#blogroll article').mouseenter( function(){
+        revealIntro(this);
+    });
 
+    // slide down and hide introduction on blogroll articles
+    $('#blogroll article').mouseleave( function(){
+        hideIntro(this);
+    });
 
 });
+
+// add actions to window resize
+if(window.addEventListener) {
+    window.addEventListener('resize', function() {
+        squareRatioHeight("#blogroll article")
+    }, true);
+}
