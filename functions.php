@@ -80,11 +80,15 @@ function russianroulette_scripts() {
 
 	wp_enqueue_style( 'russianroulette-fontawesome', get_template_directory_uri() . '/webfonts/font-awesome-4.6.3/css/font-awesome.min.css');
 
+	wp_enqueue_style( 'russianroulette-jqueryui', get_template_directory_uri() . '/css/jquery-ui.min.css');
+
 	wp_enqueue_script( 'russianroulette-navigation', get_template_directory_uri() . '/js/navigation.js', array(), '20120206', true );
 
 	wp_enqueue_script( 'russianroulette-skip-link-focus-fix', get_template_directory_uri() . '/js/skip-link-focus-fix.js', array(), '20130115', true );
 
 	wp_enqueue_script( 'russianroulette-slick-slider', get_template_directory_uri() . '/js/slick.min.js', array(), '20160625', true );
+
+	wp_enqueue_script( 'russianroulette-jqueryui', get_template_directory_uri() . '/js/jquery-ui.min.js', array(), '20160625', true );
 
 	wp_enqueue_script( 'russianroulette-script', get_template_directory_uri() . '/js/script.js', array(), '20160625', true );
 

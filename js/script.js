@@ -15,29 +15,40 @@ var squareRatioHeight = function(target) {
     $(target).height( $(target).width() );
 }
 
+var articleHeight = 0;
+var titleHeight = 0;
+
 // this slides up contents of targeted element
 var revealIntro = function(target) {
-    console.log( $(target).attr('class'));
+    articleHeight = $( target ).height();
+    titleHeight = $( target ).children('.titles').height();
+
+    heightOffset = (articleHeight - titleHeight) + 24;
+
+    $( target ).children('.titles').children().addClass('hovered');
     $( target ).children('.titles').animate({
-            top: "-=50%",
-        }, 500, function() { // Animation complete.
+            bottom: heightOffset,
+        }, 400, function() {
+            // Animation complete.
     });
     $( target ).children('.text').removeClass('hidden').animate({
         top: "-=50%",
-    }, 500, function() { // Animation complete.
+    }, 400, function() { // Animation complete.
     });
 }
 
 // animates sliding intro back down
 var hideIntro = function(target) {
-    console.log( $(target).attr('class'));
+    $( target ).children('.titles').children().removeClass('hovered');
     $( target ).children('.titles').animate({
-            top: "+=50%",
-        }, 500, function() { // Animation complete.
+            bottom: 0
+        }, 400, function() {
+            // Animation complete.
+            $( target ).removeClass('hovered', {duration:1500});
     });
     $( target ).children('.text').animate({
         top: "+=50%",
-    }, 500, function() { // Animation complete.
+    }, 400, function() { // Animation complete.
         $( this ).addClass('hidden');
     });
 }
