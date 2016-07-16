@@ -23,7 +23,7 @@ var revealIntro = function(target) {
     articleHeight = $( target ).height();
     titleHeight = $( target ).children('.titles').height();
 
-    heightOffset = (articleHeight - titleHeight) + 24;
+    heightOffset = (articleHeight - titleHeight) + 50;
 
     $( target ).children('.titles').children().addClass('hovered');
     $( target ).children('.titles').animate({
@@ -60,7 +60,7 @@ var hideIntro = function(target) {
 /* *************** */
 /* *************** */
 
-$( document ).ready(function() {
+jQuery( document ).ready(function() {
 
     /* initialise slick slider for CAROUSEL */
     $('.carousel-init').slick({
@@ -68,7 +68,7 @@ $( document ).ready(function() {
          slidesToShow: 1,
          slidesToScroll: 1,
          autoplay: true,
-         autoplaySpeed: 3000000,
+         autoplaySpeed: 4000,
          pauseOnFocus: true
     });
 
@@ -93,6 +93,9 @@ $( document ).ready(function() {
         hideIntro(this);
     });
 
+    // append triangle inside of prev and next links
+    $('.pagination .triangle-right').detach().appendTo('.next');
+    $('.pagination .triangle-left').detach().appendTo('.prev');
 });
 
 // add actions to window resize

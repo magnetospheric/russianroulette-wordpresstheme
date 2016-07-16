@@ -33,14 +33,26 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 		<section id="blogroll">
 			<?php
 			// The Query
-			$main_query = new WP_Query(array(
-  				'tag__not_in' => array($tag_exclude->term_id),
-			  	'category__not_in' => $category_excludes,
-				'post_type' => 'post',
-				'post_status' => 'publish',
-			  	'paged' => $paged,
-				'offset' => 3
-			) );
+
+			// First, initialize how many posts to render per page
+			$display_count = 16;
+
+			// Next, get the current page
+			$page = get_query_var( 'paged' ) ? get_query_var( 'paged' ) : 1;
+
+			// After that, calculate the offset
+			$offset = ( ( $page - 1 ) * $display_count ) + 3;
+
+			$args = array(
+			  'posts_per_page' => $display_count,
+			  'offset' => $offset,
+			  'paged'          => $page,
+			  'tag__not_in' => array($tag_exclude->term_id),
+		  	  'category__not_in' => $category_excludes
+			);
+
+			$main_query = new WP_Query( $args );
+
 
 			// The Loop
 			if ( $main_query->have_posts() ) {
@@ -64,7 +76,7 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 			?>
 
 			<div class="pagination">
-				<?php my_pagination(); ?>
+				<?php rr_pagination($main_query); ?>
 			</div>
 
 		</section><!-- end blogroll -->

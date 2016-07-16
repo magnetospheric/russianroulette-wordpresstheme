@@ -73,20 +73,51 @@ add_filter( 'shortcode_atts_gallery', 'russianroulette_gallery_atts', 10, 3 );
  * Add pagination function
  * =================================================================================*/
 
-if ( ! function_exists( 'my_pagination' ) ) :
-	function my_pagination() {
-		global $wp_query;
+if ( ! function_exists( 'rr_pagination' ) ) :
+	function rr_pagination($query) {
 
 		$big = 999999999; // need an unlikely integer
+        $last_page = $query->max_num_pages;
 
-		echo paginate_links( array(
+		$paginate_links = paginate_links( array(
 			'base' => str_replace( $big, '%#%', esc_url( get_pagenum_link( $big ) ) ),
 			'format' => '?paged=%#%',
 			'current' => max( 1, get_query_var('paged') ),
-			'total' => $wp_query->max_num_pages
+			'total' => $query->max_num_pages,
+            'type'      => 'array'
 		) );
+
+        foreach ( $paginate_links as $pgl ) {
+            $innerHTML = getStringSegment($pgl, "'>", "</");
+            if ( $innerHTML == (string)$last_page ) {
+                echo '<span class="last">of &nbsp;' . $pgl . '</span>';
+            }
+            elseif ( strpos($pgl, 'Previous') !== false ) {
+                echo '<span class="prev-page">' . $pgl . '<div class="triangle-left"></div></span>';
+            }
+            elseif ( strpos($pgl, 'Next') !== false ) {
+                echo '<span class="next-page">' . $pgl . '<div class="triangle-right"></div></span>';
+            }
+            elseif ( strpos($pgl, 'current') !== false ) {
+                echo $pgl;
+            }
+            else { // do nothing
+            }
+        }
 	}
 endif;
+
+function getStringSegment($str, $from, $to)
+{
+    $sub = substr($str, strpos($str, $from) + strlen($from), strlen($str));
+    return substr($sub, 0, strpos($sub, $to));
+}
+
+the_posts_pagination( array(
+	'mid_size'  => 2,
+	'prev_text' => __( 'Back', 'textdomain' ),
+	'next_text' => __( 'Onward', 'textdomain' ),
+) );
 
 /*===================================================================================
  * Register sidebars

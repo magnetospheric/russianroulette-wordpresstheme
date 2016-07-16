@@ -220,8 +220,8 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
     float:left;
     position:relative;
     overflow:hidden;
-    /*text-shadow: 1px 1px 2px rgba(10, 10, 10, 1);*/
-    text-shadow: 1px 1px 1px #000,
+    text-shadow:
+                 1px 1px 1px #000,
                  1px 1px 1px #000,
                  1px 1px 2px #000,
                  1px 1px 2px #000,
@@ -260,7 +260,7 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 }
 
 #blogroll article .titles .entry-title {
-    padding: 55px 2% 0px;
+    padding: 75px 2% 0px;
 }
 #blogroll article .titles .entry-meta {
     padding: 2px 2%;
@@ -289,12 +289,6 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
     background-blend-mode:overlay;
 }
 
-#blogroll .pagination {
-    display: block;
-    width: 100%;
-    float: left;
-}
-
 /* hover states */
 #blogroll article:hover {
     background-blend-mode:color-dodge!important;
@@ -312,9 +306,9 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
     -o-transition: background 0.5s;
     transition: background 0.5s;
 
-    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.3) 100%); /* FF3.6-15 */
-    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.3) 100%); /* Chrome10-25,Safari5.1-6 */
-    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 30%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    background: -moz-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.3) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.3) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.5) 40%, rgba(0, 0, 0, 0.4) 80%, rgba(0, 0, 0, 0.3) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#000',GradientType=0 ); /* IE6-9 */
     background-blend-mode:multiply!important;
 }
@@ -335,6 +329,144 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
 #blogroll article:hover .entry-meta {
     padding: 0 0 3% 0;
 }
+
+
+
+
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* BLOGROLL PAGINATION
+----------------------------------------------- */
+#blogroll .pagination {
+    display: block;
+    position: relative;
+    width: 96%;
+    float: left;
+    text-align: center;
+    border-top: 2px solid #292828;
+    padding: 2% 2% 2.5% 2%;
+    text-transform: uppercase;
+    /* css gradient */
+    background: rgb(48, 46, 45); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1)) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302e2d', endColorstr='#383635',GradientType=0 ); /* IE6-9 */
+}
+
+.pagination .current {
+    background: rgba(32, 30, 29, 1);
+    padding: 10px 13px;
+    border: 1px solid rgba(20, 20, 20, 1);
+    box-shadow: 0px 0px 5px 0px rgba(255, 255, 255, 0.15);
+    border-radius: 2px;
+    display: inline-block;
+    width: auto;
+}
+
+.pagination .prev-page {
+    position: absolute;
+    left: 0;
+    width: 47%;
+    height: 50%;
+}
+
+.pagination .next-page {
+    position: absolute;
+    right: 0;
+    width: 47%;
+    height: 50%;
+}
+
+.pagination .last {
+    position: absolute;
+    bottom: 8px;
+    left: 0;
+    width: 100%;
+    display: inline-block;
+    padding: 4px 0 6px;
+    font-size: 0.8em;
+    text-transform: none;
+    text-shadow:
+                0px 0px 1px #000,
+                0px 0px 1px #000,
+                0px 0px 2px #000,
+                0px 0px 3px #000,
+                0px 0px 4px #000
+    ;
+}
+
+.pagination .last a{
+    text-decoration:none;
+}
+
+.pagination .last a:hover{
+    color: rgba( 198, 43, 46, 1 );
+    text-shadow:0px 0px 1px rgba( 0, 0, 0, 0.9 )
+    ;
+}
+
+.pagination .prev,
+.pagination .next {
+    text-indent: -9999px;
+    display: block;
+    height: 100%;
+}
+
+.triangle-right {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -6px;
+    left: 0;
+    overflow: hidden;
+    box-shadow: -17px 0px 10px -17px rgba(0, 0, 0, 0.6);
+}
+.triangle-right:after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: rgba( 145, 39, 41, 1 );
+    transform: rotate(45deg); /* Prefixes... */
+    top: 25%;
+    right: 75%;
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.6);
+}
+
+/* create an arrow that points left */
+.triangle-left {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    top: -6px;
+    right: 0;
+    overflow: hidden;
+    box-shadow: 17px 0px 10px -17px rgba(0, 0, 0, 0.6);
+}
+.triangle-left:after {
+    content: "";
+    position: absolute;
+    width: 50%;
+    height: 50%;
+    background: rgba( 145, 39, 41, 1 );
+    transform: rotate(45deg); /* Prefixes... */
+    top: 25%;
+    left: 75%;
+    box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.6);
+}
+
+
+a:hover .triangle-right:after,
+a:hover .triangle-left:after {
+    background: rgba( 198, 43, 46, 1 );
+}
+
+
 
 
 /*--------------------------------------------- */
