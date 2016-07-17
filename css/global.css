@@ -229,7 +229,7 @@ a:visited {
 a:hover,
 a:focus,
 a:active {
-	color: #5f2f31;
+	color: rgba( 198, 43, 46, 1 );
 }
 
 /* Alignment */

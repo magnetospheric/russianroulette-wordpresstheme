@@ -1,0 +1,16 @@
+/* ---------------------
+	Admin.css
+	--------------------- */
+
+
+
+
+/* ==============================
+
+    use fontawesome icons in menu
+
+   ============================== */
+
+.edit-menu-item-custom select {
+    font-family: 'FontAwesome';
+}

@@ -99,6 +99,24 @@ function russianroulette_scripts() {
 add_action( 'wp_enqueue_scripts', 'russianroulette_scripts' );
 
 
+
+
+// custom admin styling
+function admin_custom_enqueue( $hook ) {
+	wp_register_style( 'russianroulette-fontawesome', get_template_directory_uri() . '/webfonts/font-awesome-4.6.3/css/font-awesome.min.css', false, '1.0.0' );
+	wp_enqueue_style( 'russianroulette-fontawesome');
+	
+	wp_register_style( 'custom_wp_admin_css', get_template_directory_uri() . '/css/admin.css', false, '1.0.0' );
+	wp_enqueue_style( 'custom_wp_admin_css' );
+
+	wp_register_script( 'admin', get_template_directory_uri() . '/js/admin.js', array('jquery'), '1.0.0', true );
+	wp_enqueue_script('admin');
+}
+add_action('admin_enqueue_scripts', 'admin_custom_enqueue', 2000);
+
+
+
+
 /**
  * Custom template tags for this theme.
  */

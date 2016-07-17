@@ -15,7 +15,8 @@
 		<div class="footer-logo"></div>
 		<nav id="site-navigation" class="footer-navigation" role="navigation">
 			<h2 class="menu-toggle"><?php _e( 'Menu', 'russianroulette' ); ?></h2>
-			<?php wp_nav_menu( array( 'theme_location' => 'secondary' ) ); ?>
+			<?php $walker = new Menu_With_Icons; ?>
+			<?php wp_nav_menu( array( 'theme_location' => 'secondary', 'menu_class' => 'nav-menu', 'walker' => $walker ) ); ?>
 		</nav><!-- #site-navigation -->
 
 		<div class="site-info">
