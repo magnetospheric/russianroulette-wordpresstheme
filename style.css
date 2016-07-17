@@ -81,11 +81,107 @@ and Blueprint http://www.blueprintcss.org/
 
 header>div.site-branding{ background:url(images/header_title.jpg) no-repeat top left rgba(145, 39, 41, 1); width:100%; height:86px; position:relative; }
 header>div.site-branding h1, header>div.site-branding h2 { text-indent:-9999px; }
-header>div>div#search{ position:absolute; top:28px; right:28px; }
-header>div>div#search form { width:auto; border: 1px solid #000000; box-shadow: 1px 1px 7px #111111; border-radius:3px;  background:#fff; }
+
+header .search-reveal {
+    position: absolute;
+    right: 1.5%;
+    font-size: 2.5em;
+    top: 14%;
+    text-shadow: 0px 0px 4px rgba( 30, 30, 30, 0.5 );
+    z-index: 98;
+    padding: 0px 0px 0px 10px;
+    display: block;
+    cursor: pointer;
+}
+
+header>div>div#search{
+    position:absolute;
+    top:20%;
+    right:1%;
+    height:60%;
+    width:11%; /* changes to 33.3% in javascript */
+    display: block;
+    z-index: 99;
+}
+
+.reveal {
+    display: block!important;
+}
+
+header>div>div#search.reveal form {
+    width:auto;
+    box-shadow: none;
+    border-radius:1px;
+    background: transparent;
+    height:100%;
+}
+
+header>div>div#search.reveal form {
+    width:auto;
+    box-shadow: 0px 0px 4px rgba( 30, 30, 30, 0.5 );
+    border-radius:1px;
+    background: rgba( 198, 43, 46, 0.5 );
+    height:100%;
+}
+
+header .search-field {
+    background: transparent;
+    padding: 17px 3.2%;
+    width: 78%;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: normal;
+}
+
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fff;
+    opacity: 0;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  0;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  0;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #fff;
+   opacity: 0;
+}
+
+#search.reveal ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+    color: rgba(255, 255, 255, 0.6);
+    opacity: 1;
+}
+#search.reveal :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color: rgba(255, 255, 255, 0.6);
+   opacity:  1;
+}
+#search.reveal ::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color: rgba(255, 255, 255, 0.6);
+   opacity:  1;
+}
+#search.reveal :-ms-input-placeholder { /* Internet Explorer 10-11 */
+   color: rgba(255, 255, 255, 0.6);
+   opacity: 1;
+}
+
+header .search-submit {
+    position: absolute;
+    right: 0;
+    top: 0;
+    border: none;
+    background: transparent;
+    box-shadow: none;
+    text-indent: -9999px;
+    display: block;
+    z-index: 100;
+    width: 15%;
+    height: 100%;
+}
+
 header>div>div#search form label{ width:100%; height:100%; display:block; }
 input[type="search"] { border:none !important; margin:0; }
-
 
 
 /*--------------------------------------------- */

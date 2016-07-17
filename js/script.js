@@ -62,6 +62,122 @@ var hideIntro = function(target) {
 
 jQuery( document ).ready(function() {
 
+    /* search hover */
+    // var timeoutId;
+    // $(".search-reveal").hover(function() {
+    //     if (!timeoutId) {
+    //         timeoutId = window.setTimeout(function() {
+    //             timeoutId = null;
+    //             $('#search').addClass('reveal');
+    //             $('#search').animate({
+    //                 width: "33.3%"
+    //             }, {
+    //                 duration: 800,
+    //                 complete: function () {
+    //                 }
+    //             });
+    //        }, 1000);
+    //     }
+    // },
+    // function () {
+    //     if (timeoutId) {
+    //         window.clearTimeout(timeoutId);
+    //         timeoutId = null;
+    //     }
+    //     else {
+    //     }
+    // });
+
+
+    $('#search').hover(function() {
+        clearTimeout($(this).data('timeout'));
+        $('#search').addClass('reveal');
+        $('#search').animate({
+            width: "33.3%"
+        }, {
+            duration: 500,
+            complete: function () {
+            }
+        });
+    }, function() {
+        var t = setTimeout(function() {
+            $('#search').animate({
+                width: "11%"
+            }, {
+                duration: 500,
+                complete: function () {
+                    $('#search').removeClass('reveal');
+                }
+            });
+        }, 200);
+        $(this).data('timeout', t);
+    });
+
+    // $('#search').hover( function () {
+    //     //$('#search').addClass('reveal');
+    //     $('#search').animate({
+    //         width: "33.3%"
+    //     }, {
+    //         duration: 500,
+    //         complete: function () {
+    //         }
+    //     });
+    // },function()    {
+    //     $('#search').animate({
+    //         width: "11%"
+    //     }, {
+    //         duration: 500,
+    //         complete: function () {
+    //             //$('#search').removeClass('reveal');
+    //         }
+    //     });
+    // }
+    // );
+
+    // $('#search').mouseleave( function () {
+    //     $('#search').animate({
+    //         width: "11%"
+    //     }, {
+    //         duration: 500,
+    //         complete: function () {
+    //             //$('#search').removeClass('reveal');
+    //         }
+    //     });
+    // });
+
+
+    // $('.search-reveal').hover( function(){
+    //     $('#search').addClass('reveal');
+    //     $('#search').animate({
+    //         width: "33.3%"
+    //     }, {
+    //         duration: 500,
+    //         complete: function () {
+    //             $('#search').hover( function(){
+    //                 $('#search').addClass('reveal');
+    //             });
+    //         }
+    //     });
+    // });
+    //
+    // $('#search').hover( function(){
+    //     if ( $('#search').hasClass('.reveal') ) {
+    //     } else {
+    //         $('#search').addClass('reveal');
+    //     }
+    // });
+    //
+    // $('#search').mouseleave( function(){
+    //     $('#search').animate({
+    //         width: "0%"
+    //     }, {
+    //         duration: 500,
+    //         complete: function () {
+    //             //$('#search').removeClass('reveal');
+    //         }
+    //     });
+    // });
+
     /* initialise slick slider for CAROUSEL */
     $('.carousel-init').slick({
          dots: true,
