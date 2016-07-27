@@ -4,107 +4,104 @@
  */
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('single'); ?> >
+<article id="post-<?php the_ID(); ?>" <?php if ( 'post' == get_post_type($post) ) { post_class('single'); } ?>>
 	<div class="entry-content">
-	  <div class="featuredImage">
 		<?php // check if the post has a Post Thumbnail assigned to it.
-		if ( has_post_thumbnail() ) {
-			the_post_thumbnail('large');
-		} ?>
-	  
-	  <div class="titles">
-	 	<h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3><?php //h3 title as permalink ?>
+		if ( has_post_thumbnail() ) { ?>
+		<div class="featuredImage">
+			<?php $thumb = wp_get_attachment_image_src( get_post_thumbnail_id($post->ID), 'x-large' );
+			$url = $thumb['0']; ?>
+			<img src="<?php echo $url; ?>" longdesc="URL_2" alt="Text_2" />
 
-		<?php if ( 'post' == get_post_type() ) : ?>
-		<div class="entry-meta">
-			<?php russianroulette_posted_on(); //gets posted on date ?>
-		</div>
-		<!-- .entry-meta -->
-		<?php endif; ?>
+		  	<div class="titles">
+			 	<h3 class="entry-title"><?php the_title(); ?></h3>
+				<?php if ( 'post' == get_post_type($post) ) : ?>
+					<div class="entry-meta">
+						<?php russianroulette_posted_on(); //gets posted on date ?>
+					</div><!-- .entry-meta -->
+				<?php endif; ?>
+	  		</div><!-- end titles -->
+
+			<span class="overlay-gradient"></span>
+
+		</div><!-- end post thumbnail -->
+
+		<?php } else { ?>
+
+		<div class="titles">
+		 	<h3 class="entry-title"><a href="<?php the_permalink(); ?>" rel="bookmark"><?php the_title(); ?></a></h3><?php //h3 title as permalink ?>
+
+			<?php if ( get_post_type() != 'page' ) : ?>
+				<div class="entry-meta">
+					<?php russianroulette_posted_on(); //gets posted on date ?>
+				</div><!-- .entry-meta -->
+			<?php endif; ?>
   		</div><!-- end titles -->
-	 
-	  </div>
-	   
-	 
+
+	<?php } ?>
+
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-author">
 		 <?php
-				  $curauth = get_the_author_meta('ID');
-				  //curauth gets the author details based on get_author_meta('ID') 
-				  //which is currently the only thing able to target the 
-				  //author nicename, nickname AND user photo without getting
-				  //confused between nickname and photo, outside of the loop
-				  
-				  include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-				  		if ( is_plugin_active('user-photo/user-photo.php') ) {
+				$curauth = get_the_author_meta('ID');
+
+				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+						if ( is_plugin_active('user-photo/user-photo.php') ) {
  							//do stuff
- 							if(userphoto_exists($curauth)) {  
+ 							if(userphoto_exists($curauth)) {
  								userphoto_thumbnail($curauth);
  							}
 						}
 						else {
-				  			echo get_avatar($curauth, 40);
-				  		}
-				 
-				
+							echo get_avatar($curauth, 40);
+						}
 
-
-
-//$user = get_the_author();
-//$curauth = get_the_author($user->ID);
-//			  if(userphoto_exists($curauth)){
-//				userphoto_the_author_thumbnail();}
-//			  else{
-//				echo get_avatar(get_the_author_meta('ID'), 60);}
 				?>
-		 
-				
-		  <?php //gets author icon ?>
-			
+
 			<div class="authorCategoryInfo">
-			  	<div class="author"><p>Written by 
+			  	<div class="author"><p>Written by
 				  	<a href="<?php  echo get_author_posts_url( get_the_author_meta( 'ID', $curauth->ID ) );  ?>">
 				  		<?php the_author(); //gets author name ?>
 				  </a>
 				  </p></div>
 				<div class="category"><p>in</p>
-				<?php 
+				<?php
 						$counter = 0;
 		  				foreach((get_the_category()) as $category) {
 						  //
 						  if ($counter >= 1) { echo "<span class=\"and\">&nbsp;&amp;&nbsp;</span>"; }
-			  				
+
 						  //echo a link
 						  ?>
-				  			<a class="category" href="<?php 
-							$url = home_url('/');		  
-		  		
+				  			<a class="category" href="<?php
+							$url = home_url('/');
+
 					  		echo $url . $category->cat_name;
-				
+
 							?>"><?php
-						  
-						  	
+
+
 						  	//echo category name
-						  	echo $category->cat_name;	
-						  	
-						  
+						  	echo $category->cat_name;
+
+
 							//close a link
 							?>
-							</a>  
+							</a>
 							<?php
 						  	$counter++;
-						} 
-				  	?>					
+						}
+				  	?>
 			  </div>
 		</div>
 		</div><!-- end entry author -->
 		<!-- .entry-meta -->
 		<?php endif; ?>
 
-	  
-	 
-		<div class="intro">
-			<?php 
+
+
+		<div class="intro page">
+			<?php
 			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		  		if ( is_plugin_active('advanced-custom-fields/acf.php') ) {
 					//do stuff
@@ -118,63 +115,59 @@
 				}
 		 	?>
 	  </div>
-		<?php the_content(); ?>
+	  <div class="text page">
+		<?php
+			$content = apply_filters('the_content', $post->post_content);
+			echo $content;
+		?>
 		<?php
 			wp_link_pages( array(
 				'before' => '<div class="page-links">' . __( 'Pages:', 'russianroulette' ),
 				'after'  => '</div>',
 			) );
 		?>
+	</div>
 	</div><!-- .entry-content -->
 
-	<footer class="entry-meta">
-		<?php
-			/* translators: used between list items, there is a space after the comma */
-			$category_list = get_the_category_list( __( ', ', 'russianroulette' ) );
+	<?php if ( get_post_type() != 'page' ) : ?>
+		<footer class="entry-meta">
+			<?php
+				/* translators: used between list items, there is a space after the comma */
+				$category_list = get_the_category_list( __( ', ', 'russianroulette' ) );
 
-			/* translators: used between list items, there is a space after the comma */
-			$tag_list = get_the_tag_list( '', __( ', ', 'russianroulette' ) );
+				/* translators: used between list items, there is a space after the comma */
+				$tag_list = get_the_tag_list( '', __( ', ', 'russianroulette' ) );
 
-			if ( ! russianroulette_categorized_blog() ) {
-				// This blog only has 1 category so we just need to worry about tags in the meta text
-				if ( '' != $tag_list ) {
-					$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'russianroulette' );
+				if ( ! russianroulette_categorized_blog() ) {
+					// This blog only has 1 category so we just need to worry about tags in the meta text
+					if ( '' != $tag_list ) {
+						$meta_text = __( 'This entry was tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'russianroulette' );
+					} else {
+						$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'russianroulette' );
+					}
+
 				} else {
-					$meta_text = __( 'Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'russianroulette' );
-				}
+					if ( '' != $tag_list ) {
+						$posttype = get_field('posttype', $post->ID);
+						$meta_text = __( '<p class="cat">This ' .get_field('posttype', $post->ID)  .' article was posted in %1$s</p><h3>Tags:</h3><p>%2$s</p>', 'russianroulette' );
+					} else {
+						$meta_text = __( '<p>This article was posted in %1$s</p>', 'russianroulette' );
+					}
 
-			} else {
-				// But this blog has loads of categories so we should probably display them here
-				if ( '' != $tag_list ) {
-				  $posttype = get_field('posttype', $post->ID);
-				  if ( $posttype == 'news' || $posttype == 'longform' ) {
-					$meta_text = __( '<p>This ' .get_field('posttype', $post->ID)  .' piece was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.</p>', 'russianroulette' );
-				  }
-				  else {
-				  	$meta_text = __( '<p>This ' .get_field('posttype', $post->ID)  .' was posted in %1$s and tagged %2$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.</p>', 'russianroulette' );
-				  }
-				} else {
-					$meta_text = __( 'This entry was posted in %1$s. Bookmark the <a href="%3$s" rel="bookmark">permalink</a>.', 'russianroulette' );
-				}
+				} // end check for categories on this blog
+				printf(
 
-			} // end check for categories on this blog
-			printf(
-				
-				$meta_text,
-			  	$category_list,
-				$tag_list,
-				get_permalink()
-			);
-		?>
+					$meta_text,
+					$category_list,
+					$tag_list,
+					get_permalink()
+				);
+			?>
 
-		<?php edit_post_link( __( 'Edit', 'russianroulette' ), '<span class="edit-link">', '</span>' ); ?>
-	  <?php $someVar = $category->cat_name; ?>
-	  <?php 
-//if someVar matches one of the title elements
+			<?php edit_post_link( __( 'Edit', 'russianroulette' ), '<span class="edit-link">', '</span>' ); ?>
+			<?php $someVar = $category->cat_name; ?>
 
-//
-	  
-	  
-	  ?>
-	</footer><!-- .entry-meta -->
+		</footer><!-- .entry-meta -->
+	<?php endif; ?>
+
 </article><!-- #post-## -->

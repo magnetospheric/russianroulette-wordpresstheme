@@ -7,39 +7,40 @@
 
 get_header(); ?>
 
-	<section id="primary" class="content-area">
-		<main id="main" class="site-main" role="main">
-		  
-		  
+	<main id="main" class="site-main" role="main">
+
+		<section id="blogroll">
 		<?php
 
 		if ( have_posts() ) : ?>
 
-			<header class="page-header">
-				<h1 class="page-title"><?php printf( __( 'Search Results for: %s', 'russianroulette' ), '<span>' . get_search_query() . '</span>' ); ?></h1>
-			</header><!-- .page-header -->
+			<section class="archive-header">
+				<h3><?php printf( __( 'Search Results for: %s', 'russianroulette' ), '<span>' . get_search_query() . '</span>' ); ?></h3>
+			</section><!-- .page-header -->
 
 			<?php /* Start the Loop */ ?>
 			<?php while ( have_posts() ) : the_post(); ?>
 
-				<?php get_template_part( 'content-list', 'search' ); ?>
+				<?php get_template_part( 'template-parts/content', 'blogroll' ); ?>
 
 			<?php endwhile; ?>
 
-			<?php russianroulette_content_nav( 'nav-below' ); ?>
+			<?php else : ?>
 
-		<?php else : ?>
+				<?php get_template_part( 'content', 'none' ); ?>
 
-			<?php get_template_part( 'content', 'none' ); ?>
+			<?php endif; ?>
 
-		<?php endif; ?>
-		  
-		  <div class="pagination">	
-				<?php my_pagination(); ?>
-		</div>
+			<?php wp_reset_postdata(); ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+			<div class="pagination">
+				<?php rr_pagination($main_query); ?>
+			</div>
 
-<?php get_sidebar(); ?>
+		</section><!-- end blogroll -->
+
+		<div class="clear"></div>
+
+	</main><!-- #main -->
+
 <?php get_footer(); ?>

@@ -20,13 +20,27 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 
 ?>
 
-	<main id="main" class="site-main" role="main">
+<?php
+	$paged = get_query_var('paged');
 
-		<?php include(locate_template('template-parts/section-carousel.php')); ?>
-
+	if ($paged < 2) { // only show carousel on first page
+		?><main id="main" class="site-main page1" role="main"><?php
+		include(locate_template('template-parts/section-carousel.php'));
+	} else {
+		?><main id="main" class="site-main" role="main"><?php
+	}
+?>
 		<section id="site-navigation" class="main-navigation" role="navigation">
 			<h2 class="menu-toggle"><?php _e( 'Menu', 'russianroulette' ); ?></h2>
-			<h3>N<span class="threepixels">a</span>vi<span class="onepixel">ga</span>te to:</h3>
+			<h3>
+				<?php
+				if ($paged < 2) { // only show scroll button on first page
+					?><span class="scrollDown"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span><?php
+				} else {
+					?><span class="rr-logo-greyscale"> </span><?php
+				}?>
+				N<span class="threepixels">a</span>vi<span class="onepixel">ga</span>te to:
+			</h3>
 			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 		</section><!-- #site-navigation -->
 

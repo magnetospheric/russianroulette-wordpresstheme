@@ -1,0 +1,195 @@
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* MAIN HEADER
+/*--------------------------------------------- */
+::-webkit-input-placeholder { /* WebKit browsers */
+    color:    #fff;
+    opacity: 0;
+}
+:-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+   color:    #fff;
+   opacity:  0;
+}
+::-moz-placeholder { /* Mozilla Firefox 19+ */
+   color:    #fff;
+   opacity:  0;
+}
+:-ms-input-placeholder { /* Internet Explorer 10+ */
+   color:    #fff;
+   opacity: 0;
+}
+.titles {
+    position: relative;
+    display: block;
+    width: 100%;
+    padding: 3% 0%;
+    text-align: center;
+    z-index: 10;
+    min-height: 15%;
+    height: auto;
+    h3 {
+        font-size: 1.8em;
+    }
+    a {
+        color: #e8e4de;
+        text-shadow:
+                    1px 1px 2px #111,
+                    1px 1px 2px #111,
+                    1px 1px 2px #111,
+                    1px 1px 10px #111,
+                    1px 1px 15px #111
+                    ;
+        text-decoration: none;
+    }
+    a:hover {
+        color: #fff;
+    }
+    .entry-meta {
+       width: 100%;
+       display: inline-block;
+       span {
+           display: inline-block;
+           text-shadow:
+                       1px 1px 2px #111,
+                       1px 1px 10px #111,
+                       1px 1px 15px #111
+                       ;
+       }
+       span.author {
+           width: 47%;
+           text-align: right;
+       }
+       span.divider {
+           width: 4%;
+           text-align: center;
+       }
+       span.date {
+           width: 47%;
+           text-align: left;
+       }
+   }
+}
+.titles:hover {
+    text-shadow:
+    0px 0px 3px rgba(0, 0, 0, 0.8),
+    0px 0px 3px rgba(0, 0, 0, 0.8),
+    0px 0px 21px rgba(255, 255, 255, 0.7),
+    0px 0px 40px rgba(255, 255, 255, 1)
+    ;
+    a {
+        text-shadow:
+        0px 0px 3px rgba(0, 0, 0, 0.8),
+        0px 0px 3px rgba(0, 0, 0, 0.8),
+        0px 0px 21px rgba(255, 255, 255, 0.7),
+        0px 0px 40px rgba(255, 255, 255, 1)
+        ;
+    }
+}
+
+header {
+    height: 10vh;
+    .site-branding {
+        background: url(images/header_title.jpg) no-repeat top left rgba(145, 39, 41, 1);
+        background-size: auto 100%;
+        width: 100%;
+        height: 10vh;
+        position: relative;
+        h1 {
+            height: 100%;
+            z-index: 90;
+            text-indent: -9999px;
+            a {
+                display: block;
+                cursor: pointer;
+                height: 100%;
+            }
+        }
+        h2 {
+            text-indent: -9999px;
+        }
+        .search-reveal {
+            position: absolute;
+            right: 1.5%;
+            font-size: 2.5em;
+            top: 14%;
+            text-shadow: 0px 0px 4px rgba( 30, 30, 30, 0.5 );
+            z-index: 98;
+            padding: 0px 0px 0px 10px;
+            display: block;
+            cursor: pointer;
+        }
+        #search{
+            position: absolute;
+            top: 20%;
+            right: 1%;
+            height: 60%;
+            width: 11%; /* changes to 33.3% in javascript */
+            opacity: 0;
+            z-index: 99;
+            form {
+                width: auto;
+                box-shadow: 0px 0px 4px rgba( 30, 30, 30, 0.5 );
+                border-radius: 1px;
+                background: rgba( 198, 43, 46, 0.5 );
+                height: 100%;
+                label {
+                    width:100%;
+                    height:100%;
+                    display:block;
+                    .search-field {
+                        background: transparent;
+                        padding: 17px 3.2%;
+                        width: 78%;
+                        color: rgba(255, 255, 255, 0.8);
+                        font-weight: normal;
+                    }
+                }
+                input[type="search"] {
+                    border: none !important;
+                    margin: 0;
+                }
+                .search-submit {
+                    position: absolute;
+                    right: 0;
+                    top: 0;
+                    border: none;
+                    background: transparent;
+                    box-shadow: none;
+                    text-indent: -9999px;
+                    display: none;
+                    z-index: 100;
+                    width: 15%;
+                    height: 100%;
+                }
+            }
+            &.reveal {
+                opacity: 1!important;
+                form {
+                    ::-webkit-input-placeholder { /* WebKit, Blink, Edge */
+                        color: rgba(255, 255, 255, 0.6);
+                        opacity: 1;
+                    }
+                    :-moz-placeholder { /* Mozilla Firefox 4 to 18 */
+                       color: rgba(255, 255, 255, 0.6);
+                       opacity:  1;
+                    }
+                    ::-moz-placeholder { /* Mozilla Firefox 19+ */
+                       color: rgba(255, 255, 255, 0.6);
+                       opacity:  1;
+                    }
+                    :-ms-input-placeholder { /* Internet Explorer 10-11 */
+                       color: rgba(255, 255, 255, 0.6);
+                       opacity: 1;
+                    }
+                    .search-submit {
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+}

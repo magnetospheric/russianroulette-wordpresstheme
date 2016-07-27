@@ -1,0 +1,123 @@
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* MAIN NAV
+/*--------------------------------------------- */
+
+
+
+.main-navigation {
+    position: relative;
+    border-top: 2px solid #292828;
+    padding: 0.5% 1% 2% 1%;
+    text-transform: uppercase;
+    /* css gradient */
+    background: rgb(48, 46, 45); /* Old browsers */
+    background: -moz-linear-gradient(top,  rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302e2d', endColorstr='#383635',GradientType=0 ); /* IE6-9 */
+    h3 {
+        font-size: 100%;
+        text-align: center;
+        position: relative;
+        padding-top: 0;
+        padding-bottom: 56px;
+        font-family: 'RepublikSerifW01-03Alt', serif;
+        letter-spacing: 1px;
+        -webkit-font-smoothing: antialiased;
+        height: 10vh;
+        span.threepixels {
+            letter-spacing: -3px;
+        }
+        span.onepixel {
+            letter-spacing: -1px;
+        }
+        .scrollDown{
+            content: '\f103';
+            font-family: 'FontAwesome';
+            opacity: 0.8;
+            position: relative;
+            top: -12px;
+            display: block;
+            height: auto;
+            left: 0%;
+            width: 100%;
+            min-height: 64px;
+            font-size: 4.2em;
+            text-shadow:
+                        0px 0px 1px rgba(255, 255, 255, 0.5),
+                        0px 0px 10px rgba(0, 0, 0, 1),
+                        0px 0px 10px rgba(0, 0, 0, 1)
+                        ;
+            color: rgba(40,40,40,1);
+            color: rgba(255, 255, 255, 1);
+            cursor: pointer;
+        }
+    }
+}
+.rr-logo-greyscale {
+    background-image: url('images/rr-logo-greyscale.png');
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: 0px;
+    display: block;
+    width: 8%;
+    height: auto;
+    min-height: 70px;
+    position: relative;
+    left: 46%;
+    opacity: 0.5;
+}
+ul {
+	list-style: none;
+	margin: 0;
+	padding-left: 0;
+    text-align: center;
+    li {
+    	display: inline-block;
+        float: none;
+        font-size: 110%;
+        height: 100%;
+        margin: 0;
+        padding: 1% 2.5% 1% 1%;
+        position: relative;
+        a {
+        	text-decoration: none;
+        	color:#FAF6EF;
+            text-shadow:
+                          0px 0px 1px rgba(250, 250, 250, 0.7)
+            ;
+        }
+        &:hover {
+            a {
+              color: #f3f1e9;
+              text-shadow:
+                            0px 0px 1px rgba(250, 250, 250, 0.7),
+                            0px 0px 3px rgba(250, 250, 250, 0.5),
+                            0px 0px 8px rgba(250, 250, 250, 0.3),
+                            0px 0px 15px rgba(250, 250, 250, 0.3)
+              ;
+            }
+        }
+        &.current_page_item, &.current-menu-item, &.current-page-ancestor {
+            a {
+                color: #f3f1e9!important;
+            	text-shadow: 0px 0px 3px #000;
+            }
+        }
+    }
+}
+
+.title-small {
+    display: none;
+}
+/* Small menu */
+.menu-toggle {
+    cursor: pointer;
+    display: none;
+    padding-left:10px;
+}

@@ -20,16 +20,13 @@ if ( post_password_required() )
 ?>
 
 <div id="comments" class="comments-area">
-  
+
 	<?php // You can start editing here -- including this comment! ?>
 
+	<h3 class="comments-title">
+		Comments
+	</h3>
 	<?php if ( have_comments() ) : ?>
-		<h2 class="comments-title">
-			<?php
-				printf( _nx( 'One thought on &ldquo;%2$s&rdquo;', '%1$s thoughts on &ldquo;%2$s&rdquo;', get_comments_number(), 'comments title', 'russianroulette' ),
-					number_format_i18n( get_comments_number() ), '<span>' . get_the_title() . '</span>' );
-			?>
-		</h2>
 
 		<?php if ( get_comment_pages_count() > 1 && get_option( 'page_comments' ) ) : // are there comments to navigate through ?>
 		<nav id="comment-nav-above" class="comment-navigation" role="navigation">
@@ -59,6 +56,8 @@ if ( post_password_required() )
 		</nav><!-- #comment-nav-below -->
 		<?php endif; // check for comment navigation ?>
 
+		<?php else: ?>
+		<p>No comments yet - be the first!</p>
 	<?php endif; // have_comments() ?>
 
 	<?php
@@ -70,7 +69,7 @@ if ( post_password_required() )
   <?php $comments_args = array(
 	  'comment_notes_before' => '<p class="comment-notes">' . __( 'We welcome comments whether constructive or critical, positive or negative, opinionated or not. We <strong>do not accept</strong> any comments which include swearing, defamation, or content which is discriminatory. We do not condone harrassment of fellow commenters.' ) . '</p>' .
 								'<p class="comment-notes">' . __( 'Your email address will not be published.' ) . ( $req ? $required_text : '' ) . '</p>'
-  
+
 );
   ?>
 	<?php comment_form($comments_args); ?>

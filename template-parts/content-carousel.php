@@ -21,19 +21,20 @@
 
 		<span class="overlay-gradient"></span>
 
-		<div class="titles">
 
-			<h3 class="entry-title">
-				<a href="<?php the_permalink(); ?>" rel="bookmark">
-					<?php the_title(); ?>
-				</a>
-			</h3><!-- end entry-title -->
+		<div class="titles" style="cursor: pointer;" onclick="window.location='<?php the_permalink(); ?>';">
 
-			<div class="entry-meta">
-				<span class="author">by <?php the_author(); //gets author name ?></span>
-				<span class="divider"><i class="fa fa-cog" aria-hidden="true"></i></span>
-				<span class="date"><?php russianroulette_posted_on(); //gets posted on date ?></span>
-			</div><!-- end entry-meta -->
+				<h3 class="entry-title">
+					<a href="<?php the_permalink(); ?>" rel="bookmark">
+						<?php the_title(); ?>
+					</a>
+				</h3><!-- end entry-title -->
+
+				<div class="entry-meta">
+					<span class="author">by <?php the_author(); //gets author name ?></span>
+					<span class="divider"><i class="fa fa-cog" aria-hidden="true"></i></span>
+					<span class="date"><?php russianroulette_posted_on(); //gets posted on date ?></span>
+				</div><!-- end entry-meta -->
 
 		</div><!-- end titles -->
 

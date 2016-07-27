@@ -22,9 +22,7 @@
 		<div class="site-info">
 			<p class="left">&copy; Renegade Revolution, 2013</p>
 			<p class="right"><?php do_action( 'russianroulette_credits' ); ?>
-			<a href="http://wordpress.org/" rel="generator"><?php printf( __( 'Proudly powered by %s', 'russianroulette' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'russianroulette' ), 'russianroulette', '<a href="http://www.rambutanweb.com" rel="designer">rambutanweb</a>' ); ?>
+			<?php printf( __( 'Theme: %1$s by %2$s', 'russianroulette' ), 'russianroulette', '<a href="http://www.rambutanweb.com" rel="designer">rambutanweb</a>' ); ?>
 			</p>
 		</div><!-- .site-info -->
 

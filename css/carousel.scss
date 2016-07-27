@@ -1,0 +1,116 @@
+
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* CAROUSEL FEATURES
+/*--------------------------------------------- */
+#carousel{
+	height: 80vh;
+	max-height: 775px;
+    border-bottom: 1px solid #5d5c5b;
+	article {
+		width: 100%;
+		height: 100%;
+		padding: 0;
+	    cursor: pointer;
+		.featuredImage {
+			width: 100%;
+			height: 100%;
+			img {
+				width: 100%;
+				height: 100%;
+			}
+			.titles {
+				top: -25%;
+			}
+		}
+		.overlay-gradient{
+			background: -moz-linear-gradient(top, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 100%); /* FF3.6-15 */
+			background: -webkit-linear-gradient(top, rgba(0,0,0,0) 40%,rgba(0,0,0,0.4) 100%); /* Chrome10-25,Safari5.1-6 */
+			background: linear-gradient(to bottom, rgba(0,0,0,0) 40%,rgba(0,0,0,0.4) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+			filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bd000000',GradientType=0 );
+			display: block;
+			height: 100%;
+			width: 100%;
+			position: absolute;
+		    bottom: 0;
+		    z-index: 9;
+		}
+	}
+	.slick-list {
+		width: 100%;
+		height: 100%;
+	}
+	.slick-arrow {
+		display: none!important;
+	}
+	.slick-track {
+		height: 100%;
+	}
+	.slick-dots {
+	    position: relative;
+	    top: -30%;
+		width: 100%;
+		text-align: center;
+		li {
+			display: inline;
+			list-style: none;
+			padding: 1%;
+			button {
+				position: relative;
+			    font-size: 0;
+			    line-height: 0;
+			    display: inline-block;
+			    width: 25px;
+			    height: 20px;
+			    padding: 5px;
+			    cursor: pointer;
+			    color: transparent;
+			    border: 0;
+			    outline: none;
+			    background: transparent;
+				box-shadow: none;
+			}
+			button::before {
+			    font-family: slick;
+			    font-size: 44px;
+			    line-height: 20px;
+			    position: absolute;
+			    top: 0px;
+			    left: 0px;
+			    width: 25px;
+			    height: 20px;
+			    content: "•";
+			    text-align: center;
+			    opacity: 0.25;
+			    color: white;
+			    -webkit-font-smoothing: antialiased;
+				text-shadow: 1px 1px 2px #111;
+			}
+		}
+		li:hover {
+			button:before {
+				opacity: .75;
+			    color: white;
+			}
+		}
+		li.slick-active {
+			button:before {
+				opacity: .75;
+			    color: white;
+			}
+		}
+	}
+	.blur-focus {
+	    filter: blur(2px) brightness(108%) saturate(102%);
+	    -webkit-filter: blur(2px) brightness(108%) saturate(102%);
+	    -moz-filter: blur(2px) brightness(108%) saturate(102%);
+
+	    transition: 0.3s;
+	    -webkit-transition: 0.3s;
+	    -moz-transition: 0.3s;
+	}
+}

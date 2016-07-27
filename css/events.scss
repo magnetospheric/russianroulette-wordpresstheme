@@ -1,0 +1,49 @@
+
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* EVENTS LIST
+/*--------------------------------------------- */
+
+aside .event-date, aside .event-info { width:auto; float:left; }
+aside .multi-day, aside .event-info { margin:0!important; }
+.event-list .start-date, .event-list .end-date { background-color: #F3F1EA !important;
+    border: 1px solid #CBC4BB;
+    border-radius: 3px; }
+aside .event-list .multi-date { position:absolute; background-position:63px 38px !important; }
+aside .event-date { margin:0 0 0.1em 0!important; width:100%; position:absolute; }
+aside#recent-posts.widget ul.event-list-view {
+    padding: 15px 0px 0px!important;
+	margin: 0;
+}
+.event-list .multi-date .start-date, .event-list .multi-date .end-date  { padding:2px 4px; }
+aside .event-title, aside .event-location { padding-left:43%!important; float:left; }
+ .event-list .end-date { margin-left:4.2em!important; }
+aside .event-info { margin:0em 0 1em 0!important; width:100%!important; }
+aside .event-info .event-details { margin-top:15px; float:left; }
+aside .event-title { margin-bottom:0.2em; min-height:44px; }
+aside .event-title h3 a { color:#484848; text-decoration:none; font-size:1.2em; margin-bottom:0.4em; }
+
+aside .eventsSidebar { width:100%; float:left; }
+aside .eventsSidebar a { margin:10px 0 0; text-align:center; width:100%; float:left; }
+
+body #content .eventsList h3{
+  	background:none!important;
+  	font-size:120%;
+	color:#5f2f2f;
+	padding:0px!important;
+	float:none!important;
+	width:100%;
+  	margin:15px;
+  	text-transform:none!important;
+  	box-shadow:none!important;
+  	font-weight:normal;
+}
+.eventsList { padding-left:20px; padding-bottom:20px; }
+.eventsList .event-title, .eventsList .event-location { width:100%; }
+.eventsList .event-list .start-date, .eventsList .event-list .end-date { background-color:#FAF6EF!important; }
+a.events { text-align:center; margin:0 auto; width:100%; display:block; }
+.eventsList p {margin-bottom:1em;}
