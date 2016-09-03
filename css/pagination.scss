@@ -39,7 +39,7 @@
         }
         .last {
             position: absolute;
-            bottom: 0;
+            bottom: 8%;
             left: 0;
             width: 100%;
             display: inline-block;
@@ -85,18 +85,20 @@
             position: absolute;
             right: 0;
             width: 47%;
-            height: 50%;
+            height: 100%;
             .next {
                 text-indent: -9999px;
                 display: block;
                 height: 100%;
+                position: relative;
                 .triangle-right {
                     width: 60px;
                     height: 60px;
                     position: absolute;
-                    top: 30%;
-                    left: 4%;
+                    top: 0;
+                    left: 0;
                     overflow: hidden;
+                    margin: 2% 2% 4% 2%;
                     box-shadow: -17px 0px 10px -17px rgba(0, 0, 0, 0.6);
                     &:after {
                         content: "";
@@ -121,18 +123,20 @@
             position: absolute;
             left: 0;
             width: 47%;
-            height: 50%;
+            height: 100%;
             .prev {
                 text-indent: -9999px;
                 display: block;
                 height: 100%;
+                position: relative;
                 .triangle-left {
                     width: 60px;
                     height: 60px;
                     position: absolute;
-                    top: 30%;
-                    right: 4%;
+                    top: 0;
+                    right: 0%;
                     overflow: hidden;
+                    margin: 2% 2% 4% 2%;
                     box-shadow: 17px 0px 10px -17px rgba(0, 0, 0, 0.6);
                     &:after {
                         content: "";

@@ -13,9 +13,15 @@
 // vars for scroll animation
 var pos1 = 0;
 var navOffset = jQuery("#site-navigation").offset();
-var pos2 = Math.floor(navOffset["top"]);
+var pos2 = (Math.floor(navOffset["top"])) - 10;
 var eventListenerPaused = false;
 var scrolledToPos2 = false;
+
+var viewportHeight = $(window).height();
+var scrollDownHeight = ( viewportHeight / 100) * 10;
+
+
+
 
 
 
@@ -26,9 +32,7 @@ var scrolledToPos2 = false;
 /* ********* */
 
 function scrollBetween(pos1, pos2, scrolledToPos2) {
-    console.log('scroll fn init');
     if ( scrolledToPos2 == true ) {
-        console.log('scrolled to pos2');
         jQuery('html, body').animate({
             scrollTop: pos1
         }, 500);
@@ -47,10 +51,27 @@ var squareRatioHeight = function(target) {
     jQuery(target).height( jQuery(target).width() );
 }
 
+var changeScrollDownHeight = function(target) {
+    jQuery(target).css("font-size", scrollDownHeight + "px");
+}
+
+var changeHamburgerOffset = function(target) {
+    console.log(document.body.scrollTop);
+    if (document.body.scrollTop > 100) {
+        jQuery(target).animate({
+            top: "0px"
+        }, 400);
+    } else {
+        jQuery(target).animate({
+            top: "100px"
+        }, 400);
+    }
+}
+
+// this slides up contents of targeted element
 var articleHeight = 0;
 var titleHeight = 0;
 
-// this slides up contents of targeted element
 var revealIntro = function(target) {
     articleHeight = jQuery( target ).height();
     titleHeight = jQuery( target ).children('.titles').height();
@@ -69,6 +90,7 @@ var revealIntro = function(target) {
     });
 }
 
+
 // animates sliding intro back down
 var hideIntro = function(target) {
     jQuery( target ).children('.titles').children().removeClass('hovered');
@@ -85,6 +107,39 @@ var hideIntro = function(target) {
     });
 }
 
+var hamburgerInit = function(button, menu) {
+    var currentScrollPosition = document.body.scrollTop + 187;
+    var sidebarHeight = ( document.getElementById('mainbody').offsetHeight - currentScrollPosition);
+    jQuery("#sidebar").height( sidebarHeight );
+    jQuery("#sidebar").css( "padding-top", currentScrollPosition);
+
+    jQuery(button).toggleClass('is-active');
+    if ( jQuery(menu).hasClass('active') ) {
+        jQuery(menu).animate({
+            opacity: 0,
+            right: "-=54%"
+        }, 400, function () {
+            jQuery(menu).removeClass('active');
+        });
+    } else {
+        jQuery(menu).addClass('active');
+        jQuery(menu).animate({
+            opacity: 1,
+            right: "+=54%"
+        }, 400, function () {
+        });
+    }
+}
+
+
+
+
+/* ************************************************************************** */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/* ************************************************************************** */
+/* ************************************************************************** */
+
 
 /* *************** */
 /* *************** */
@@ -95,7 +150,6 @@ var hideIntro = function(target) {
 jQuery( document ).ready(function() {
 
     jQuery('#search').hover(function() {
-        console.log('search func activated');
         clearTimeout(jQuery(this).data('timeout'));
         jQuery('#search').addClass('reveal');
         jQuery('#search').animate({
@@ -148,11 +202,18 @@ jQuery( document ).ready(function() {
         });
     }
 
+    jQuery('.hamburger').on('click', function() {
+        hamburgerInit(this, "#sidebar");
+    });
+
     // calculate height of blogroll articles
     squareRatioHeight("#blogroll article");
 
     // calculate height of blogroll articles
     squareRatioHeight(".relatedposts article");
+
+    // setScrollDown size
+    changeScrollDownHeight(".scrollDown");
 
     // slide up and reveal introduction on blogroll articles
     jQuery('#blogroll article').mouseenter( function(){
@@ -190,11 +251,18 @@ jQuery( document ).ready(function() {
 
 if(window.addEventListener) {
     window.addEventListener('resize', function() {
-        squareRatioHeight("#blogroll article")
+        navOffset = jQuery("#site-navigation").offset();
+        pos2 = (Math.floor(navOffset["top"])) - 10;
+        viewportHeight = $(window).height();
+        scrollDownHeight = ( viewportHeight / 100) * 10;
+        squareRatioHeight("#blogroll article");
+        squareRatioHeight(".relatedposts article");
+        changeScrollDownHeight(".scrollDown");
+
     }, true);
     // scroll animation between two positions
-    if ( jQuery("#main").hasClass('page1') ) {
-        window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function() {
+        if ( jQuery("#main").hasClass('page1') ) {
             if ( eventListenerPaused == false ) {
                 if ( scrolledToPos2 == true ) {
                     if ( ( document.body.scrollTop > pos1 )  && ( document.body.scrollTop < pos2 ) ) {
@@ -226,6 +294,6 @@ if(window.addEventListener) {
                     }
                 }
             }
-        });
-    }
+        }
+    });
 }

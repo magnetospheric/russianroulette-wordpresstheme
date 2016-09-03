@@ -77,8 +77,8 @@ function russianroulette_comment( $comment, $args, $depth ) {
 		<article id="div-comment-<?php comment_ID(); ?>" class="comment-body">
 			<footer class="comment-meta">
 				<div class="comment-author vcard">
-				  	
-				  <?php 
+
+				  <?php
 				//$author_ids = $wp_user_query->get_results();
 				//foreach($author_ids as $author) :
 				$curauth = get_userdata($author->ID);
@@ -89,8 +89,8 @@ function russianroulette_comment( $comment, $args, $depth ) {
 				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 		  		if ( is_plugin_active('user-photo/user-photo.php') ) {
 						//do stuff
-		  			if(userphoto_exists($curauth)) {  
-						userphoto_comment_author_thumbnail(); 
+		  			if(userphoto_exists($curauth)) {
+						userphoto_comment_author_thumbnail();
 					}
 						//userphoto_thumbnail($curauth);
 				}
@@ -143,8 +143,6 @@ if ( ! function_exists( 'russianroulette_posted_on' ) ) :
  */
 function russianroulette_posted_on() {
 	$time_string = '<time class="entry-date published" datetime="%1$s">%2$s</time>';
-	if ( get_the_time( 'U' ) !== get_the_modified_time( 'U' ) )
-		$time_string .= '<time class="updated" datetime="%3$s">%4$s</time>';
 
 	$time_string = sprintf( $time_string,
 		esc_attr( get_the_date( 'c' ) ),

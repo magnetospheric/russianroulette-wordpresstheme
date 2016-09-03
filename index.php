@@ -99,4 +99,5 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 
 	</main><!-- #main -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

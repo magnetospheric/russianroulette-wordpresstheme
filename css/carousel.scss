@@ -8,9 +8,18 @@
 /* CAROUSEL FEATURES
 /*--------------------------------------------- */
 #carousel{
-	height: 80vh;
-	max-height: 775px;
+	height: 74vh;
+	// max-height: 775px;
     border-bottom: 1px solid #5d5c5b;
+	// &.short {
+	// 	height: 74vh;
+	// }
+	// &.shorter {
+	// 	height: 66vh;
+	// }
+	// &.shortest {
+	// 	height: 62vh;
+	// }
 	article {
 		width: 100%;
 		height: 100%;

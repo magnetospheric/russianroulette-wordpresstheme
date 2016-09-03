@@ -10,86 +10,75 @@
 get_header(); ?>
 
 <section id="primary" class="content-area">
-	<main id="main" class="site-main" role="main">
+	<main id="main" class="site-main archive single" role="main">
 
-
-		<section id="site-navigation" class="main-navigation" role="navigation">
-			<h2 class="menu-toggle"><?php _e( 'Menu', 'russianroulette' ); ?></h2>
+		<?php if ( !is_author() ) :
+			?> <section class="archive-header">
 			<h3>
-				<span class="rr-logo-greyscale"> </span>
-				N<span class="threepixels">a</span>vi<span class="onepixel">ga</span>te to:
-			</h3>
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</section><!-- #site-navigation -->
+			<?php
+			if ( is_category() ) :
+				single_cat_title();
 
-		<section class="archive-header">
-			<h3>
-				<?php
-					if ( is_category() ) :
-						single_cat_title();
-
-					elseif ( is_tag() ) :
-						_e('Archives: ');
-						single_tag_title();
+				elseif ( is_tag() ) :
+					_e('Archives: ');
+					single_tag_title();
 
 					elseif ( is_author() ) :
-						/* Queue the first post, that way we know
-						 * what author we're dealing with (if that is the case).
-						*/
-						the_post();
-						printf( __( 'Author: %s', 'russianroulette' ), '<span class="vcard">' . get_the_author() . '</span>' );
+						//the_post();
 
-						/* Since we called the_post() above, we need to
-						 * rewind the loop back to the beginning that way
-						 * we can run the loop properly, in full.
-						 */
-						rewind_posts();
+						//rewind_posts();
 
-					elseif ( is_day() ) :
-						printf( __( 'Day: %s', 'russianroulette' ), '<span>' . get_the_date() . '</span>' );
+						elseif ( is_day() ) :
+							printf( __( 'Day: %s', 'russianroulette' ), '<span>' . get_the_date() . '</span>' );
 
-					elseif ( is_month() ) :
-						printf( __( 'Month: %s', 'russianroulette' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
+							elseif ( is_month() ) :
+								printf( __( 'Month: %s', 'russianroulette' ), '<span>' . get_the_date( 'F Y' ) . '</span>' );
 
-					elseif ( is_year() ) :
-						printf( __( 'Year: %s', 'russianroulette' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
+								elseif ( is_year() ) :
+									printf( __( 'Year: %s', 'russianroulette' ), '<span>' . get_the_date( 'Y' ) . '</span>' );
 
-					elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
-						_e( 'Asides', 'russianroulette' );
+									elseif ( is_tax( 'post_format', 'post-format-aside' ) ) :
+										_e( 'Asides', 'russianroulette' );
 
-					elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
-						_e( 'Images', 'russianroulette');
+										elseif ( is_tax( 'post_format', 'post-format-image' ) ) :
+											_e( 'Images', 'russianroulette');
 
-					elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
-						_e( 'Videos', 'russianroulette' );
+											elseif ( is_tax( 'post_format', 'post-format-video' ) ) :
+												_e( 'Videos', 'russianroulette' );
 
-					elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
-						_e( 'Quotes', 'russianroulette' );
+												elseif ( is_tax( 'post_format', 'post-format-quote' ) ) :
+													_e( 'Quotes', 'russianroulette' );
 
-					elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
-						_e( 'Links', 'russianroulette' );
+													elseif ( is_tax( 'post_format', 'post-format-link' ) ) :
+														_e( 'Links', 'russianroulette' );
 
-					else :
-						_e( 'Archives', 'russianroulette' );
+														else :
+															_e( 'Archives', 'russianroulette' );
 
-					endif;
-				?>
-			</h3>
-			<?php
-				// Show an optional term description.
-				$term_description = term_description();
-				if ( ! empty( $term_description ) ) :
-					printf( '<div class="taxonomy-description">%s</div>', $term_description );
-				endif;
-			?>
-		</section><!-- .page-header -->
+														endif;
+														?>
+													</h3>
+													<?php
+													// Show an optional term description.
+													$term_description = term_description();
+													if ( ! empty( $term_description ) ) :
+														printf( '<div class="taxonomy-description">%s</div>', $term_description );
+														endif;
+														?>
+													</section><!-- .page-header -->
 
 
 
+		<?php endif; ?>
 
 
 		<?php if ( is_author() ) { ?>
-			<div class="author-details">
+			<div class="author-details entry-content">
+				<div class="titles">
+					<h3 class="entry-title">
+						<?php printf( __( 'Author: %s', 'russianroulette' ), '<span class="vcard">' . get_the_author() . '</span>' ); ?>
+					</h3>
+				</div>
 			<?php
 				$curauth = get_the_author_meta('ID');
 
@@ -192,4 +181,5 @@ get_header(); ?>
 		</main><!-- #main -->
 	</section><!-- #primary -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

@@ -30,6 +30,19 @@
     #blogroll article {
         width: 33.3333333%;
     }
+	#blogroll article .titles .entry-title {
+        font-size: 0.9em;
+		padding: 65px 2% 0px;
+    }
+    #blogroll article .titles .entry-meta .posted-on {
+        font-size: 0.9em;
+    }
+    #blogroll article .text {
+        font-size: 0.9em;
+    }
+	#blogroll .pagination .last {
+		bottom: 4%;
+	}
 }
 
 
@@ -46,10 +59,19 @@
     .pagination .current{
         margin-bottom: 20px;
     }
-    .pagination .next-page,
-    .pagination .prev-page {
+    #blogroll .pagination .next-page,
+    #blogroll .pagination .prev-page {
         width: 44%;
     }
+	#blogroll .pagination .last {
+		bottom: -2%;
+	}
+	#blogroll .pagination .next-page .next .triangle-right {
+		margin: 1% 2% 2% 4%;
+	}
+	#blogroll .pagination .next-page .next .triangle-left {
+		margin: 1% 2% 2% 4%;
+	}
     #blogroll article {
         width: 50%;
     }
@@ -90,9 +112,6 @@
 	.main-navigation h3 {
 		padding-bottom: 36px;
 	}
-    .main-navigation h3 .scrollDown {
-        top: -3%;
-    }
     .menu-toggle,
 	.main-navigation.toggled .nav-menu {
 		display: none;
@@ -101,10 +120,33 @@
 	.main-navigation li {
 		width: 98%;
 	}
+	#carousel {
+		article {
+			.featuredImage {
+				.titles {
+					h3 {
+						font-size: 1.2em;
+					}
+				}
+			}
+		}
+	}
     .pagination .next-page,
     .pagination .prev-page {
         width: 40%;
     }
+	#blogroll .pagination .page-numbers {
+    	margin: 3% 2% 6% 2%;
+	}
+	#blogroll .pagination .next-page .next .triangle-right {
+		left: 4%;
+	}
+	#blogroll .pagination .next-page .next .triangle-left {
+		right: 4%;
+	}
+	#blogroll .pagination .last {
+    	bottom: -2px;
+	}
     #blogroll article {
         width: 100%;
     }
