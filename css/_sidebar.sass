@@ -8,12 +8,13 @@
 /*--------------------------------------------- */
 
 #sidebar
-	position: fixed
+	position: absolute
 	top: 0
+	right: -100%
 	width: 100%
 	z-index: 105
 	padding-top: 187px
-	background: rgba(0, 0, 0, 0.9)
+	background: rgba(0, 0, 0, 0.92)
 	color: rgba(255, 255, 255, 0.9)
 
 	aside
@@ -36,25 +37,27 @@
 		p
 			padding: 0
 			width: 200px
-			height: 200px
+			height: auto
 			text-transform: capitalize
-			background: rgba(103, 103, 103, 0.2)
+			background: rgba(145, 136, 136, 0.1)
 			justify-content: space-between
 			margin: 0 5px 12px
 
 			span
-				padding: 10px
+				padding: 16px 10px 10px
 				margin: 10px
+				width: auto
 				+flexbox()
 
 				a
-					background: rgba(146, 146, 146, 0.9)
-					width: auto
-					padding: 10px
+					background: rgba(166, 166, 166, 0.9)
+					width: auto!important
+					padding: 12px 26px
 					margin: 0 auto
 					text-transform: uppercase
 					color: #000
-					text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.9)
+					text-shadow: 0px 0px 1px rgba(0, 0, 0, 1), 0px 0px 1px rgba(0, 0, 0, 1)
+					border-radius: 1px
 					+flexbox()
 
 			a
@@ -63,6 +66,18 @@
 				display: block
 				text-align: center
 				margin: 10px 10px 20px
+				color: rgba(186, 186, 186, 0.9)
+
+			&:hover
+				background: rgba(145, 136, 136, 0.25)
+				cursor: pointer
+
+				span
+					a
+						background: rgba(145, 39, 41, 0.8)
+						//background: rgba(0, 0, 0, 0.9)
+						color: rgba(255, 255, 255, 0.9)
+						text-shadow: 0px 0px 1px rgba(255, 255, 255, 1), 0px 0px 1px rgba(255, 255, 255, 1)
 
 		&.authorThumbs
 			.author
@@ -90,3 +105,41 @@
 
 	&.active
 		position: absolute
+
+.stopScroll
+	position: fixed
+
+.bodyHover
+	overflow-x: visible
+
+.hamburger
+	position: fixed
+	top: 100px
+	right: -3px
+	z-index: 106
+	box-shadow: none
+	outline: none
+	.hamburger-inner
+		background-color: rgba(255, 255, 255, 1)
+		box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8), 0px 0px 3px rgba(0, 0, 0, 0.7)
+		opacity: 0.8
+		&:before, &:after
+			background-color: rgba(255, 255, 255, 1)
+			box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8), 0px 0px 3px rgba(0, 0, 0, 0.7)
+			opacity: 0.87
+	&:hover
+		.hamburger-inner
+			background-color: rgba(255, 255, 255, 1)
+			box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.9)
+			opacity: 1
+			&:before, &:after
+				background-color: rgba(255, 255, 255, 1)
+				opacity: 1
+				box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.9)
+	&.is-active
+		.hamburger-inner
+			background-color: rgba(255, 255, 255, 1)
+			opacity: 1
+			&:before, &:after
+				background-color: rgba(255, 255, 255, 1)
+				opacity: 1

@@ -217,35 +217,6 @@ header {
           opacity: 1; }
         header .site-branding #search.reveal form .search-submit {
           display: block; }
-  header .hamburger {
-    position: fixed;
-    top: 100px;
-    right: -3px;
-    z-index: 106;
-    box-shadow: none;
-    outline: none; }
-    header .hamburger .hamburger-inner {
-      background-color: white;
-      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8), 0px 0px 3px rgba(0, 0, 0, 0.7);
-      opacity: 0.8; }
-      header .hamburger .hamburger-inner:before, header .hamburger .hamburger-inner:after {
-        background-color: white;
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8), 0px 0px 3px rgba(0, 0, 0, 0.7);
-        opacity: 0.87; }
-    header .hamburger:hover .hamburger-inner {
-      background-color: white;
-      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.9);
-      opacity: 1; }
-      header .hamburger:hover .hamburger-inner:before, header .hamburger:hover .hamburger-inner:after {
-        background-color: white;
-        opacity: 1;
-        box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.9); }
-    header .hamburger.is-active .hamburger-inner {
-      background-color: white;
-      opacity: 1; }
-      header .hamburger.is-active .hamburger-inner:before, header .hamburger.is-active .hamburger-inner:after {
-        background-color: white;
-        opacity: 1; }
 
 /*--------------------------------------------- */
 /*--------------------------------------------- */
@@ -1575,12 +1546,13 @@ object {
 /* SIDEBAR */
 /*--------------------------------------------- */
 #sidebar {
-  position: fixed;
+  position: absolute;
   top: 0;
+  right: -100%;
   width: 100%;
   z-index: 105;
   padding-top: 187px;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.92);
   color: rgba(255, 255, 255, 0.9); }
   #sidebar aside {
     width: 90%;
@@ -1604,27 +1576,29 @@ object {
     #sidebar aside p {
       padding: 0;
       width: 200px;
-      height: 200px;
+      height: auto;
       text-transform: capitalize;
-      background: rgba(103, 103, 103, 0.2);
+      background: rgba(145, 136, 136, 0.1);
       justify-content: space-between;
       margin: 0 5px 12px; }
       #sidebar aside p span {
-        padding: 10px;
+        padding: 16px 10px 10px;
         margin: 10px;
+        width: auto;
         display: -webkit-box;
         display: -moz-box;
         display: -ms-flexbox;
         display: -webkit-flex;
         display: flex; }
         #sidebar aside p span a {
-          background: rgba(146, 146, 146, 0.9);
-          width: auto;
-          padding: 10px;
+          background: rgba(166, 166, 166, 0.9);
+          width: auto !important;
+          padding: 12px 26px;
           margin: 0 auto;
           text-transform: uppercase;
           color: #000;
-          text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.9);
+          text-shadow: 0px 0px 1px black, 0px 0px 1px black;
+          border-radius: 1px;
           display: -webkit-box;
           display: -moz-box;
           display: -ms-flexbox;
@@ -1635,7 +1609,15 @@ object {
         text-shadow: 0px 0px 1px rgba(255, 255, 255, 0.8);
         display: block;
         text-align: center;
-        margin: 10px 10px 20px; }
+        margin: 10px 10px 20px;
+        color: rgba(186, 186, 186, 0.9); }
+      #sidebar aside p:hover {
+        background: rgba(145, 136, 136, 0.25);
+        cursor: pointer; }
+        #sidebar aside p:hover span a {
+          background: rgba(145, 39, 41, 0.8);
+          color: rgba(255, 255, 255, 0.9);
+          text-shadow: 0px 0px 1px white, 0px 0px 1px white; }
     #sidebar aside.authorThumbs .author {
       display: inline-block;
       width: auto;
@@ -1657,6 +1639,42 @@ object {
           font-size: 1em; }
   #sidebar.active {
     position: absolute; }
+
+.stopScroll {
+  position: fixed; }
+
+.bodyHover {
+  overflow-x: visible; }
+
+.hamburger {
+  position: fixed;
+  top: 100px;
+  right: -3px;
+  z-index: 106;
+  box-shadow: none;
+  outline: none; }
+  .hamburger .hamburger-inner {
+    background-color: white;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8), 0px 0px 3px rgba(0, 0, 0, 0.7);
+    opacity: 0.8; }
+    .hamburger .hamburger-inner:before, .hamburger .hamburger-inner:after {
+      background-color: white;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.8), 0px 0px 3px rgba(0, 0, 0, 0.7);
+      opacity: 0.87; }
+  .hamburger:hover .hamburger-inner {
+    background-color: white;
+    box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.9);
+    opacity: 1; }
+    .hamburger:hover .hamburger-inner:before, .hamburger:hover .hamburger-inner:after {
+      background-color: white;
+      opacity: 1;
+      box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.9), 0px 0px 3px rgba(0, 0, 0, 0.9); }
+  .hamburger.is-active .hamburger-inner {
+    background-color: white;
+    opacity: 1; }
+    .hamburger.is-active .hamburger-inner:before, .hamburger.is-active .hamburger-inner:after {
+      background-color: white;
+      opacity: 1; }
 
 /*--------------------------------------------- */
 /*--------------------------------------------- */

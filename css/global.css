@@ -6,7 +6,17 @@
   -moz-osx-font-smoothing: grayscale;
 }
 
-body { background:url(../images/bgtile-new.png) center top repeat #34302c; margin:0 auto; font-family: 'Roboto-Light', Arial, sans-serif!important; text-rendering: optimizeLegibility; -webkit-font-smoothing: subpixel-antialiased; font-smooth:always; }
+body {
+    background:url(../images/bgtile-new.png) center top repeat #34302c;
+    margin:0 auto;
+    font-family: 'Roboto-Light', Arial, sans-serif!important;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: subpixel-antialiased;
+    font-smooth:always;
+    overflow-x: hidden;
+    width: 100%;
+    position: relative;
+}
 
 body>div { max-width:1366px; margin:0 auto; }
 body,

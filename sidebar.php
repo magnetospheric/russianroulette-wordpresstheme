@@ -7,7 +7,7 @@
 ?>
 
 <section id="sidebar" class="widget-area" role="complementary">
-	
+
 		<aside id="postTypeFilter">
 			<h4>Filter by post type</h4>
 
@@ -46,8 +46,6 @@
 								<?php
 									//echo category name
 									echo $posttypeSingle;
-									echo ":"
-									//close a link
 								?>
 								</a>
 							</span>
