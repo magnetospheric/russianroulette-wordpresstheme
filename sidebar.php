@@ -6,8 +6,9 @@
  */
 ?>
 
-<section id="sidebar" class="widget-area" role="complementary">
+<section id="sidebar" class="widget-area overlay" role="complementary">
 
+	<div class="overlay-content">
 		<aside id="postTypeFilter">
 			<h4>Filter by post type</h4>
 
@@ -68,5 +69,5 @@
             <?php create_author_list( 'Contributor' ); ?>
 			<div class="clear"></div>
 		</aside>
-
+	</div>
 </section>

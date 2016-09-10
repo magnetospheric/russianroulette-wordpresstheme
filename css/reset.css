@@ -33,6 +33,7 @@ body {
 	border: none;
 	max-width: 1580px;
 	background:#111;
+	position: relative;
 }
 article,
 aside,

@@ -109,51 +109,51 @@ var hideIntro = function(target) {
 
 var hamburgerInit = function(button, menu) {
 
-    // set current scroll position and offset sidebar height based on it
-    var currentScrollPosition = document.body.scrollTop + 187;
-    var sidebarHeight = ( document.getElementById('mainbody').offsetHeight - currentScrollPosition);
-    jQuery("#sidebar").height( sidebarHeight );
-    jQuery("#sidebar").css( "padding-top", currentScrollPosition);
+    var overlay = document.querySelector("body");
+    overlay.classList.toggle('hide-overlay');
 
-    // animate slide-in-out
-    jQuery(button).toggleClass('is-active');
 
-    if ( jQuery(menu).hasClass('active') ) {
-
-        // set classes on elements beneath sidebar overlay
-        jQuery('#page').removeClass('stopScroll');
-        jQuery('body').removeClass('bodyHover');
-
-        // move hamburger out of dom tree to join sidebar
-        var hamburger = jQuery('.hamburger').detach();
-        jQuery('#masthead').append(hamburger);
-
-        jQuery(menu).animate({
-            opacity: 0,
-            right: "-=100%"
-        }, 400, function () {
-            jQuery(menu).removeClass('active');
-        });
-
-    } else {
-
-        jQuery(menu).addClass('active');
-
-        // set classes on elements beneath sidebar overlay
-        jQuery('#page').addClass('stopScroll');
-        jQuery('body').addClass('bodyHover');
-
-        // move hamburger out of dom tree to join sidebar
-        var hamburger = jQuery('.hamburger').detach();
-        jQuery('#sidebar').append(hamburger);
-
-        jQuery(menu).animate({
-            opacity: 1,
-            right: "+=100%"
-        }, 400, function () {
-        });
-
-    }
+    // // set current scroll position and offset sidebar height based on it
+    // var currentScrollPosition = document.body.scrollTop;
+    // var currentScrollPositionPlusBuffer = document.body.scrollTop + 187;
+    //
+    // // animate slide-in-out
+    // jQuery(button).toggleClass('is-active');
+    //
+    // if ( jQuery(menu).hasClass('active') ) {
+    //
+    //     // set classes on elements beneath sidebar overlay
+    //     jQuery('#page').removeClass('stopScroll');
+    //
+    //     // move hamburger out of dom tree to join sidebar
+    //     var hamburger = jQuery('.hamburger').detach();
+    //     jQuery('#masthead').append(hamburger);
+    //
+    //     jQuery(menu).animate({
+    //         opacity: 0,
+    //         right: "-=100%"
+    //     }, 400, function () {
+    //         jQuery(menu).removeClass('active');
+    //     });
+    //
+    // } else {
+    //
+    //     jQuery(menu).addClass('active');
+    //
+    //     // set classes on elements beneath sidebar overlay
+    //     jQuery('#page').addClass('stopScroll');
+    //
+    //     // move hamburger out of dom tree to join sidebar
+    //     var hamburger = jQuery('.hamburger').detach();
+    //     jQuery('#sidebar').append(hamburger);
+    //
+    //     jQuery(menu).animate({
+    //         opacity: 1,
+    //         right: "+=100%"
+    //     }, 400, function () {
+    //     });
+    //
+    // }
 
 }
 
@@ -174,6 +174,8 @@ var hamburgerInit = function(button, menu) {
 /* *************** */
 
 jQuery( document ).ready(function() {
+    
+    jQuery('body').addClass('hide-overlay');
 
     // move sidebar out of dom tree to below main content
     var sidebar = jQuery('#sidebar').detach();
