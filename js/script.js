@@ -174,8 +174,8 @@ var hamburgerInit = function(button, menu) {
 /* *************** */
 
 jQuery( document ).ready(function() {
-    
-    jQuery('body').addClass('hide-overlay');
+
+    //jQuery('body').addClass('hide-overlay');
 
     // move sidebar out of dom tree to below main content
     var sidebar = jQuery('#sidebar').detach();

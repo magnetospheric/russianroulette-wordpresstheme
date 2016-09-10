@@ -176,27 +176,29 @@ function create_author_list( $role ) {
             $user_link = get_author_posts_url($curauth->ID);
             $avatar = 'default'; ?>
 
-            <div class="author" title="<?php echo $curauth->display_name; ?>">
-                <a href="
-                    <?php  echo get_author_posts_url( get_the_author_meta( 'ID', $curauth->ID ) );  ?>
-                ">
-                    <?php
-                    include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-                    if ( is_plugin_active('user-photo/user-photo.php') ) {
-                        if(userphoto_exists($curauth)) {
-                                userphoto_thumbnail($curauth);
-                            }
-                            else {
-                                echo get_avatar($curauth->ID, 60);
-                            }
-                    }
-                    else {
-                        echo get_avatar($curauth->ID, 60);
-                    }
-                    ?>
-                    <p class="name"><?php echo $curauth->display_name; ?></p>
-                    <p><?php the_author_meta( 'shortbio', $curauth->ID ); ?></p>
-                </a>
+            <div class="authorWrap">
+                <div class="author" title="<?php echo $curauth->display_name; ?>">
+                    <a href="
+                        <?php  echo get_author_posts_url( get_the_author_meta( 'ID', $curauth->ID ) );  ?>
+                    ">
+                        <?php
+                        include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
+                        if ( is_plugin_active('user-photo/user-photo.php') ) {
+                            if(userphoto_exists($curauth)) {
+                                    userphoto_thumbnail($curauth);
+                                }
+                                else {
+                                    echo get_avatar($curauth->ID, 60);
+                                }
+                        }
+                        else {
+                            echo get_avatar($curauth->ID, 60);
+                        }
+                        ?>
+                        <p class="name"><?php echo $curauth->display_name; ?></p>
+                        <p><?php the_author_meta( 'shortbio', $curauth->ID ); ?></p>
+                    </a>
+                </div>
             </div>
 
         <?php endif;

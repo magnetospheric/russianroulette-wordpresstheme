@@ -63,6 +63,150 @@
 /*--------------------------------------------- */
 /* INCLUDES */
 /*--------------------------------------------- */
+/* defining mixins for use throughout sass dir */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* =WEBKIT FIXES */
+/*--------------------------------------------- */
+@media screen and (-webkit-min-device-pixel-ratio: 0) {
+  .site {
+    font-size: 12px; }
+
+  .main-navigation li:after {
+    top: 19%; } }
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* SMALL DESKTOP VIEW */
+/*--------------------------------------------- */
+@media screen and (max-width: 1152px) {
+  #blogroll .pagination .last {
+    bottom: 4%; } }
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* TABLET VIEW */
+/*--------------------------------------------- */
+@media screen and (max-width: 800px) {
+  .pagination .current {
+    margin-bottom: 20px; }
+
+  #blogroll .pagination .last {
+    bottom: -2%; }
+
+  #blogroll .pagination .next-page .next .triangle-right {
+    margin: 1% 2% 2% 4%; }
+
+  #blogroll .pagination .next-page .next .triangle-left {
+    margin: 1% 2% 2% 4%; }
+
+  .archive-header h3 {
+    padding: 8% 0 6%;
+    font-size: 1.6em; }
+
+  .single .post-navigation .nav-next,
+  .single .post-navigation .nav-previous {
+    position: relative; }
+
+  .single .post-navigation .nav-next .meta-nav {
+    right: -9%;
+    top: -0.2em; }
+
+  .single .post-navigation .nav-previous .meta-nav {
+    left: -9%;
+    top: -0.2em; }
+
+  footer nav li {
+    width: 50%; } }
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* MOBILE VIEW */
+/*--------------------------------------------- */
+@media (max-width: 612px) {
+  .main-navigation h3 {
+    padding-bottom: 36px; }
+
+  .menu-toggle,
+  .main-navigation.toggled .nav-menu {
+    display: none;
+    color: #FAF6EF; }
+
+  .main-navigation li {
+    width: 98%; }
+
+  #carousel article .featuredImage .titles h3 {
+    font-size: 1.2em; }
+
+  .pagination .next-page,
+  .pagination .prev-page {
+    width: 40%; }
+
+  #blogroll .pagination .page-numbers {
+    margin: 3% 2% 6% 2%; }
+
+  #blogroll .pagination .next-page .next .triangle-right {
+    left: 4%; }
+
+  #blogroll .pagination .next-page .next .triangle-left {
+    right: 4%; }
+
+  #blogroll .pagination .last {
+    bottom: -2px; }
+
+  #blogroll article {
+    width: 100%; }
+
+  #blogroll article .titles .entry-title {
+    font-size: 1.1em; }
+
+  #blogroll article .titles .entry-meta .posted-on {
+    font-size: 1.1em; }
+
+  #blogroll article .text {
+    font-size: 1.05em; }
+
+  .archive-header h3 {
+    font-size: 1.2em;
+    padding: 9% 0 7%; }
+
+  .single .post-navigation .nav-next,
+  .single .post-navigation .nav-previous {
+    padding: 7% 14%;
+    width: 74%;
+    display: block; }
+
+  .single .post-navigation .nav-next .meta-nav {
+    top: 31%;
+    right: -3%; }
+
+  .single .post-navigation .nav-previous .meta-nav {
+    top: 12%;
+    left: -3%; }
+
+  .single .writers .author {
+    width: 48%; }
+
+  footer .site-info .left {
+    float: none;
+    width: 100%;
+    text-align: center; }
+  footer .site-info .right {
+    float: none;
+    width: 100%;
+    text-align: center; } }
 /* sass styles */
 /*--------------------------------------------- */
 /*--------------------------------------------- */
@@ -374,7 +518,7 @@ ul {
     #carousel .slick-dots li {
       display: inline;
       list-style: none;
-      padding: 1%; }
+      padding: 0.5%; }
       #carousel .slick-dots li button {
         position: relative;
         font-size: 0;
@@ -517,6 +661,9 @@ ul {
       color: #fff;
       text-decoration: none;
       font-size: 1.2em; }
+      @media (max-width: 768px) {
+        #blogroll article .titles a {
+          font-size: 1.6em; } }
     #blogroll article .titles time {
       font-size: 70%; }
   #blogroll article .text {
@@ -530,6 +677,9 @@ ul {
     background: linear-gradient(to bottom, transparent 0%, rgba(0, 0, 0, 0.2) 18%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#000',GradientType=0 );
     /*background-blend-mode:hue */ }
+    @media (max-width: 768px) {
+      #blogroll article .text {
+        font-size: 120%; } }
   #blogroll article:hover span.images {
     background-blend-mode: multiply, soft-light;
     -webkit-filter: blur(3px);
@@ -580,6 +730,15 @@ ul {
     background: linear-gradient(to bottom, rgba(0, 0, 0, 0.3) 0%, rgba(0, 0, 0, 0.2) 40%, transparent 95%);
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000', endColorstr='#000',GradientType=0 );
     /*background-blend-mode:multiply!important */ }
+  @media (min-width: 768px) and (max-width: 1023px) {
+    #blogroll article {
+      width: 33.33333%; } }
+  @media (max-width: 768px) {
+    #blogroll article {
+      width: 50%; } }
+  @media (max-width: 476px) {
+    #blogroll article {
+      width: 100%; } }
 
 .archive-header {
   color: rgba(244, 244, 244, 0.9);
@@ -601,7 +760,7 @@ ul {
 /*--------------------------------------------- */
 /*--------------------------------------------- */
 /*--------------------------------------------- */
-/* BLOGROLL PAGINATION
+/* BLOGROLL PAGINATION */
 /*--------------------------------------------- */
 #blogroll .pagination {
   display: block;
@@ -614,15 +773,10 @@ ul {
   text-transform: uppercase;
   /* css gradient */
   background: #302e2d;
-  /* Old browsers */
   background: -moz-linear-gradient(top, #383635 0%, #312f2e 30%, #302e2d 40%, #302e2d 100%);
-  /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #383635 0%, #312f2e 30%, #302e2d 40%, #302e2d 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #383635 0%, #312f2e 30%, #302e2d 40%, #302e2d 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302e2d', endColorstr='#383635',GradientType=0 );
-  /* IE6-9 */ }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302e2d', endColorstr='#383635',GradientType=0 ); }
   #blogroll .pagination .page-numbers {
     margin: 3% 2% 4% 2%; }
   #blogroll .pagination .current {
@@ -691,12 +845,14 @@ ul {
           height: 50%;
           background: #912729;
           transform: rotate(45deg);
-          /* Prefixes... */
           top: 25%;
           right: 75%;
           box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.6); }
       #blogroll .pagination .next-page .next:hover .triangle-right:after {
         background: #c62b2e; }
+    @media (max-width: 768px) {
+      #blogroll .pagination .next-page {
+        width: 44%; } }
   #blogroll .pagination .prev-page {
     position: absolute;
     left: 0;
@@ -723,12 +879,14 @@ ul {
           height: 50%;
           background: #912729;
           transform: rotate(45deg);
-          /* Prefixes... */
           top: 25%;
           left: 75%;
           box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.6); }
       #blogroll .pagination .prev-page .prev:hover .triangle-left:after {
         background: #c62b2e; }
+    @media (max-width: 768px) {
+      #blogroll .pagination .prev-page {
+        width: 44%; } }
 
 /*--------------------------------------------- */
 /*--------------------------------------------- */
@@ -935,6 +1093,9 @@ ul {
             font-size: 1.1em; }
         .single .writers .author a:hover p {
           text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5), 0px 0px 2px rgba(0, 0, 0, 0.3); }
+
+.archive {
+  background: #000; }
 
 /*--------------------------------------------- */
 /*--------------------------------------------- */
@@ -1550,18 +1711,30 @@ object {
   z-index: 105;
   background: rgba(0, 0, 0, 0.92);
   color: rgba(255, 255, 255, 0.9); }
-  #sidebar .overlay-content {
-    padding-top: 187px; }
+  #sidebar.overlay {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
+    #sidebar.overlay .overlay-content {
+      height: 100%;
+      overflow: scroll; }
+      #sidebar.overlay .overlay-content .overlay-content-inner {
+        padding-top: 187px;
+        padding-bottom: 6%; }
   #sidebar aside {
     width: 90%;
-    padding: 2% 5% 8% 5%;
+    padding: 0% 5% 2% 5%;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; }
+    justify-content: space-around; }
     #sidebar aside h4 {
       font-family: "RepublikSerifW01-03Alt", serif;
       text-transform: uppercase;
@@ -1571,14 +1744,21 @@ object {
       border-bottom: 1px solid rgba(244, 244, 244, 0.11);
       padding: 0% 0% 3%;
       width: 100%; }
+      @media (max-width: 768px) {
+        #sidebar aside h4 {
+          margin: 2% 0 5%; } }
     #sidebar aside p {
       padding: 0;
-      width: 200px;
+      min-width: 200px;
+      width: 32%;
       height: auto;
       text-transform: capitalize;
       background: rgba(145, 136, 136, 0.1);
-      justify-content: space-between;
+      justify-content: space-around;
       margin: 0 5px 12px; }
+      @media (max-width: 768px) {
+        #sidebar aside p {
+          width: 47.2%; } }
       #sidebar aside p span {
         padding: 16px 10px 10px;
         margin: 10px;
@@ -1610,46 +1790,74 @@ object {
         margin: 10px 10px 20px;
         color: rgba(186, 186, 186, 0.9); }
       #sidebar aside p:hover {
-        background: rgba(145, 136, 136, 0.25);
         cursor: pointer; }
         #sidebar aside p:hover span a {
           background: rgba(145, 39, 41, 0.8);
           color: rgba(255, 255, 255, 0.9);
           text-shadow: 0px 0px 1px white, 0px 0px 1px white; }
-    #sidebar aside.authorThumbs .author {
-      display: inline-block;
-      width: auto;
-      text-align: center;
-      float: left;
-      max-width: 50%;
-      min-width: 33%; }
-      #sidebar aside.authorThumbs .author a img {
-        border-radius: 2px;
-        box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.1); }
-      #sidebar aside.authorThumbs .author a p {
-        font-size: 0.7em;
-        padding: 0 1%;
-        text-transform: capitalize;
-        text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4); }
-        #sidebar aside.authorThumbs .author a p:before {
-          content: ""; }
-        #sidebar aside.authorThumbs .author a p.name {
-          font-size: 1em; }
+    #sidebar aside.authorThumbs .authorWrap {
+      background: rgba(145, 136, 136, 0.1); }
+      #sidebar aside.authorThumbs .authorWrap .author {
+        text-align: center;
+        float: left;
+        background: rgba(166, 166, 166, 0.9);
+        border-radius: 1px;
+        padding: 20px;
+        margin: 20px;
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: center;
+        height: 63%;
+        max-width: 162px; }
+        #sidebar aside.authorThumbs .authorWrap .author a {
+          text-decoration: none; }
+          #sidebar aside.authorThumbs .authorWrap .author a img {
+            border-radius: 2px;
+            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.1); }
+          #sidebar aside.authorThumbs .authorWrap .author a p {
+            font-size: 0.9em;
+            padding: 0;
+            color: #000;
+            text-shadow: 0px 0px 1px black, 0px 0px 1px black;
+            background: transparent;
+            width: auto; }
+            #sidebar aside.authorThumbs .authorWrap .author a p:before {
+              content: ""; }
+            #sidebar aside.authorThumbs .authorWrap .author a p.name {
+              font-size: 1em;
+              text-transform: uppercase; }
+        #sidebar aside.authorThumbs .authorWrap .author:hover {
+          background: rgba(166, 166, 166, 0.99); }
+          #sidebar aside.authorThumbs .authorWrap .author:hover p {
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0px 0px 1px white, 0px 0px 1px white; }
+          #sidebar aside.authorThumbs .authorWrap .author:hover img {
+            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), 0px 0px 8px rgba(255, 255, 255, 0.6); }
+    #sidebar aside.popularTags a {
+      background: rgba(166, 166, 166, 0.9);
+      width: auto !important;
+      padding: 7px;
+      text-transform: uppercase;
+      color: #000;
+      text-shadow: 0px 0px 1px black, 0px 0px 1px black;
+      border-radius: 1px;
+      text-decoration: none;
+      margin: 5px;
+      line-height: initial;
+      height: 0%; }
+      #sidebar aside.popularTags a:hover {
+        background: rgba(145, 39, 41, 0.8);
+        color: rgba(255, 255, 255, 0.9);
+        text-shadow: 0px 0px 1px white, 0px 0px 1px white; }
+    @media (max-width: 768px) {
+      #sidebar aside {
+        width: 80%;
+        padding: 0% 10% 2% 10%; } }
 
-.overlay {
-  position: fixed;
-  top: 0;
-  right: 0;
-  width: 100%;
-  height: 100%;
-  -webkit-transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1);
-  transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); }
-
-.overlay .overlay-content {
-  height: 100%;
-  overflow: scroll; }
-
-.hide-overlay .overlay {
+.hide-overlay #sidebar.overlay {
   right: -100%; }
 
 html, body {
@@ -1662,7 +1870,7 @@ html, body {
 .hamburger {
   position: fixed;
   top: 100px;
-  right: -3px;
+  right: 14px;
   z-index: 106;
   box-shadow: none;
   outline: none; }
@@ -1733,173 +1941,6 @@ footer {
     footer .site-info .right {
       float: right; }
 
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/* =WEBKIT FIXES
-/*--------------------------------------------- */
-@media screen and (-webkit-min-device-pixel-ratio: 0) {
-  .site {
-    font-size: 12pt; }
-
-  .main-navigation li:after {
-    top: 19%; } }
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/* SMALL DESKTOP VIEW
-/*--------------------------------------------- */
-@media screen and (max-width: 1152px) {
-  .pagination .next-page,
-  .pagination .prev-page {
-    width: 46%; }
-
-  #blogroll article {
-    width: 33.3333333%; }
-
-  #blogroll article .titles .entry-title {
-    font-size: 0.9em;
-    padding: 65px 2% 0px; }
-
-  #blogroll article .titles .entry-meta .posted-on {
-    font-size: 0.9em; }
-
-  #blogroll article .text {
-    font-size: 0.9em; }
-
-  #blogroll .pagination .last {
-    bottom: 4%; } }
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/* TABLET VIEW
-/*--------------------------------------------- */
-@media screen and (max-width: 800px) {
-  .pagination .current {
-    margin-bottom: 20px; }
-
-  #blogroll .pagination .next-page,
-  #blogroll .pagination .prev-page {
-    width: 44%; }
-
-  #blogroll .pagination .last {
-    bottom: -2%; }
-
-  #blogroll .pagination .next-page .next .triangle-right {
-    margin: 1% 2% 2% 4%; }
-
-  #blogroll .pagination .next-page .next .triangle-left {
-    margin: 1% 2% 2% 4%; }
-
-  #blogroll article {
-    width: 50%; }
-
-  .archive-header h3 {
-    padding: 8% 0 6%;
-    font-size: 1.6em; }
-
-  .single .post-navigation .nav-next,
-  .single .post-navigation .nav-previous {
-    position: relative; }
-
-  .single .post-navigation .nav-next .meta-nav {
-    right: -9%;
-    top: -0.2em; }
-
-  .single .post-navigation .nav-previous .meta-nav {
-    left: -9%;
-    top: -0.2em; }
-
-  footer nav li {
-    width: 50%; } }
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/*--------------------------------------------- */
-/* MOBILE VIEW
-/*--------------------------------------------- */
-@media (max-width: 612px) {
-  .main-navigation h3 {
-    padding-bottom: 36px; }
-
-  .menu-toggle,
-  .main-navigation.toggled .nav-menu {
-    display: none;
-    color: #FAF6EF; }
-
-  .main-navigation li {
-    width: 98%; }
-
-  #carousel article .featuredImage .titles h3 {
-    font-size: 1.2em; }
-
-  .pagination .next-page,
-  .pagination .prev-page {
-    width: 40%; }
-
-  #blogroll .pagination .page-numbers {
-    margin: 3% 2% 6% 2%; }
-
-  #blogroll .pagination .next-page .next .triangle-right {
-    left: 4%; }
-
-  #blogroll .pagination .next-page .next .triangle-left {
-    right: 4%; }
-
-  #blogroll .pagination .last {
-    bottom: -2px; }
-
-  #blogroll article {
-    width: 100%; }
-
-  #blogroll article .titles .entry-title {
-    font-size: 1.1em; }
-
-  #blogroll article .titles .entry-meta .posted-on {
-    font-size: 1.1em; }
-
-  #blogroll article .text {
-    font-size: 1.05em; }
-
-  .archive-header h3 {
-    font-size: 1.2em;
-    padding: 9% 0 7%; }
-
-  .single .post-navigation .nav-next,
-  .single .post-navigation .nav-previous {
-    padding: 7% 14%;
-    width: 74%;
-    display: block; }
-
-  .single .post-navigation .nav-next .meta-nav {
-    top: 31%;
-    right: -3%; }
-
-  .single .post-navigation .nav-previous .meta-nav {
-    top: 12%;
-    left: -3%; }
-
-  .single .writers .author {
-    width: 48%; }
-
-  footer .site-info .left {
-    float: none;
-    width: 100%;
-    text-align: center; }
-  footer .site-info .right {
-    float: none;
-    width: 100%;
-    text-align: center; } }
 /* other people's libraries */
 /*!
  * Hamburgers
