@@ -51,10 +51,6 @@ var squareRatioHeight = function(target) {
     jQuery(target).height( jQuery(target).width() );
 }
 
-var changeScrollDownHeight = function(target) {
-    jQuery(target).css("font-size", scrollDownHeight + "px");
-}
-
 var changeHamburgerOffset = function(target) {
     if (document.body.scrollTop > 100) {
         jQuery(target).animate({
@@ -198,9 +194,6 @@ jQuery( document ).ready(function() {
     // calculate height of blogroll articles
     squareRatioHeight(".relatedposts article");
 
-    // setScrollDown size
-    changeScrollDownHeight(".scrollDown");
-
     // slide up and reveal introduction on blogroll articles
     jQuery('#blogroll article').mouseenter( function(){
         revealIntro(this);
@@ -243,8 +236,6 @@ if(window.addEventListener) {
         scrollDownHeight = ( viewportHeight / 100) * 10;
         squareRatioHeight("#blogroll article");
         squareRatioHeight(".relatedposts article");
-        changeScrollDownHeight(".scrollDown");
-
     }, true);
     // scroll animation between two positions
     window.addEventListener('scroll', function() {

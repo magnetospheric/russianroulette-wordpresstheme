@@ -34,7 +34,6 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 			<h2 class="menu-toggle"><?php _e( 'Menu', 'russianroulette' ); ?></h2>
 			<h3>
 				Recent articles:
-				<!-- N<span class="threepixels">a</span>vi<span class="onepixel">ga</span>te to: -->
 				<?php
 				if ($paged < 2) { // only show scroll button on first page
 					?><span class="scrollDown"><i class="fa fa-angle-double-down" aria-hidden="true"></i></span><?php
@@ -60,7 +59,7 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 			$args = array(
 			  'posts_per_page' => $display_count,
 			  'offset' => $offset,
-			  'paged'          => $page,
+			  'paged' => $page,
 			  'tag__not_in' => array($tag_exclude->term_id),
 		  	  'category__not_in' => $category_excludes
 			);

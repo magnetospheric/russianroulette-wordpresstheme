@@ -24,6 +24,8 @@
 
 		<div class="titles" style="cursor: pointer;" onclick="window.location='<?php the_permalink(); ?>';">
 
+				<span class="highlights">Highlights</span>
+
 				<h3 class="entry-title">
 					<a href="<?php the_permalink(); ?>" rel="bookmark">
 						<?php the_title(); ?>
