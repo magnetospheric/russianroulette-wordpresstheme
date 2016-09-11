@@ -10,6 +10,12 @@
 
 	<div class="overlay-content">
 		<div class="overlay-content-inner">
+
+			<aside id="primaryMenu">
+				<h4>Categories</h4>
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			</aside>
+
 			<aside id="postTypeFilter">
 				<h4>Filter by post type</h4>
 

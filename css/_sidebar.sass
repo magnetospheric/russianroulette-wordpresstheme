@@ -55,7 +55,7 @@
 			width: 32%
 			height: auto
 			text-transform: capitalize
-			background: rgba(145, 136, 136, 0.1)
+			background: rgba(145, 136, 136, 0.2)
 			justify-content: space-around
 			margin: 0 5px 12px
 
@@ -63,7 +63,7 @@
 				width: 47.2%
 
 			span
-				padding: 16px 10px 10px
+				padding: 20px 10px
 				margin: 10px
 				width: auto
 				+flexbox()
@@ -91,6 +91,41 @@
 				cursor: pointer
 
 				span
+					a
+						background: rgba(145, 39, 41, 0.8)
+						color: rgba(255, 255, 255, 0.9)
+						text-shadow: 0px 0px 1px rgba(255, 255, 255, 1), 0px 0px 1px rgba(255, 255, 255, 1)
+		ul
+			+flexbox()
+			flex-wrap: wrap
+			justify-content: space-around
+
+			li
+				padding: 16px 10px 10px
+				margin: 10px
+				min-width: 200px
+				width: 32%
+				height: auto
+				text-transform: capitalize
+				background: rgba(145, 136, 136, 0.2)
+				+flexbox()
+				justify-content: space-around
+
+				a
+					background: rgba(166, 166, 166, 0.9)
+					width: auto!important
+					padding: 12px 26px
+					margin: 0 auto
+					text-transform: uppercase
+					color: #000
+					text-shadow: 0px 0px 1px rgba(0, 0, 0, 1), 0px 0px 1px rgba(0, 0, 0, 1)
+					border-radius: 1px
+					text-decoration: none
+					//+flexbox()
+
+				&:hover
+					cursor: pointer
+
 					a
 						background: rgba(145, 39, 41, 0.8)
 						color: rgba(255, 255, 255, 0.9)

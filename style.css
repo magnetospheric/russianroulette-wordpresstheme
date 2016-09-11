@@ -432,30 +432,6 @@ header {
   left: 46%;
   opacity: 0.5; }
 
-ul {
-  list-style: none;
-  margin: 0;
-  padding-left: 0;
-  text-align: center; }
-  ul li {
-    display: inline-block;
-    float: none;
-    font-size: 110%;
-    height: 100%;
-    margin: 0;
-    padding: 1% 2.5% 1% 1%;
-    position: relative; }
-    ul li a {
-      text-decoration: none;
-      color: #FAF6EF;
-      text-shadow: 0px 0px 1px rgba(250, 250, 250, 0.7); }
-    ul li:hover a {
-      color: #f3f1e9;
-      text-shadow: 0px 0px 1px rgba(250, 250, 250, 0.7), 0px 0px 3px rgba(250, 250, 250, 0.5), 0px 0px 8px rgba(250, 250, 250, 0.3), 0px 0px 15px rgba(250, 250, 250, 0.3); }
-    ul li.current_page_item a, ul li.current-menu-item a, ul li.current-page-ancestor a {
-      color: #f3f1e9 !important;
-      text-shadow: 0px 0px 3px #000; }
-
 .title-small {
   display: none; }
 
@@ -1753,14 +1729,14 @@ object {
       width: 32%;
       height: auto;
       text-transform: capitalize;
-      background: rgba(145, 136, 136, 0.1);
+      background: rgba(145, 136, 136, 0.2);
       justify-content: space-around;
       margin: 0 5px 12px; }
       @media (max-width: 768px) {
         #sidebar aside p {
           width: 47.2%; } }
       #sidebar aside p span {
-        padding: 16px 10px 10px;
+        padding: 20px 10px;
         margin: 10px;
         width: auto;
         display: -webkit-box;
@@ -1795,6 +1771,44 @@ object {
           background: rgba(145, 39, 41, 0.8);
           color: rgba(255, 255, 255, 0.9);
           text-shadow: 0px 0px 1px white, 0px 0px 1px white; }
+    #sidebar aside ul {
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-around; }
+      #sidebar aside ul li {
+        padding: 16px 10px 10px;
+        margin: 10px;
+        min-width: 200px;
+        width: 32%;
+        height: auto;
+        text-transform: capitalize;
+        background: rgba(145, 136, 136, 0.2);
+        display: -webkit-box;
+        display: -moz-box;
+        display: -ms-flexbox;
+        display: -webkit-flex;
+        display: flex;
+        justify-content: space-around; }
+        #sidebar aside ul li a {
+          background: rgba(166, 166, 166, 0.9);
+          width: auto !important;
+          padding: 12px 26px;
+          margin: 0 auto;
+          text-transform: uppercase;
+          color: #000;
+          text-shadow: 0px 0px 1px black, 0px 0px 1px black;
+          border-radius: 1px;
+          text-decoration: none; }
+        #sidebar aside ul li:hover {
+          cursor: pointer; }
+          #sidebar aside ul li:hover a {
+            background: rgba(145, 39, 41, 0.8);
+            color: rgba(255, 255, 255, 0.9);
+            text-shadow: 0px 0px 1px white, 0px 0px 1px white; }
     #sidebar aside.authorThumbs .authorWrap {
       background: rgba(145, 136, 136, 0.1); }
       #sidebar aside.authorThumbs .authorWrap .author {
