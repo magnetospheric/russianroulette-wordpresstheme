@@ -214,25 +214,21 @@
 /*--------------------------------------------- */
 /*--------------------------------------------- */
 /*--------------------------------------------- */
-/* MAIN HEADER
+/* MAIN HEADER */
 /*--------------------------------------------- */
 ::-webkit-input-placeholder {
-  /* WebKit browsers */
   color: #fff;
   opacity: 0; }
 
 :-moz-placeholder {
-  /* Mozilla Firefox 4 to 18 */
   color: #fff;
   opacity: 0; }
 
 ::-moz-placeholder {
-  /* Mozilla Firefox 19+ */
   color: #fff;
   opacity: 0; }
 
 :-ms-input-placeholder {
-  /* Internet Explorer 10+ */
   color: #fff;
   opacity: 0; }
 
@@ -274,7 +270,8 @@
       text-shadow: 0px 0px 3px rgba(0, 0, 0, 0.8), 0px 0px 3px rgba(0, 0, 0, 0.8), 0px 0px 21px rgba(255, 255, 255, 0.7), 0px 0px 40px white; }
 
 header {
-  height: 12vh; }
+  height: 12vh;
+  max-height: 78px; }
   header .site-branding {
     background: url(images/header_title.jpg) no-repeat top left #912729;
     background-size: auto 100%;
@@ -307,7 +304,6 @@ header {
       right: 1%;
       height: 60%;
       width: 11%;
-      /* changes to 33.3% in javascript */
       opacity: 0;
       z-index: 99; }
       header .site-branding #search form {
@@ -343,19 +339,19 @@ header {
           height: 100%; }
       header .site-branding #search.reveal {
         opacity: 1 !important; }
-        header .site-branding #search.reveal form ::-webkit-input-placeholder {
+        header .site-branding #search.reveal form::-webkit-input-placeholder {
           /* WebKit, Blink, Edge */
           color: rgba(255, 255, 255, 0.6);
           opacity: 1; }
-        header .site-branding #search.reveal form :-moz-placeholder {
+        header .site-branding #search.reveal form:-moz-placeholder {
           /* Mozilla Firefox 4 to 18 */
           color: rgba(255, 255, 255, 0.6);
           opacity: 1; }
-        header .site-branding #search.reveal form ::-moz-placeholder {
+        header .site-branding #search.reveal form::-moz-placeholder {
           /* Mozilla Firefox 19+ */
           color: rgba(255, 255, 255, 0.6);
           opacity: 1; }
-        header .site-branding #search.reveal form :-ms-input-placeholder {
+        header .site-branding #search.reveal form-ms-input-placeholder {
           /* Internet Explorer 10-11 */
           color: rgba(255, 255, 255, 0.6);
           opacity: 1; }
@@ -1689,7 +1685,7 @@ object {
       height: 100%;
       overflow: scroll; }
       #sidebar.overlay .overlay-content .overlay-content-inner {
-        padding-top: 187px;
+        padding-top: 102px;
         padding-bottom: 6%; }
   #sidebar aside {
     width: 90%;
