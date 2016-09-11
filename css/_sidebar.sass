@@ -31,10 +31,10 @@
 
 	aside
 		width: 90%
-		padding: 0% 5% 2% 5%
+		padding: 0% 5% 4% 5%
 		+flexbox()
 		flex-wrap: wrap
-		justify-content: space-around
+		justify-content: center
 
 		h4
 			font-family: 'RepublikSerifW01-03Alt', serif
@@ -51,8 +51,7 @@
 
 		p
 			padding: 0
-			min-width: 200px
-			width: 32%
+			width: 20%
 			height: auto
 			text-transform: capitalize
 			background: rgba(145, 136, 136, 0.2)
@@ -63,7 +62,7 @@
 				width: 47.2%
 
 			span
-				padding: 20px 10px
+				padding: 16px 10px 10px
 				margin: 10px
 				width: auto
 				+flexbox()
@@ -98,18 +97,17 @@
 		ul
 			+flexbox()
 			flex-wrap: wrap
-			justify-content: space-around
+			justify-content: center
 
 			li
-				padding: 16px 10px 10px
-				margin: 10px
-				min-width: 200px
-				width: 32%
+				padding: 20px
+				margin: 5px
+				min-width: 100px
+				width: 18%
 				height: auto
 				text-transform: capitalize
+				text-align: center
 				background: rgba(145, 136, 136, 0.2)
-				+flexbox()
-				justify-content: space-around
 
 				a
 					background: rgba(166, 166, 166, 0.9)
@@ -121,7 +119,7 @@
 					text-shadow: 0px 0px 1px rgba(0, 0, 0, 1), 0px 0px 1px rgba(0, 0, 0, 1)
 					border-radius: 1px
 					text-decoration: none
-					//+flexbox()
+					display: inline-table
 
 				&:hover
 					cursor: pointer
@@ -131,56 +129,69 @@
 						color: rgba(255, 255, 255, 0.9)
 						text-shadow: 0px 0px 1px rgba(255, 255, 255, 1), 0px 0px 1px rgba(255, 255, 255, 1)
 
-		&.authorThumbs
-
-			.authorWrap
-				background: rgba(145, 136, 136, 0.1)
-
-				.author
-					text-align: center
-					float: left
-					background: rgba(166, 166, 166, 0.9)
-					border-radius: 1px
-					padding: 20px
-					margin: 20px
-					+flexbox()
-					justify-content: center
-					height: 63%
-					max-width: 162px
+				@include mobile
+					width: 37%
 
 					a
-						text-decoration: none
+						padding: 10%
 
-						img
-							border-radius: 2px
-							box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.1)
+		&.authorThumbs
 
-						p
-							font-size: 0.9em
-							padding: 0
-							color: #000
-							text-shadow: 0px 0px 1px rgba(0, 0, 0, 1), 0px 0px 1px rgba(0, 0, 0, 1)
-							background: transparent
-							width: auto
+			.author
+				background: rgba(145, 136, 136, 0.1)
+				text-align: center
+				float: left
+				border-radius: 1px
+				padding: 15px
+				margin: 5px
+				width: 20%
+				+flexbox()
+				justify-content: center
 
-							&:before
-								content: ''
+				a
+					background: rgba(166, 166, 166, 0.9)
+					text-decoration: none
+					padding: 15px
+					width: 100%
 
-							&.name
-								font-size: 1em
-								text-transform: uppercase
-					&:hover
+					img
+						border-radius: 2px
+						box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.1)
+
+					p
+						font-size: 0.9em
+						padding: 0
+						color: #000
+						text-shadow: 0px 0px 1px rgba(0, 0, 0, 1), 0px 0px 1px rgba(0, 0, 0, 1)
+						background: transparent
+						width: auto
+
+						&:before
+							content: ''
+
+						&.name
+							font-size: 1em
+							text-transform: uppercase
+
+				&:hover
+					a
 						background: rgba(166, 166, 166, 0.99)
+
 						p
 							color: rgba(255, 255, 255, 0.9)
 							text-shadow: 0px 0px 1px rgba(255, 255, 255, 1), 0px 0px 1px rgba(255, 255, 255, 1)
+
 						img
 							box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), 0px 0px 8px rgba(255, 255, 255, 0.6)
+
+				@include mobile
+					width: 39%
+				
 		&.popularTags
 			a
 				background: rgba(166, 166, 166, 0.9)
 				width: auto !important
-				padding: 7px
+				padding: 10px 16px
 				text-transform: uppercase
 				color: #000
 				text-shadow: 0px 0px 1px black, 0px 0px 1px black

@@ -368,40 +368,30 @@ header {
 /*--------------------------------------------- */
 /*--------------------------------------------- */
 /*--------------------------------------------- */
-/* MAIN NAV
+/* MAIN NAV */
 /*--------------------------------------------- */
 .main-navigation {
   position: relative;
   border-top: 2px solid #292828;
-  padding: 0.5% 1% 2% 1%;
+  padding: 1%;
   text-transform: uppercase;
   /* css gradient */
   background: #302e2d;
-  /* Old browsers */
   background: -moz-linear-gradient(top, #383635 0%, #312f2e 30%, #302e2d 40%, #302e2d 100%);
-  /* FF3.6-15 */
   background: -webkit-linear-gradient(top, #383635 0%, #312f2e 30%, #302e2d 40%, #302e2d 100%);
-  /* Chrome10-25,Safari5.1-6 */
   background: linear-gradient(to bottom, #383635 0%, #312f2e 30%, #302e2d 40%, #302e2d 100%);
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302e2d', endColorstr='#383635',GradientType=0 );
-  /* IE6-9 */ }
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302e2d', endColorstr='#383635',GradientType=0 ); }
   .main-navigation h3 {
     font-size: 100%;
     text-align: center;
     position: relative;
-    padding-top: 0;
-    padding-bottom: 56px;
-    font-family: 'RepublikSerifW01-03Alt', serif;
+    padding: 0;
+    font-family: "RepublikSerifW01-03Alt", serif;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased; }
-    .main-navigation h3 span.threepixels {
-      letter-spacing: -3px; }
-    .main-navigation h3 span.onepixel {
-      letter-spacing: -1px; }
     .main-navigation h3 .scrollDown {
-      content: '\f103';
-      font-family: 'FontAwesome';
+      content: "";
+      font-family: "FontAwesome";
       opacity: 0.8;
       position: relative;
       top: -12px;
@@ -1703,14 +1693,14 @@ object {
         padding-bottom: 6%; }
   #sidebar aside {
     width: 90%;
-    padding: 0% 5% 2% 5%;
+    padding: 0% 5% 4% 5%;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around; }
+    justify-content: center; }
     #sidebar aside h4 {
       font-family: "RepublikSerifW01-03Alt", serif;
       text-transform: uppercase;
@@ -1725,8 +1715,7 @@ object {
           margin: 2% 0 5%; } }
     #sidebar aside p {
       padding: 0;
-      min-width: 200px;
-      width: 32%;
+      width: 20%;
       height: auto;
       text-transform: capitalize;
       background: rgba(145, 136, 136, 0.2);
@@ -1736,7 +1725,7 @@ object {
         #sidebar aside p {
           width: 47.2%; } }
       #sidebar aside p span {
-        padding: 20px 10px;
+        padding: 16px 10px 10px;
         margin: 10px;
         width: auto;
         display: -webkit-box;
@@ -1778,21 +1767,16 @@ object {
       display: -webkit-flex;
       display: flex;
       flex-wrap: wrap;
-      justify-content: space-around; }
+      justify-content: center; }
       #sidebar aside ul li {
-        padding: 16px 10px 10px;
-        margin: 10px;
-        min-width: 200px;
-        width: 32%;
+        padding: 20px;
+        margin: 5px;
+        min-width: 100px;
+        width: 18%;
         height: auto;
         text-transform: capitalize;
-        background: rgba(145, 136, 136, 0.2);
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        justify-content: space-around; }
+        text-align: center;
+        background: rgba(145, 136, 136, 0.2); }
         #sidebar aside ul li a {
           background: rgba(166, 166, 166, 0.9);
           width: auto !important;
@@ -1802,58 +1786,67 @@ object {
           color: #000;
           text-shadow: 0px 0px 1px black, 0px 0px 1px black;
           border-radius: 1px;
-          text-decoration: none; }
+          text-decoration: none;
+          display: inline-table; }
         #sidebar aside ul li:hover {
           cursor: pointer; }
           #sidebar aside ul li:hover a {
             background: rgba(145, 39, 41, 0.8);
             color: rgba(255, 255, 255, 0.9);
             text-shadow: 0px 0px 1px white, 0px 0px 1px white; }
-    #sidebar aside.authorThumbs .authorWrap {
-      background: rgba(145, 136, 136, 0.1); }
-      #sidebar aside.authorThumbs .authorWrap .author {
-        text-align: center;
-        float: left;
+        @media (max-width: 768px) {
+          #sidebar aside ul li {
+            width: 37%; }
+            #sidebar aside ul li a {
+              padding: 10%; } }
+    #sidebar aside.authorThumbs .author {
+      background: rgba(145, 136, 136, 0.1);
+      text-align: center;
+      float: left;
+      border-radius: 1px;
+      padding: 15px;
+      margin: 5px;
+      width: 20%;
+      display: -webkit-box;
+      display: -moz-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: center; }
+      #sidebar aside.authorThumbs .author a {
         background: rgba(166, 166, 166, 0.9);
-        border-radius: 1px;
-        padding: 20px;
-        margin: 20px;
-        display: -webkit-box;
-        display: -moz-box;
-        display: -ms-flexbox;
-        display: -webkit-flex;
-        display: flex;
-        justify-content: center;
-        height: 63%;
-        max-width: 162px; }
-        #sidebar aside.authorThumbs .authorWrap .author a {
-          text-decoration: none; }
-          #sidebar aside.authorThumbs .authorWrap .author a img {
-            border-radius: 2px;
-            box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.1); }
-          #sidebar aside.authorThumbs .authorWrap .author a p {
-            font-size: 0.9em;
-            padding: 0;
-            color: #000;
-            text-shadow: 0px 0px 1px black, 0px 0px 1px black;
-            background: transparent;
-            width: auto; }
-            #sidebar aside.authorThumbs .authorWrap .author a p:before {
-              content: ""; }
-            #sidebar aside.authorThumbs .authorWrap .author a p.name {
-              font-size: 1em;
-              text-transform: uppercase; }
-        #sidebar aside.authorThumbs .authorWrap .author:hover {
-          background: rgba(166, 166, 166, 0.99); }
-          #sidebar aside.authorThumbs .authorWrap .author:hover p {
-            color: rgba(255, 255, 255, 0.9);
-            text-shadow: 0px 0px 1px white, 0px 0px 1px white; }
-          #sidebar aside.authorThumbs .authorWrap .author:hover img {
-            box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), 0px 0px 8px rgba(255, 255, 255, 0.6); }
+        text-decoration: none;
+        padding: 15px;
+        width: 100%; }
+        #sidebar aside.authorThumbs .author a img {
+          border-radius: 2px;
+          box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.1); }
+        #sidebar aside.authorThumbs .author a p {
+          font-size: 0.9em;
+          padding: 0;
+          color: #000;
+          text-shadow: 0px 0px 1px black, 0px 0px 1px black;
+          background: transparent;
+          width: auto; }
+          #sidebar aside.authorThumbs .author a p:before {
+            content: ""; }
+          #sidebar aside.authorThumbs .author a p.name {
+            font-size: 1em;
+            text-transform: uppercase; }
+      #sidebar aside.authorThumbs .author:hover a {
+        background: rgba(166, 166, 166, 0.99); }
+        #sidebar aside.authorThumbs .author:hover a p {
+          color: rgba(255, 255, 255, 0.9);
+          text-shadow: 0px 0px 1px white, 0px 0px 1px white; }
+        #sidebar aside.authorThumbs .author:hover a img {
+          box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), 0px 0px 8px rgba(255, 255, 255, 0.6); }
+      @media (max-width: 768px) {
+        #sidebar aside.authorThumbs .author {
+          width: 39%; } }
     #sidebar aside.popularTags a {
       background: rgba(166, 166, 166, 0.9);
       width: auto !important;
-      padding: 7px;
+      padding: 10px 16px;
       text-transform: uppercase;
       color: #000;
       text-shadow: 0px 0px 1px black, 0px 0px 1px black;

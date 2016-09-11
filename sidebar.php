@@ -16,6 +16,14 @@
 				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
 			</aside>
 
+			<aside class="authorThumbs">
+				<h4>Authors</h4>
+				<?php create_author_list( 'Administrator' ); ?>
+	            <?php create_author_list( 'Editor' ); ?>
+	            <?php create_author_list( 'Author' ); ?>
+	            <?php create_author_list( 'Contributor' ); ?>
+			</aside>
+
 			<aside id="postTypeFilter">
 				<h4>Filter by post type</h4>
 
@@ -66,14 +74,6 @@
 						endif;
 					}
 				} ?>
-			</aside>
-
-			<aside class="authorThumbs">
-				<h4>Authors</h4>
-				<?php create_author_list( 'Administrator' ); ?>
-	            <?php create_author_list( 'Editor' ); ?>
-	            <?php create_author_list( 'Author' ); ?>
-	            <?php create_author_list( 'Contributor' ); ?>
 			</aside>
 
 			<aside class="popularTags">
