@@ -16,12 +16,10 @@ var navOffset = jQuery("#site-navigation").offset();
 var pos2 = (Math.floor(navOffset["top"])) - 10;
 var eventListenerPaused = false;
 var scrolledToPos2 = false;
+var currentScroll = 0;
 
 var viewportHeight = $(window).height();
 var scrollDownHeight = ( viewportHeight / 100) * 10;
-
-
-
 
 
 
@@ -104,8 +102,22 @@ var hideIntro = function(target) {
 
 var hamburgerInit = function(button, menu) {
 
+    if ( jQuery('body').hasClass('hide-overlay') ) {
+        currentScroll = jQuery('body').scrollTop();
+    }
+
+    console.log(currentScroll);
+
     var overlay = document.querySelector("body");
     overlay.classList.toggle('hide-overlay');
+
+    var base = document.querySelector("html");
+    base.classList.toggle('stopScroll'); // fixes height:100% scrollTop conflict
+
+    //if ( jQuery('body').hasClass('hide-overlay') ) {
+        jQuery('body').scrollTop(currentScroll);
+    //}
+
 
 }
 
@@ -179,7 +191,8 @@ jQuery( document ).ready(function() {
             scrolledToPos2 = true;
         }
         // scroll to nav area
-        jQuery('.scrollDown').on('click', function() {
+        jQuery('.scrollDown').on('click', function(e) {
+            e.preventDefault();
             scrollBetween(pos1, pos2, scrolledToPos2);
         });
     }
@@ -237,6 +250,7 @@ if(window.addEventListener) {
         squareRatioHeight("#blogroll article");
         squareRatioHeight(".relatedposts article");
     }, true);
+
     // scroll animation between two positions
     window.addEventListener('scroll', function() {
         if ( jQuery("#main").hasClass('page1') ) {
@@ -270,6 +284,9 @@ if(window.addEventListener) {
                         scrolledToPos2 = true;
                     }
                 }
+            }
+            if (document.body.scrollTop == 0) {
+                jQuery('.scrollDown i').removeClass('fa-angle-double-up').addClass('fa-angle-double-down');
             }
         }
     });
