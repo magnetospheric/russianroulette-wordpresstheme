@@ -230,9 +230,6 @@ jQuery( document ).ready(function() {
     // calculate height of blogroll articles
     squareRatioHeight("#blogroll article");
 
-    // calculate height of blogroll articles
-    squareRatioHeight(".relatedposts article");
-
     jQuery('#blogroll article').each( function () {
         jQuery(this).attr('enterCount', 0);
         jQuery(this).attr('leaveCount', 0);
@@ -241,32 +238,11 @@ jQuery( document ).ready(function() {
     // slide up and reveal introduction on blogroll articles
     jQuery('#blogroll article').mouseenter( function(){
         var currentArticle = this;
-
         enqueueBlurbTransition( currentArticle, true);
 
     }).mouseleave( function(){
         var currentArticle = this;
-
         enqueueBlurbTransition( currentArticle, false);
-
-    });
-
-    jQuery('.relatedposts article').each( function () {
-        jQuery(this).attr('enterCount', 0);
-        jQuery(this).attr('leaveCount', 0);
-    });
-    // slide up and reveal introduction on blogroll articles
-    jQuery('.relatedposts article').mouseenter( function(){
-        var currentArticle = this;
-
-        enqueueBlurbTransition( currentArticle, true);
-    });
-
-    // slide down and hide introduction on blogroll articles
-    jQuery('.relatedposts article').mouseleave( function(){
-        var currentArticle = this;
-
-        enqueueBlurbTransition( currentArticle, true);
     });
 
     // append triangle inside of prev and next links

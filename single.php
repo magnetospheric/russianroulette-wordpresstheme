@@ -23,7 +23,7 @@ get_header(); ?>
 				}
 			?>
 
-			<div class="relatedposts">
+			<div id="blogroll" class="relatedposts">
 			<h4>Related posts</h4>
 			<?php
 				$orig_post = $post;
