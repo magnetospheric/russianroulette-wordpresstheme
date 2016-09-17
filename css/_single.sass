@@ -1,0 +1,253 @@
+
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* SINGLE POST
+/*--------------------------------------------- */
+.single
+	background: rgb(250,250,250) /* Old browsers */
+	background: -moz-linear-gradient(top,  rgba(250,250,250,1) 40%,rgba(221,220,219,1) 100%) /* FF3.6-15 */
+	background: -webkit-linear-gradient(top,  rgba(250,250,250,1) 40%,rgba(221,220,219,1) 100%) /* Chrome10-25,Safari5.1-6 */
+	background: linear-gradient(to bottom,  rgba(250,250,250,1) 40%,rgba(221,220,219,1) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+	filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#f4f4f4', endColorstr='#d3d2d1',GradientType=0 ) /* IE6-9 */
+
+	.entry-content
+		color: #4d4d4d
+		text-shadow: 0px 0px 1px #999
+
+		a
+			color: rgba( 198, 43, 46, 1 )
+
+		.featuredImage
+			width: 100%
+			height: 60vh
+			position: relative
+
+			img
+				object-fit: cover
+				width: 100%
+				height: 100%
+
+			.overlay-gradient
+				background: -moz-linear-gradient(top, rgba(0,0,0,0) 40%, rgba(0,0,0,0.4) 100%) /* FF3.6-15 */
+				background: -webkit-linear-gradient(top, rgba(0,0,0,0) 40%,rgba(0,0,0,0.4) 100%) /* Chrome10-25,Safari5.1-6 */
+				background: linear-gradient(to bottom, rgba(0,0,0,0) 40%,rgba(0,0,0,0.4) 100%) /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+				filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#00000000', endColorstr='#bd000000',GradientType=0 )
+				display: block
+				height: 100%
+				width: 100%
+				position: absolute
+				bottom: 0
+				z-index: 9
+
+			.titles
+				position: absolute
+				bottom: 8%
+
+				h3
+					color: #fff
+					text-shadow: 1px 1px 2px #111, 1px 1px 2px #111, 1px 1px 2px #111, 1px 1px 10px #111, 1px 1px 15px #111
+
+				a
+					color: #e8e4de
+					text-shadow: 1px 1px 2px #111, 1px 1px 2px #111, 1px 1px 2px #111, 1px 1px 10px #111, 1px 1px 15px #111
+
+			a
+				color: #e8e4de
+
+		.titles
+			width: 96%
+			height: auto
+			text-align: center
+			padding: 2px 2%
+			z-index: 10
+
+			.entry-title
+				padding: 75px 2% 0px
+
+			.entry-meta
+				padding: 2px 2%
+				width: 96%
+
+			a
+				color: #4d4d4d
+				text-decoration: none
+				font-size: 1em
+				text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4),
+
+		.entry-author
+			width: 100%
+			text-align: center
+			padding: 2% 0
+			font-size: 1.2em
+
+			img
+				border-radius: 3px
+				box-shadow: 0px 0px 10px #ccc, 0px 0px 2px #666
+
+			.author
+				text-transform: uppercase
+				text-shadow: 0px 0px 1px rgba(10, 10, 10, 0.4), 0px 0px 8px rgba(50, 50, 50, 0.7)
+
+		.category
+			font-size: 0.7em
+
+			a
+				font-size: 1.2em
+
+			&.author
+				a
+					text-decoration: none
+
+		.author
+			font-size: 0.9em
+
+		.intro
+			padding: 3em 12% 0.5em
+			font-size: 1.4em
+			line-height: 1.6em
+
+		.text
+			padding: 2% 12% 4%
+			font-size: 1.2em
+
+			p
+				margin-bottom: 1.2em
+				line-height: 1.8em
+
+	footer
+		padding: 2% 8%
+		text-transform: uppercase
+		text-align: center
+		color: #aaa
+
+		h3
+			font-size: 1.8em
+			margin: 4% 0 2%
+
+		p
+			font-size: 1em
+			font-family: 'Roboto-Medium'
+
+			&.cat
+				font-size: 0.9em
+
+			a
+				text-decoration: none
+
+				&:hover
+					color: rgba( 198, 43, 46, 1 )
+
+	.post-navigation
+		display: block
+		overflow: hidden
+		position: relative
+		width: 96%
+		min-height: 2em
+		text-align: center
+		border-top: 2px solid #292828
+		padding: 2% 2% 2.5% 2%
+		text-transform: uppercase
+		background: rgb(48, 46, 45)
+		background: -moz-linear-gradient(top, rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1) 100%)
+		background: -webkit-linear-gradient(top, rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1) 100%)
+		background: linear-gradient(to bottom, rgba(56, 54, 53, 1) 0%, rgba(49, 47, 46, 1) 30%, rgba(48, 46, 45, 1) 40%, rgba(48, 46, 45, 1) 100%)
+		filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302e2d', endColorstr='#383635',GradientType=0 )
+
+		div
+			display: table-cell
+			height: 100%
+			width: 44%
+			height: 50%
+			vertical-align: middle
+			padding: 0 7%
+
+		.nav-previous
+			padding: 0 2% 0 7%
+
+			&.nav-next
+				.meta-nav
+					width: 60px
+					height: 60px
+					position: absolute
+					top: 0.8em
+					overflow: hidden
+					box-shadow: -17px 0px 10px -17px rgba(0, 0, 0, 0.6)
+					text-indent: -9999px
+
+					&:after
+						content: ""
+						position: absolute
+						width: 50%
+						height: 50%
+						background: rgba( 145, 39, 41, 1 )
+						transform: rotate(45deg)
+						top: 25%
+						left: 75%
+						box-shadow: 0px 0px 10px -1px rgba(0, 0, 0, 0.6)
+
+				a
+					color: #ededed
+					text-decoration: none
+					font-size: 0.9em
+					font-family: 'Roboto-Medium'
+					&:hover
+						color: rgba( 198, 43, 46, 1 )
+
+			.meta-nav
+				left: 0
+
+		.nav-next
+			padding: 0 7% 0 2%
+			text-align: right
+			.meta-nav
+				right: 0
+				text-align: left
+
+		a
+			&:hover
+				.meta-nav
+					&:after
+						background: rgba( 198, 43, 46, 1 )
+
+	.writers
+		padding: 2% 12% 4%
+
+		h3
+			font-size: 1.8em
+			text-align: center
+			color: #4d4d4d
+			margin: 4% 0 6%
+
+		.author
+			display: inline-block
+			margin: 0% 2% 2% 0%
+			width: 23%
+			float: left
+
+			a
+				position: relative
+				display: block
+				text-decoration: none
+				text-align: center
+				padding: 0 5px
+
+				img
+					border-radius: 2px
+					box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.1)
+
+				p
+					color: #4d4d4d
+					font-size: 0.9em
+					text-transform: capitalize
+					text-shadow: 0px 0px 2px rgba(0, 0, 0, 0.4)
+
+					&.name
+						font-size: 1.1em
+
+				&:hover
+					p
+						text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5), 0px 0px 2px rgba(0, 0, 0, 0.3)

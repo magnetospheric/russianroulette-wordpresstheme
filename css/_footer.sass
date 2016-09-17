@@ -1,0 +1,78 @@
+
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* FOOTER
+/*--------------------------------------------- */
+
+footer
+	background: rgba(24,23,22,1)
+	position: relative
+
+	nav
+		padding: 6% 0
+
+		ul
+			+flexbox()
+			justify-content: space-between
+			flex-wrap: wrap
+
+			li
+				width: 24.5%
+				display: inline-block
+				margin-right: -4px
+
+				@include tablet
+					width: 49.5%
+
+				@include mobile
+					width: 49.5%
+
+				@include tiny
+					width: 100%
+
+				a
+					display: block
+					padding: 10% 5%
+					text-align: center
+					color: #fff
+					text-shadow: 0px 0px 4px rgba(250, 250, 250, 0.3)
+					text-decoration: none
+					font-family: 'RepublikSerifW01-03Alt', serif
+					-webkit-font-smoothing: antialiased
+					font-size: 1.2em
+
+					&:hover
+						color: rgba( 198, 43, 46, 1 )
+						text-shadow: 0px 0px 8px rgba(234, 53, 56, 0.2)
+
+					.sub
+						width: 100%
+						display: inline-block
+						padding: 4% 0 0
+						font-size: 2.2em
+
+	.site-info
+		font-size: 0.8em
+		display: inline-block
+		width: 98%
+		padding: 1% 1% 0
+
+		.left
+			float: left
+
+			@include mobile
+				float: none
+				width: 100%
+				text-align: center
+
+		.right
+			float: right
+
+			@include mobile
+				float: none
+				width: 100%
+				text-align: center
