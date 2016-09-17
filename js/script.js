@@ -65,7 +65,10 @@ var changeHamburgerOffset = function(target) {
 var articleHeight = 0;
 var titleHeight = 0;
 
-var revealIntro = function(target) {
+var revealIntro = function( target ) {
+
+    $( target ).addClass( 'informationVisible' );
+
     articleHeight = jQuery( target ).height();
     titleHeight = jQuery( target ).children('.titles').height();
 
@@ -73,31 +76,59 @@ var revealIntro = function(target) {
 
     jQuery( target ).children('.titles').children().addClass('hovered');
     jQuery( target ).children('.titles').animate({
-            bottom: heightOffset,
-        }, 400, function() {
-            // Animation complete.
+        bottom: heightOffset,
+    }, 400, function() {
+        // Animation complete.
     });
+
     jQuery( target ).children('.text').removeClass('hidden').animate({
         top: "-=50%",
-    }, 400, function() { // Animation complete.
+    }, 400, function() {
+        // Animation complete.
     });
 }
 
-
 // animates sliding intro back down
-var hideIntro = function(target) {
+var hideIntro = function( target ) {
+    $( target ).removeClass( 'informationVisible' );
+
     jQuery( target ).children('.titles').children().removeClass('hovered');
     jQuery( target ).children('.titles').animate({
-            bottom: 0
-        }, 400, function() {
-            // Animation complete.
-            jQuery( target ).removeClass('hovered', {duration:1500});
+        bottom: 0
+    }, 400, function() {
+        // Animation complete.
+        jQuery( target ).removeClass('hovered', {duration:1500});
     });
     jQuery( target ).children('.text').animate({
         top: "+=50%",
     }, 400, function() { // Animation complete.
         jQuery( this ).addClass('hidden');
     });
+
+}
+
+var enqueueBlurbTransition = function( currentArticle, isMouseEnter, delay=200 ) {
+    var secondaryCount = isMouseEnter ? 'leaveCount' : 'enterCount';
+    var focusCount = isMouseEnter ? 'enterCount' : 'leaveCount';
+
+    var currentSecondaryCount = parseInt(jQuery( currentArticle ).attr(secondaryCount));
+    currentSecondaryCount += 1;
+    jQuery( currentArticle ).attr(secondaryCount, currentSecondaryCount);
+
+
+    var currentFocusCount = parseInt(jQuery( currentArticle ).attr(focusCount));
+    currentFocusCount += 1;
+    jQuery( currentArticle ).attr(focusCount, currentFocusCount);
+
+    setTimeout( function() {
+        var isVisible = jQuery( currentArticle ).hasClass( 'informationVisible' );
+        var anim = isMouseEnter ? revealIntro : hideIntro;
+        if ( ( isMouseEnter && !isVisible ) || ( !isMouseEnter && isVisible ) ) {
+            if ( jQuery( currentArticle ).attr(focusCount) == currentFocusCount ) {
+                anim(currentArticle);
+            }
+        }
+    }, delay );
 }
 
 var hamburgerInit = function(button, menu) {
@@ -106,18 +137,13 @@ var hamburgerInit = function(button, menu) {
         currentScroll = jQuery('body').scrollTop();
     }
 
-    console.log(currentScroll);
-
     var overlay = document.querySelector("body");
     overlay.classList.toggle('hide-overlay');
 
     var base = document.querySelector("html");
     base.classList.toggle('stopScroll'); // fixes height:100% scrollTop conflict
 
-    //if ( jQuery('body').hasClass('hide-overlay') ) {
-        jQuery('body').scrollTop(currentScroll);
-    //}
-
+    jQuery('body').scrollTop(currentScroll);
 
 }
 
@@ -207,24 +233,40 @@ jQuery( document ).ready(function() {
     // calculate height of blogroll articles
     squareRatioHeight(".relatedposts article");
 
+    jQuery('#blogroll article').each( function () {
+        jQuery(this).attr('enterCount', 0);
+        jQuery(this).attr('leaveCount', 0);
+    });
+
     // slide up and reveal introduction on blogroll articles
     jQuery('#blogroll article').mouseenter( function(){
-        revealIntro(this);
+        var currentArticle = this;
+
+        enqueueBlurbTransition( currentArticle, true);
+
+    }).mouseleave( function(){
+        var currentArticle = this;
+
+        enqueueBlurbTransition( currentArticle, false);
+
     });
 
-    // slide down and hide introduction on blogroll articles
-    jQuery('#blogroll article').mouseleave( function(){
-        hideIntro(this);
+    jQuery('.relatedposts article').each( function () {
+        jQuery(this).attr('enterCount', 0);
+        jQuery(this).attr('leaveCount', 0);
     });
-
     // slide up and reveal introduction on blogroll articles
     jQuery('.relatedposts article').mouseenter( function(){
-        revealIntro(this);
+        var currentArticle = this;
+
+        enqueueBlurbTransition( currentArticle, true);
     });
 
     // slide down and hide introduction on blogroll articles
     jQuery('.relatedposts article').mouseleave( function(){
-        hideIntro(this);
+        var currentArticle = this;
+
+        enqueueBlurbTransition( currentArticle, true);
     });
 
     // append triangle inside of prev and next links

@@ -12,6 +12,7 @@
 	z-index: 105
 	background: rgba(0, 0, 0, 0.92)
 	color: rgba(255, 255, 255, 0.9)
+	
 	&.overlay
 		position: fixed
 		top: 0
@@ -23,7 +24,8 @@
 
 		.overlay-content
 			height: 100%
-			overflow: scroll
+			overflow-y: scroll
+			overflow-x: hidden
 
 			.overlay-content-inner
 				padding-top: 102px
