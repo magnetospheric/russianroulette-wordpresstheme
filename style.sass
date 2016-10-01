@@ -75,10 +75,20 @@
 
 $pre: webkit moz ms o
 
-=flexbox()
+// justify-content,  align, flow
+=flexbox($content: initial,  $align: initial,   $flow: row wrap )
 	$list: -webkit-box -moz-box -ms-flexbox -webkit-flex flex
 	@each $prefix in $list
 		display: #{$prefix}
+
+	+prefix(( justify-content: $content ), $pre)
+	+prefix(( align-items: $align ), $pre)
+	+prefix(( flex-flow: $flow ), $pre)
+
+// flex, order
+=flexchild( $flex: initial, $order: 0 )
+	+prefix(( flex: $flex ), $pre)
+	+prefix(( order: $order ), $pre)
 
 
 

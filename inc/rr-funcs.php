@@ -8,10 +8,6 @@
 
 
 
- // custom admin bar settings when logged in
- show_admin_bar( false );
-
-
  /*===================================================================================
   * Register widgetized area and update sidebar with default widgets.
   * =================================================================================*/
@@ -133,20 +129,15 @@ the_posts_pagination( array(
 /*===================================================================================
  * Register sidebars
  * =================================================================================*/
-if ( function_exists('register_sidebar') )
-register_sidebar(array('name'=>'sidebar1',
-'before_widget' => '',
-'after_widget' => '',
-'before_title' => '<h4>',
-'after_title' => '</h4>',
-));
-
-register_sidebar(array('name'=>'sidebar2',
-'before_widget' => '',
-'after_widget' => '',
-'before_title' => '<h4>',
-'after_title' => '</h4>',
-));
+if ( function_exists('register_sidebar') ) :
+    register_sidebar(array(
+        'name'=>'sidebar1',
+        'before_widget' => '',
+        'after_widget' => '',
+        'before_title' => '<h4>',
+        'after_title' => '</h4>',
+    ));
+endif;
 
 
 
@@ -211,17 +202,6 @@ function create_author_list( $role ) {
 /*===================================================================================
  * Add Author Links
  * =================================================================================*/
-function add_to_author_profile( $contactmethods ) {
-
-	$contactmethods['shortbio'] = 'Short Bio (for sidebar) e.g. Editor, Games';
-	$contactmethods['google_profile'] = 'Google Profile URL';
-	$contactmethods['twitter_profile'] = 'Twitter Profile URL';
-	$contactmethods['facebook_profile'] = 'Facebook Profile URL';
-	$contactmethods['linkedin_profile'] = 'Linkedin Profile URL';
-
-	return $contactmethods;
-}
-add_filter( 'user_contactmethods', 'add_to_author_profile', 10, 1);
 
 function pagination_on_archive($query){
     if ($query->is_archive) {
@@ -615,4 +595,29 @@ class Menu_With_Icons extends Walker_Nav_Menu {
 }
 
 
-?>
+/* hide admin bar from view */
+add_filter('show_admin_bar', '__return_false');
+
+/* ---------------------
+		removes the `profile.php` admin color scheme options
+		--------------------- */
+
+	remove_action( 'admin_color_scheme_picker', 'admin_color_scheme_picker' );
+	remove_action( 'personal_options', 'personal_options' );
+
+    // Legg inn mellomrom
+	add_action( 'admin_init', 'add_admin_menu_separator' );
+	function add_admin_menu_separator( $position ) {
+		global $menu;
+		$menu[ $position ] = array(
+			0	=>	'',
+			1	=>	'read',
+			2	=>	'separator' . $position,
+			3	=>	'',
+			4	=>	'wp-menu-separator'
+		);
+	}
+	add_action( 'admin_menu', 'set_admin_menu_separator' );
+	function set_admin_menu_separator() {
+		do_action( 'admin_init', 21 );
+	}

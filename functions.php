@@ -142,6 +142,11 @@ require get_template_directory() . '/inc/customizer.php';
 require get_template_directory() . '/inc/jetpack.php';
 
 /**
+* Custom RR functions and action/hooks
+*/
+require get_template_directory() . '/inc/customfields.php';
+
+/**
  * Custom RR functions and action/hooks
  */
 require get_template_directory() . '/inc/rr-funcs.php';

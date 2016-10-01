@@ -121,6 +121,7 @@
 		border: 1px solid rgba(0, 0, 0, 0.02)
 		padding: 3% 0
 		margin: 2.5em 0
+		box-shadow: 0px 0px 10px rgba(255, 255, 255, 0.4)
 
 		#reply-title
 			font-family: 'Roboto-Medium'
@@ -161,21 +162,22 @@
 			color: rgba(107,28,28,1)
 
 		input
-			padding: 10px
-			margin: 0.5em 0
+			padding: 0.8em 0
+			margin: 0
+			line-height: 1em
 
 		.comment-form-author,
 		.comment-form-email,
 		.comment-form-url
 			margin-bottom: 0.5em
-			+flexbox()
+			+flexbox(space-between, center, row nowrap)
 			justify-content: center
-			width: 80%
+			width: 88%
 
 			label
 				width: 20%
 				text-align: right
-				padding: 2.5% 2%
+				padding: 2.5% 2% 2.5% 1%
 				vertical-align: middle
 
 			input
