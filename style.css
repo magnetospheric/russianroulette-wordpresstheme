@@ -646,6 +646,14 @@ header {
     -o-filter: blur(3px);
     -ms-filter: blur(3px);
     filter: blur(3px); }
+    @media (max-device-width: 1024px) {
+      #blogroll article:hover span.images {
+        -webkit-filter: blur(0px);
+        -moz-filter: blur(0px);
+        -o-filter: blur(0px);
+        -ms-filter: blur(0px);
+        filter: blur(0px);
+        background-blend-mode: normal; } }
   #blogroll article:hover:before {
     content: "";
     display: block;
@@ -863,6 +871,9 @@ header {
 /*--------------------------------------------- */
 /* SINGLE POST */
 /*--------------------------------------------- */
+.clear {
+  background: #161514; }
+
 .single {
   background: #fafafa;
   background: -moz-linear-gradient(top, #fafafa 40%, #dddcdb 100%);
@@ -1110,6 +1121,8 @@ header {
             font-size: 1.1em; }
         .single .writers .author a:hover p {
           text-shadow: 0px 0px 1px rgba(0, 0, 0, 0.5), 0px 0px 2px rgba(0, 0, 0, 0.3); }
+    .single .writers .clear {
+      background: rgba(255, 255, 255, 0) !important; }
 
 .no-results {
   padding: 2% 12% 4%; }
@@ -1118,9 +1131,6 @@ header {
     text-align: center; }
   .no-results .page-content p {
     font-size: 1.2em; }
-
-.clear {
-  background: #161514; }
 
 .author-photo {
   overflow: hidden;

@@ -598,14 +598,6 @@ class Menu_With_Icons extends Walker_Nav_Menu {
     }
 }
 
-add_action('init', 'rewrite_rule_example');
-/**
- * Add rewrite rule for a pattern matching "post-by-slug/<post_name>"
- */
- function rewrite_rule_example() {
- 	add_rewrite_rule('^post-by-slug$', 'index.php?name=interesting-mods-rom-hacks', 'top');
- }
-
 
 /* hide admin bar from view */
 add_filter('show_admin_bar', '__return_false');

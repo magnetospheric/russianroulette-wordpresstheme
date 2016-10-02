@@ -266,17 +266,17 @@ if(window.addEventListener) {
             if ( eventListenerPaused == false ) {
                 if ( scrolledToPos2 == true ) {
                     if ( ( document.body.scrollTop > pos1 )  && ( document.body.scrollTop < pos2 ) ) {
-                        jQuery('html, body').animate({
-                            scrollTop: pos1
-                        }, 500);
+                        // jQuery('html, body').animate({
+                        //     scrollTop: pos1
+                        // }, 500);
                         eventListenerPaused = true;
                         jQuery('.scrollDown i').removeClass('fa-angle-double-up').addClass('fa-angle-double-down');
                     }
                 } else {
                     if ( ( document.body.scrollTop > pos1 )  && ( document.body.scrollTop < pos2 ) ) {
-                        jQuery('html, body').animate({
-                            scrollTop: pos2
-                        }, 500);
+                        // jQuery('html, body').animate({
+                        //     scrollTop: pos2
+                        // }, 500);
                         eventListenerPaused = true;
                         jQuery('.scrollDown i').removeClass('fa-angle-double-down').addClass('fa-angle-double-up');
                     }

@@ -17,6 +17,7 @@ get_header(); ?>
 
 		<?php // generate templates for article types
 
+			// dev site
 			$field = get_field_object('field_52b75069a90e6');
 			$posttypes = $field['choices'];
 
@@ -44,6 +45,31 @@ get_header(); ?>
 			if ( $is_posttype_page == false ) {
 				include(locate_template('template-parts/content-single.php' ));
 			}
+
+
+
+			//live site
+
+			// $field = get_field_object('field_52b75069a90e6');
+			// $posttypes = $field['choices'];
+			//
+			// $site_url = site_url();
+			// $uri_array = explode("/", $_SERVER['REQUEST_URI']);
+			//
+			// $next = false;
+			// $is_posttype_page = false;
+			//
+			//   // check if post type match
+			//   foreach ( $posttypes as $posttype ) {
+			// 	if ( strtolower($posttype) === strtolower($uri_array[1]) ) {
+			// 	  include(locate_template('template-parts/page-articletype.php'));
+			// 	  $is_posttype_page = true;
+			// 	}
+			//   }
+			//
+			// if ( $is_posttype_page == false ) {
+			// 	include(locate_template('template-parts/content-single.php' ));
+			// }
 		?>
 
 		</main><!-- #main -->
