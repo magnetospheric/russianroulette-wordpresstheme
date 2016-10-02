@@ -169,8 +169,9 @@ jQuery( document ).ready(function() {
     var sidebar = jQuery('#sidebar').detach();
     jQuery('body').append(sidebar);
 
-    jQuery('#search').hover(function() {
-        clearTimeout(jQuery(this).data('timeout'));
+    jQuery('.search-field').click(function() {
+        console.log('search clicked');
+        //clearTimeout(jQuery(this).data('timeout'));
         jQuery('#search').addClass('reveal');
         jQuery('#search').animate({
             width: "33.3%"
@@ -179,18 +180,6 @@ jQuery( document ).ready(function() {
             complete: function () {
             }
         });
-    }, function() {
-        var t = setTimeout(function() {
-            jQuery('#search').animate({
-                width: "11%"
-            }, {
-                duration: 500,
-                complete: function () {
-                    jQuery('#search').removeClass('reveal');
-                }
-            });
-        }, 200);
-        jQuery(this).data('timeout', t);
     });
 
     /* initialise slick slider for CAROUSEL */
@@ -224,6 +213,7 @@ jQuery( document ).ready(function() {
     }
 
     jQuery('.hamburger').on('click', function() {
+        jQuery(this).toggleClass('is-active');
         hamburgerInit(this, "#sidebar");
     });
 
@@ -267,6 +257,7 @@ if(window.addEventListener) {
         scrollDownHeight = ( viewportHeight / 100) * 10;
         squareRatioHeight("#blogroll article");
         squareRatioHeight(".relatedposts article");
+        $('#carousel').css("height", ( viewportHeight - 140 ) + "px");
     }, true);
 
     // scroll animation between two positions

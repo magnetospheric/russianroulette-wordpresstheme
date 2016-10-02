@@ -1,2 +1,64 @@
-.archive
-	background: #000
+
+.author-photo
+	overflow: hidden
+	width: 100px
+	height: 100px
+	border-radius: 50%
+	box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4) inset, 0px 0px 10px rgba(0, 0, 0, 0.2)
+
+	&.article
+		width: 60px
+		height: 60px
+
+	img
+		min-width: 100%
+		min-height: 100%
+		border: 0
+		margin-top: 0!important
+		box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.4) inset
+
+.author-details
+	.author-photo
+		margin-right: 3em
+		margin-bottom: 2em
+	.titles
+		padding: 2px 2% 28px
+		&:hover
+			text-shadow: 0px 0px 1px #999
+		h3
+			span
+				text-transform: capitalize
+	.text
+		+flexbox(initial, initial, row wrap)
+		padding: 2% 12% 0%!important
+		.bio
+			+flexchild(0 80%)
+	.extras
+		+flexbox()
+		padding: 2% 12% 0%!important
+		.extra-photos
+			padding: 2% 0% 2%
+			.author-extra-photo
+				max-width: 300px
+				margin-right: 20px
+				float: left
+				h4
+					margin: 11% 0 2%
+					font-size: 1.2em
+		.social-links
+			padding: 2% 0% 2%
+			h3
+				font-size: 1.8em
+				text-align: center
+				color: #4d4d4d
+				margin: 4% 0 2%
+			ul
+				text-align: center
+				font-size: 1.2em
+	.posts
+		padding: 2% 12% 0%
+		h3
+			font-size: 1.8em
+			text-align: center
+			color: #4d4d4d
+			margin: 4% 0 6%

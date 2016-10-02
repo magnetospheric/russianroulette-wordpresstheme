@@ -63,6 +63,9 @@
 			@include mobile
 				width: 47.2%
 
+			@include tiny
+				width: 88%
+
 			span
 				padding: 16px 10px 10px
 				margin: 10px
@@ -132,10 +135,13 @@
 						text-shadow: 0px 0px 1px rgba(255, 255, 255, 1), 0px 0px 1px rgba(255, 255, 255, 1)
 
 				@include mobile
-					width: 37%
+					width: 39%
 
 					a
 						padding: 10%
+
+				@include tiny
+					width: 77%
 
 		&.authorThumbs
 
@@ -155,16 +161,23 @@
 					text-decoration: none
 					padding: 15px
 					width: 100%
+					position: relative
+					overflow: hidden
 
 					img
-						border-radius: 2px
+						border-radius: 50%
 						box-shadow: 1px 1px 1px rgba(0, 0, 0, 0.2), 0px 0px 8px rgba(0, 0, 0, 0.1)
+						position: absolute
+						top: -6%
+						left: -6%
+						width: 60px
+						height: 60px
 
 					p
 						font-size: 0.9em
 						padding: 0
 						color: #000
-						text-shadow: 0px 0px 1px rgba(0, 0, 0, 1), 0px 0px 1px rgba(0, 0, 0, 1)
+						text-shadow: 0px 0px 1px rgba(0, 0, 0, 1), 0px 0px 1px rgba(0, 0, 0, 0.8)
 						background: transparent
 						width: auto
 
@@ -174,6 +187,7 @@
 						&.name
 							font-size: 1em
 							text-transform: uppercase
+							padding-bottom: 1em
 
 				&:hover
 					a
@@ -183,11 +197,11 @@
 							color: rgba(255, 255, 255, 0.9)
 							text-shadow: 0px 0px 1px rgba(255, 255, 255, 1), 0px 0px 1px rgba(255, 255, 255, 1)
 
-						img
-							box-shadow: 1px 1px 1px rgba(255, 255, 255, 0.2), 0px 0px 8px rgba(255, 255, 255, 0.6)
-
 				@include mobile
-					width: 39%
+					width: 43%
+
+				@include tiny
+					width: 88%
 
 		&.popularTags
 			a

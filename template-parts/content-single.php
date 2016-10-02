@@ -42,21 +42,16 @@
 
 		<?php if ( 'post' == get_post_type() ) : ?>
 		<div class="entry-author">
-		 <?php
-				$curauth = get_the_author_meta('ID');
-
-				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-						if ( is_plugin_active('user-photo/user-photo.php') ) {
- 							//do stuff
- 							if(userphoto_exists($curauth)) {
- 								userphoto_thumbnail($curauth);
- 							}
-						}
-						else {
-							echo get_avatar($curauth, 40);
-						}
-
-				?>
+			<?php
+				$author_id = $post->post_author;
+				// avatar goes here
+				$avatar = get_field('author_photo', 'user_' . $author_id );
+				echo '<div class="author-photo article">';
+				echo '<img src="';
+				echo $avatar['url'];
+				echo '" />';
+				echo '</div>';
+			?>
 
 			<div class="authorCategoryInfo">
 				<div class="author"><p>Written by

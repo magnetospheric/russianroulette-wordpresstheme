@@ -24,10 +24,12 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 	$paged = get_query_var('paged');
 
 	if ($paged < 2) { // only show carousel on first page
-		?><main id="main" class="site-main page1" role="main"><?php
-		include(locate_template('template-parts/section-carousel.php'));
+		?><main id="main" class="site-main page1" role="main">
+			<div class="front-page-carousel">
+			<?php include(locate_template('template-parts/section-carousel.php'));
 	} else {
-		?><main id="main" class="site-main" role="main"><?php
+		?><main id="main" class="site-main" role="main">
+		<div class="front-page-carousel sub-page"><?php
 	}
 ?>
 		<section id="site-navigation" class="main-navigation" role="navigation">
@@ -42,6 +44,8 @@ $tag_exclude = get_term_by('slug','editorial', 'post_tag');
 				}?>
 			</h3>
 		</section><!-- #site-navigation -->
+
+	</div>
 
 		<section id="blogroll">
 			<?php

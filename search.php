@@ -7,7 +7,7 @@
 
 get_header(); ?>
 
-	<main id="main" class="site-main" role="main">
+	<main id="main" class="site-main single" role="main">
 
 		<section id="blogroll">
 		<?php
@@ -26,8 +26,7 @@ get_header(); ?>
 			<?php endwhile; ?>
 
 			<?php else : ?>
-
-				<?php get_template_part( 'content', 'none' ); ?>
+				<?php get_template_part( 'template-parts/content', 'none' ); ?>
 
 			<?php endif; ?>
 
@@ -43,4 +42,5 @@ get_header(); ?>
 
 	</main><!-- #main -->
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>

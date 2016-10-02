@@ -53,8 +53,8 @@ get_header(); ?>
 			else :
 				_e( 'Archives', 'russianroulette' );
 
-			endif;
-			?>
+		endif;
+		?>
 		</h3>
 		<?php
 		// Show an optional term description.
@@ -75,26 +75,74 @@ get_header(); ?>
 						<?php printf( __( 'Author: %s', 'russianroulette' ), '<span class="vcard">' . get_the_author() . '</span>' ); ?>
 					</h3>
 				</div>
-			<?php
-				$curauth = get_the_author_meta('ID');
+				<div class="text page">
+					<?php
+						$author = get_user_by( 'slug', get_query_var( 'author_name' ) );
+						$author_id = $author->ID;
+						// avatar goes here
+						$avatar = get_field('author_photo', 'user_' . $author_id );
+						echo '<div class="author-photo">';
+						echo '<img src="';
+						echo $avatar['url'];
+						echo '" />';
+						echo '</div>';
+						// bio goes here
+						$bio = get_field('extended_bio', 'user_' . $author_id );
+						echo '<div class="bio">';
+						echo $bio;
+						echo '</div>';
+ 					?>
+				</div>
 
-				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-				if ( is_plugin_active('user-photo/user-photo.php') ) {
-							//do stuff
-							if(userphoto_exists($curauth)) {
-								userphoto_thumbnail($curauth);
-						}
-						else {
-							echo get_avatar($curauth, 60);
-						}
-					}
-					else {
-						echo get_avatar($curauth, 60);
-					}
+				<div class="extras">
+					<div class="extra-photos">
+						<?php
+						if( have_rows('extra_author_photos', 'user_' . $author_id) ):
+							while ( have_rows('extra_author_photos', 'user_' . $author_id) ) : the_row();
+								if( get_row_layout() == 'custom_author_photo' ):
+									echo '<div class="author-extra-photo">';
+									echo '<h4>' . get_sub_field('tagline', 'user_' . $author_id) . '</h4>';
+									echo '<img src="';
+									$photo = get_sub_field('photo', 'user_' . $author_id);
+									echo $photo['url'];
+									echo '" />';
+									echo '</div>';
+								endif;
+							endwhile;
+							else :
+						endif;
+						?>
 
-				?>
+					</div>
 
-				<h4>Posts by me:</h4>
+					<div class="social-links">
+						<?php
+						if( have_rows('social_media_links', 'user_' . $author_id) ):
+							echo '<h3>Other places you can find me:</h3>';
+							echo '<ul>';
+							while ( have_rows('social_media_links', 'user_' . $author_id) ) : the_row();
+								if( get_row_layout() == 'new_link' ):
+									echo '<li>';
+									echo get_sub_field('title', 'user_' . $author_id) . ' ';
+									echo '<a href="';
+									echo get_sub_field('link', 'user_' . $author_id);
+									echo '">';
+									echo get_sub_field('link', 'user_' . $author_id);
+									echo '</a>';
+									echo '</li>';
+								endif;
+							endwhile;
+							else :
+							// no layouts found
+						echo '</ul>';
+						endif;
+						?>
+					</div>
+				</div>
+
+				<section class="posts">
+					<h3>Posts by me:</h3>
+				</section>
 			</div>
 		<?php } ?>
 
@@ -122,8 +170,8 @@ get_header(); ?>
 			get_template_part( 'content', 'none' );
 		endif; ?>
 
-		</main><!-- #main -->
-	</section><!-- #primary -->
+	</main><!-- #main -->
+</section><!-- #primary -->
 
 <?php get_sidebar(); ?>
 <?php get_footer(); ?>
