@@ -59,33 +59,29 @@
 				?>
 
 			<div class="authorCategoryInfo">
-			  	<div class="author"><p>Written by
-				  	<a href="<?php  echo get_author_posts_url( get_the_author_meta( 'ID', $curauth->ID ) );  ?>">
-				  		<?php the_author(); //gets author name ?>
-				  </a>
-				  </p></div>
-				<div class="category"><p>in</p>
+				<div class="author"><p>Written by
+					<a href="<?php  echo get_author_posts_url( get_the_author_meta( 'ID', $curauth->ID ) );  ?>">
+						<?php the_author(); //gets author name ?>
+					</a>
+				</p>
+			</div>
+			<div class="category"><p>in</p>
 				<?php
-						$counter = 0;
-		  				foreach((get_the_category()) as $category) {
-						  if ($counter >= 1) { echo "<span class=\"and\">&nbsp;&amp;&nbsp;</span>"; }
-
-						  ?>
-				  			<a class="category" href="<?php
-							$url = home_url('/');
-
-					  		echo $url . $category->cat_name;
-
-							?>"><?php
-						  	//echo category name
-						  	echo $category->cat_name;
-							?>
-							</a>
-							<?php
-						  	$counter++;
-						}
-				  	?>
-			  </div>
+					$counter = 0;
+	  				foreach((get_the_category()) as $category) {
+						if ($counter >= 1) { echo "<span class=\"and\">&nbsp;&amp;&nbsp;</span>"; }
+						$url = home_url('/');
+						$cat_name = $category->name;
+						$cat_name_with_hyphens = str_replace(" ", "-", strtolower($cat_name));
+							echo '<a class="category" href="';
+							echo $url . $cat_name_with_hyphens;
+							echo '">';
+							echo $cat_name;
+							echo '</a>';
+						$counter++;
+					}
+				?>
+			</div>
 		</div>
 		</div><!-- end entry author -->
 		<!-- .entry-meta -->

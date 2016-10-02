@@ -14,7 +14,8 @@
     $category_list = get_categories();
     foreach ( $category_list as $category ) {
         $cat = strtolower($category->name);
-        add_rewrite_rule('^'. $cat .'$', 'index.php?category_name=' . $cat,'top');
+        $cat_hyphens = str_replace(" ", "-", $cat);
+        add_rewrite_rule('^'. $cat_hyphens .'$', 'index.php?category_name=' . $cat_hyphens,'top');
     }
  }
 
