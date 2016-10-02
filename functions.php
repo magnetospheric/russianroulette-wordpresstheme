@@ -144,7 +144,12 @@ require get_template_directory() . '/inc/jetpack.php';
 /**
 * Custom RR functions and action/hooks
 */
-require get_template_directory() . '/inc/customfields.php';
+require get_template_directory() . '/inc/custom-fields/customfields-authors.php';
+
+/**
+* Custom RR functions and action/hooks
+*/
+require get_template_directory() . '/inc/custom-fields/customfields-posts.php';
 
 /**
  * Custom RR functions and action/hooks

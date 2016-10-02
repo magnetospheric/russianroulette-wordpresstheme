@@ -6,7 +6,17 @@
  * @package russianroulette
  */
 
-
+ /*===================================================================================
+  * Custom permalink rewrites for categories
+  * =================================================================================*/
+ add_action('init', 'register_category_rewrites');
+ function register_category_rewrites() {
+    $category_list = get_categories();
+    foreach ( $category_list as $category ) {
+        $cat = strtolower($category->name);
+        add_rewrite_rule('^'. $cat .'$', 'index.php?category_name=' . $cat,'top');
+    }
+ }
 
  /*===================================================================================
   * Register widgetized area and update sidebar with default widgets.
@@ -593,6 +603,14 @@ class Menu_With_Icons extends Walker_Nav_Menu {
         $output .= apply_filters( 'walker_nav_menu_start_el', $item_output, $item, $depth, $args );
     }
 }
+
+add_action('init', 'rewrite_rule_example');
+/**
+ * Add rewrite rule for a pattern matching "post-by-slug/<post_name>"
+ */
+ function rewrite_rule_example() {
+ 	add_rewrite_rule('^post-by-slug$', 'index.php?name=interesting-mods-rom-hacks', 'top');
+ }
 
 
 /* hide admin bar from view */

@@ -68,10 +68,8 @@
 				<?php
 						$counter = 0;
 		  				foreach((get_the_category()) as $category) {
-						  //
 						  if ($counter >= 1) { echo "<span class=\"and\">&nbsp;&amp;&nbsp;</span>"; }
 
-						  //echo a link
 						  ?>
 				  			<a class="category" href="<?php
 							$url = home_url('/');
@@ -79,13 +77,8 @@
 					  		echo $url . $category->cat_name;
 
 							?>"><?php
-
-
 						  	//echo category name
 						  	echo $category->cat_name;
-
-
-							//close a link
 							?>
 							</a>
 							<?php

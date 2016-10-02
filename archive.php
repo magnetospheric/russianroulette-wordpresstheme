@@ -12,7 +12,8 @@ get_header(); ?>
 <section id="primary" class="content-area">
 	<main id="main" class="site-main archive single" role="main">
 
-		<?php if ( !is_author() ) :
+		<?php
+		if ( !is_author() ) :
 			?> <section class="archive-header">
 			<h3>
 			<?php
@@ -90,57 +91,9 @@ get_header(); ?>
 					else {
 						echo get_avatar($curauth, 60);
 					}
-				?>
-				<p><?php the_author_meta('description');?></p><?php
 
-				include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-				if ( is_plugin_active('cimy-user-extra-fields/cimy_uef_init.php') ) {
-
-				//$curauth = get_the_author($user->ID);
-				$civvies_image_url = get_cimyFieldValue(get_the_author_ID(), 'USER_CIVVIES_PHOTO');
-				$cosplay_image_url = get_cimyFieldValue(get_the_author_ID(), 'USER_COSPLAY_PHOTO');
-				$crossplay_image_url = get_cimyFieldValue(get_the_author_ID(), 'USER_CROSSPLAY_PHOTO');
-				$fursuit_image_url = get_cimyFieldValue(get_the_author_ID(), 'USER_FURSUIT_PHOTO');
-				$lolita_image_url = get_cimyFieldValue(get_the_author_ID(), 'USER_LOLITA_PHOTO');
-				//echo cimy_uef_sanitize_content($value);
 				?>
 
-				<?php if ( ! empty( $civvies_image_url ) ) : ?>
-				<span class="civviesPhoto">
-					<p><?php echo get_the_author(); ?>, as seen normally:</p>
-					<img src="<?php echo $civvies_image_url; ?>" alt="<?php echo the_author(); ?> in civvies" />
-				</span>
-				<?php endif; ?>
-
-				<?php if ( ! empty( $cosplay_image_url ) ) : ?>
-				<span class="cosplayPhoto">
-					<p><?php echo get_the_author(); ?> in cosplay:</p>
-					<img src="<?php echo $cosplay_image_url; ?>" alt="<?php echo the_author(); ?> in cosplay" />
-				</span>
-				<?php endif; ?>
-
-				<?php if ( ! empty( $crossplay_image_url ) ) : ?>
-				<span class="crossplayPhoto">
-					<p><?php echo get_the_author(); ?> in crossplay:</p>
-					<img src="<?php echo $crossplay_image_url; ?>" alt="<?php echo the_author(); ?> in crossplay" />
-				</span>
-				<?php endif; ?>
-
-				<?php if ( ! empty( $fursuit_image_url ) ) : ?>
-				<span class="fursuitPhoto">
-					<p><?php echo get_the_author(); ?> in fursuit:</p>
-					<img src="<?php echo $fursuit_image_url; ?>" alt="<?php echo the_author(); ?> in fursuit" />
-				</span>
-				<?php endif; ?>
-
-				<?php if ( ! empty( $fursuit_image_url ) ) : ?>
-				<span class="lolitaPhoto">
-					<p><?php echo get_the_author(); ?> in lolita costume:</p>
-					<img src="<?php echo $lolita_image_url; ?>" alt="<?php echo the_author(); ?> in fursuit" />
-				</span>
-				<?php endif;
-
-				} // end if cimy user fields active ?>
 				<h4>Posts by me:</h4>
 			</div>
 		<?php } ?>
