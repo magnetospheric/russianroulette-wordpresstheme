@@ -65,9 +65,6 @@
 									?>
 									</a>
 								</span>
-								<a class="post-type articleCount" href="<?php $url = home_url('/'); echo $url . $posttypeSingle;	?>">
-									<?php echo $counter; ?> articles
-								</a>
 							</p>
 
 							<?php wp_reset_query();  // Restore global post data stomped by the_post().
