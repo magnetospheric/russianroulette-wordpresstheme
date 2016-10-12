@@ -49,12 +49,19 @@
 			padding: 2% 0% 2%
 			h3
 				font-size: 1.8em
-				text-align: center
+				text-align: left
 				color: #4d4d4d
 				margin: 4% 0 2%
+				@include tiny
+					text-align: center
 			ul
 				text-align: center
 				font-size: 1.2em
+
+				li
+					text-align: left
+					@include tiny
+						text-align: center
 	.posts
 		padding: 2% 12% 0%
 		h3

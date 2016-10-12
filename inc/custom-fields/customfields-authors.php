@@ -98,7 +98,7 @@ or
 							'label' => 'Title',
 							'name' => 'title',
 							'type' => 'text',
-							'instructions' => 'A short title describing what sortt of link it is. Example: "My youtube channel:"',
+							'instructions' => 'A short title describing what sort of link it is. Example: "My youtube channel:"',
 							'required' => 0,
 							'conditional_logic' => 0,
 							'wrapper' => array (
