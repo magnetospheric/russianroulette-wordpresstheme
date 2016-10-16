@@ -64,5 +64,8 @@
         </button>
 
 	</header><!-- #masthead -->
+	<nav id="mainnav">
+		<?php wp_nav_menu( array( 'theme_location' => 'primary_head' ) ); ?>
+	</nav>
 
 	<div id="content" class="site-content">

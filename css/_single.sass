@@ -130,9 +130,14 @@
 			padding: 2% 12% 4%
 			font-size: 1.2em
 
+			@include mobile
+				padding: 2% 16% 4% 6%
+
 			p
 				margin-bottom: 1.2em
 				line-height: 1.8em
+				@include mobile
+					text-align: left
 
 			h3
 				font-size: 1.2em

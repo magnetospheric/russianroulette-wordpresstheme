@@ -42,9 +42,7 @@ function russianroulette_setup() {
 	// This theme uses wp_nav_menu() in one location.
 	register_nav_menus( array(
 		'primary' => __( 'Primary Menu', 'russianroulette' ),
-	) );
-
-  	register_nav_menus( array(
+		'primary_head' => __( 'Primary Head Menu', 'russianroulette' ),
 		'secondary' => __( 'Secondary Menu', 'russianroulette' ),
 	) );
 

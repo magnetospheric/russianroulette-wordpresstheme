@@ -188,7 +188,7 @@ jQuery( document ).ready(function() {
          slidesToShow: 1,
          slidesToScroll: 1,
          autoplay: true,
-         autoplaySpeed: 400000,
+         autoplaySpeed: 4000,
          pauseOnFocus: true
     });
 
@@ -199,6 +199,10 @@ jQuery( document ).ready(function() {
     jQuery('#carousel .titles').mouseleave( function(){
         jQuery("#carousel").find('.featuredImage img').removeClass('blur-focus');
     });
+    var mainNavHeight = jQuery('#mainnav').height();
+    var heightOffsetCarousel = 140 + mainNavHeight;
+   // console.log(heightOffsetCarousel);
+    jQuery('#carousel').css('height', 'calc(100vh - ' + heightOffsetCarousel + 'px)');
 
     if ( jQuery("#main").hasClass('page1') ) {
         if ( document.body.scrollTop >= pos2 ) {
@@ -242,6 +246,14 @@ jQuery( document ).ready(function() {
     // append class to containing elements of all iframes, to allow centering
     jQuery('body').find('iframe').parent().addClass('iframe-container');
 
+    if (document.body.scrollTop > 69) {
+        $("#mainnav").addClass('sticky');
+        $("#content").addClass('sticky');
+    } else {
+        $("#mainnav").removeClass('sticky');
+        $("#content").removeClass('sticky');
+    }
+
 });
 
 
@@ -261,7 +273,9 @@ if(window.addEventListener) {
     }, true);
 
     // scroll animation between two positions
+    // make navbar sticky if scrolled more than 70px from top
     window.addEventListener('scroll', function() {
+
         if ( jQuery("#main").hasClass('page1') ) {
             if ( eventListenerPaused == false ) {
                 if ( scrolledToPos2 == true ) {
@@ -298,5 +312,16 @@ if(window.addEventListener) {
                 jQuery('.scrollDown i').removeClass('fa-angle-double-up').addClass('fa-angle-double-down');
             }
         }
+
+        if (document.body.scrollTop > 69) {
+            $("#mainnav").addClass('sticky');
+            $("#content").addClass('sticky');
+            $(".hamburger").addClass('sticky');
+        } else {
+            $("#mainnav").removeClass('sticky');
+            $("#content").removeClass('sticky');
+            $(".hamburger").removeClass('sticky');
+        }
+
     });
 }
