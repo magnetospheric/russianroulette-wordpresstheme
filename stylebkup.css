@@ -118,7 +118,7 @@ header nav { font-family: 'Roboto-Light', Arial, sans-serif; font-weight:700; fo
     position:relative;
     padding-top: 0;
     padding-bottom: 34px;
-    font-family:'RepublikSerifW01-03Alt', serif;
+    font-family:'RepublikSerifW01-03Alt', sans-serif;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased;
 }
@@ -1114,7 +1114,7 @@ a:hover .triangle-left:after {
     color: #fff;
 	text-decoration: none;
 	padding: 2% 8%;
-    font-family: 'RepublikSerifW01-03Alt', serif;
+    font-family: 'RepublikSerifW01-03Alt', sans-serif;
     width: 84%;
 	font-size:1.2em;
 }
@@ -1355,7 +1355,7 @@ footer nav li a {
     text-align: center;
     color: #fff;
     text-decoration: none;
-    font-family: 'RepublikSerifW01-03Alt', serif;
+    font-family: 'RepublikSerifW01-03Alt', sans-serif;
     -webkit-font-smoothing: antialiased;
 }
 footer nav li a .sub {

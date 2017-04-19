@@ -49,8 +49,26 @@ var squareRatioHeight = function(target) {
     jQuery(target).height( jQuery(target).width() );
 }
 
+// this stops height from being fixed if width : height ratio is less than 2:1
+var shortHeightCarouselAdjuster = function(target) {
+    var windowHeight = $(window).height();
+    var windowWidth = $(window).width();
+    if ( windowHeight < ( windowWidth / 2.2 )  ) {
+        jQuery(target).addClass('naturalHeight');
+    } else {
+        jQuery(target).removeClass('naturalHeight');
+        if ( target == '#carousel' ) {
+            // add height offset for carousel
+            var mainNavHeight = jQuery('#mainnav').height();
+            var heightOffsetCarousel = 140 + mainNavHeight;
+            // console.log(heightOffsetCarousel);
+            jQuery('#carousel').css('height', 'calc(100vh - ' + heightOffsetCarousel + 'px)');
+        }
+    }
+}
+
 var changeHamburgerOffset = function(target) {
-    if (document.body.scrollTop > 100) {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
         jQuery(target).animate({
             top: "0px"
         }, 400);
@@ -107,7 +125,7 @@ var hideIntro = function( target ) {
 
 }
 
-var enqueueBlurbTransition = function( currentArticle, isMouseEnter, delay=200 ) {
+var enqueueBlurbTransition = function( currentArticle, isMouseEnter, delay ) {
     var secondaryCount = isMouseEnter ? 'leaveCount' : 'enterCount';
     var focusCount = isMouseEnter ? 'enterCount' : 'leaveCount';
 
@@ -199,13 +217,17 @@ jQuery( document ).ready(function() {
     jQuery('#carousel .titles').mouseleave( function(){
         jQuery("#carousel").find('.featuredImage img').removeClass('blur-focus');
     });
-    var mainNavHeight = jQuery('#mainnav').height();
-    var heightOffsetCarousel = 140 + mainNavHeight;
-   // console.log(heightOffsetCarousel);
-    jQuery('#carousel').css('height', 'calc(100vh - ' + heightOffsetCarousel + 'px)');
+
+    // set natural heights id width/height ratio too low
+    if ( jQuery('#carousel').length ) {
+        shortHeightCarouselAdjuster('#carousel');
+    } else {
+        // determine whether feature image should be natural height or vh
+        shortHeightCarouselAdjuster('.featuredImage');
+    }
 
     if ( jQuery("#main").hasClass('page1') ) {
-        if ( document.body.scrollTop >= pos2 ) {
+        if ( document.body.scrollTop >= pos2 || document.documentElement.scrollTop >= pos2 ) {
             jQuery('.scrollDown i').removeClass('fa-angle-double-down').addClass('fa-angle-double-up');
             scrolledToPos2 = true;
         }
@@ -232,11 +254,11 @@ jQuery( document ).ready(function() {
     // slide up and reveal introduction on blogroll articles
     jQuery('#blogroll article').mouseenter( function(){
         var currentArticle = this;
-        enqueueBlurbTransition( currentArticle, true);
+        enqueueBlurbTransition( currentArticle, true, 200);
 
     }).mouseleave( function(){
         var currentArticle = this;
-        enqueueBlurbTransition( currentArticle, false);
+        enqueueBlurbTransition( currentArticle, false, 200);
     });
 
     // append triangle inside of prev and next links
@@ -246,7 +268,7 @@ jQuery( document ).ready(function() {
     // append class to containing elements of all iframes, to allow centering
     jQuery('body').find('iframe').parent().addClass('iframe-container');
 
-    if (document.body.scrollTop > 69) {
+    if (document.body.scrollTop > 69 || document.documentElement.scrollTop > 69) {
         $("#mainnav").addClass('sticky');
         $("#content").addClass('sticky');
     } else {
@@ -263,6 +285,13 @@ jQuery( document ).ready(function() {
 
 if(window.addEventListener) {
     window.addEventListener('resize', function() {
+        // determine whether feature image should be natural height or vh
+        if ( jQuery('#carousel').length ) {
+            shortHeightCarouselAdjuster('#carousel');
+        } else {
+            // determine whether feature image should be natural height or vh
+            shortHeightCarouselAdjuster('.featuredImage');
+        }
         navOffset = jQuery("#site-navigation").offset();
         pos2 = (Math.floor(navOffset["top"])) - 10;
         viewportHeight = $(window).height();
@@ -279,7 +308,7 @@ if(window.addEventListener) {
         if ( jQuery("#main").hasClass('page1') ) {
             if ( eventListenerPaused == false ) {
                 if ( scrolledToPos2 == true ) {
-                    if ( ( document.body.scrollTop > pos1 )  && ( document.body.scrollTop < pos2 ) ) {
+                    if ( ( document.body.scrollTop > pos1 || document.documentElement.scrollTop > pos1 )  && ( document.body.scrollTop < pos2 || document.documentElement.scrollTop < pos2 ) ) {
                         // jQuery('html, body').animate({
                         //     scrollTop: pos1
                         // }, 500);
@@ -287,7 +316,7 @@ if(window.addEventListener) {
                         jQuery('.scrollDown i').removeClass('fa-angle-double-up').addClass('fa-angle-double-down');
                     }
                 } else {
-                    if ( ( document.body.scrollTop > pos1 )  && ( document.body.scrollTop < pos2 ) ) {
+                    if ( ( document.body.scrollTop > pos1 || document.documentElement.scrollTop > pos1)  && ( document.body.scrollTop < pos2 || document.documentElement.scrollTop < pos2) ) {
                         // jQuery('html, body').animate({
                         //     scrollTop: pos2
                         // }, 500);
@@ -297,23 +326,23 @@ if(window.addEventListener) {
                 }
             } else {
                 if ( scrolledToPos2 == true ) {
-                    if ( document.body.scrollTop === pos1 ) {
+                    if ( document.body.scrollTop === pos1 || document.documentElement.scrollTop === pos1 ) {
                         eventListenerPaused = false;
                         scrolledToPos2 = false;
                     }
                 } else {
-                    if ( document.body.scrollTop === pos2 ) {
+                    if ( document.body.scrollTop === pos2 || document.documentElement.scrollTop === pos2 ) {
                         eventListenerPaused = false;
                         scrolledToPos2 = true;
                     }
                 }
             }
-            if (document.body.scrollTop == 0) {
+            if (document.body.scrollTop == 0 || document.documentElement.scrollTop == 0) {
                 jQuery('.scrollDown i').removeClass('fa-angle-double-up').addClass('fa-angle-double-down');
             }
         }
 
-        if (document.body.scrollTop > 69) {
+        if (document.body.scrollTop > 69 || document.documentElement.scrollTop > 69) {
             $("#mainnav").addClass('sticky');
             $("#content").addClass('sticky');
             $(".hamburger").addClass('sticky');

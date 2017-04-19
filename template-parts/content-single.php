@@ -83,22 +83,6 @@
 		<?php endif; ?>
 
 
-
-		<div class="intro page">
-			<?php
-			include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
-		  		if ( is_plugin_active('advanced-custom-fields/acf.php') ) {
-					//do stuff
-					the_field("introduction", $post->ID);
-				}
-				else {
-					$values = get_post_custom( $post->ID );
-			    	$intro_text = isset( $values['introduction_text'] ) ? esc_attr( $values['introduction_text'][0] ) : '';
-
-			    	echo '<p>' . $intro_text . '</p>';
-				}
-		 	?>
-	  </div>
 	  <div class="text page">
 		<?php
 			$content = apply_filters('the_content', $post->post_content);

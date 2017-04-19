@@ -46,6 +46,8 @@
 		font-size: 21px
 		a
 			font-size: 21px
+			@include mobile
+				font-size: 14px
 	a
 		color: #e8e4de
 		text-shadow: 1px 1px 2px #111, 1px 1px 2px #111, 1px 1px 2px #111, 1px 1px 10px #111, 1px 1px 15px #111
@@ -223,7 +225,7 @@ header
 	&.sticky
 		position: fixed
 		top: 0px
-		background: url(images/rr_favicon.png) left no-repeat #000
+		background: url(images/rr_favicon.png) left top no-repeat #000
 		background-size: 35px 35px
 		@include mobile
 			display: block
@@ -234,13 +236,16 @@ header
 		@include mobile
 			display: none
 		ul
-			+flexbox(flex-start, center)
+			+flexbox(center, center)
 			width: 100%
 			padding: 8px 0
+			@include tiny
+				+flexbox(flex-start, center)
+
 			li
 				a
 					padding: 0 10px
-					font-family: 'RepublikSerifW01-03Alt', serif
+					font-family: 'RepublikSerifW01-03Alt', sans-serif
 					letter-spacing: 1px
 					-webkit-font-smoothing: antialiased
 					text-decoration: none

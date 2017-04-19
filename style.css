@@ -228,6 +228,9 @@
     font-size: 21px; }
     .titles h3 a {
       font-size: 21px; }
+      @media (max-width: 768px) {
+        .titles h3 a {
+          font-size: 14px; } }
   .titles a {
     color: #e8e4de;
     text-shadow: 1px 1px 2px #111, 1px 1px 2px #111, 1px 1px 2px #111, 1px 1px 10px #111, 1px 1px 15px #111;
@@ -394,7 +397,7 @@ header {
   #mainnav.sticky {
     position: fixed;
     top: 0px;
-    background: url(images/rr_favicon.png) left no-repeat #000;
+    background: url(images/rr_favicon.png) left top no-repeat #000;
     background-size: 35px 35px; }
     @media (max-width: 768px) {
       #mainnav.sticky {
@@ -431,11 +434,11 @@ header {
       display: -ms-flexbox;
       display: -webkit-flex;
       display: flex;
-      -webkit-justify-content: flex-start;
-      -moz-justify-content: flex-start;
-      -ms-justify-content: flex-start;
-      -o-justify-content: flex-start;
-      justify-content: flex-start;
+      -webkit-justify-content: center;
+      -moz-justify-content: center;
+      -ms-justify-content: center;
+      -o-justify-content: center;
+      justify-content: center;
       -webkit-align-items: center;
       -moz-align-items: center;
       -ms-align-items: center;
@@ -448,9 +451,31 @@ header {
       flex-flow: row wrap;
       width: 100%;
       padding: 8px 0; }
+      @media (max-width: 476px) {
+        #mainnav div ul {
+          display: -webkit-box;
+          display: -moz-box;
+          display: -ms-flexbox;
+          display: -webkit-flex;
+          display: flex;
+          -webkit-justify-content: flex-start;
+          -moz-justify-content: flex-start;
+          -ms-justify-content: flex-start;
+          -o-justify-content: flex-start;
+          justify-content: flex-start;
+          -webkit-align-items: center;
+          -moz-align-items: center;
+          -ms-align-items: center;
+          -o-align-items: center;
+          align-items: center;
+          -webkit-flex-flow: row wrap;
+          -moz-flex-flow: row wrap;
+          -ms-flex-flow: row wrap;
+          -o-flex-flow: row wrap;
+          flex-flow: row wrap; } }
       #mainnav div ul li a {
         padding: 0 10px;
-        font-family: "RepublikSerifW01-03Alt", serif;
+        font-family: "RepublikSerifW01-03Alt", sans-serif;
         letter-spacing: 1px;
         -webkit-font-smoothing: antialiased;
         text-decoration: none;
@@ -484,7 +509,7 @@ header {
     position: relative;
     top: 4%;
     padding: 0;
-    font-family: "RepublikSerifW01-03Alt", serif;
+    font-family: "RepublikSerifW01-03Alt", sans-serif;
     letter-spacing: 1px;
     -webkit-font-smoothing: antialiased; }
     .sub-page .main-navigation h3 {
@@ -548,7 +573,7 @@ header {
         width: 100%;
         height: 100%; }
       #carousel article .featuredImage .titles {
-        top: -25vh; }
+        top: -30vh; }
         @media (max-width: 768px) {
           #carousel article .featuredImage .titles {
             top: 52%;
@@ -853,7 +878,7 @@ header {
 
 .archive-header {
   color: rgba(244, 244, 244, 0.9);
-  font-family: "RepublikSerifW01-03Alt", serif;
+  font-family: "RepublikSerifW01-03Alt", sans-serif;
   background: #201e1d;
   background: -moz-linear-gradient(top, #181716 0%, #161514 100%);
   background: -webkit-linear-gradient(top, #181716 0%, #161514 100%);
@@ -886,7 +911,7 @@ header {
   float: left;
   text-align: center;
   border-top: 2px solid #292828;
-  padding: 0;
+  padding: 0 0 50px 0;
   text-transform: uppercase;
   /* css gradient */
   background: #302e2d;
@@ -895,7 +920,7 @@ header {
   background: linear-gradient(to bottom, #383635 0%, #312f2e 30%, #302e2d 40%, #302e2d 100%);
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#302e2d', endColorstr='#383635',GradientType=0 ); }
   #blogroll .pagination .page-numbers {
-    margin: 3% 2% 4% 2%; }
+    margin: 10px 6px 12px 6px; }
   #blogroll .pagination .current {
     background: #181716;
     padding: 10px 13px;
@@ -907,7 +932,7 @@ header {
     min-width: 15px; }
   #blogroll .pagination .last {
     position: absolute;
-    bottom: 8%;
+    bottom: 28%;
     left: 0;
     width: 100%;
     display: inline-block;
@@ -941,6 +966,8 @@ header {
     right: 0;
     width: 47%;
     height: 100%; }
+    #blogroll .pagination .next-page .page-numbers {
+      margin: 0px 6px 12px 6px; }
     #blogroll .pagination .next-page .next {
       text-indent: -9999px;
       display: block;
@@ -953,7 +980,7 @@ header {
         top: 0;
         left: 0;
         overflow: hidden;
-        margin: 2% 2% 4% 2%;
+        margin: 0;
         box-shadow: -17px 0px 10px -17px rgba(0, 0, 0, 0.6); }
         #blogroll .pagination .next-page .next .triangle-right:after {
           content: "";
@@ -975,6 +1002,8 @@ header {
     left: 0;
     width: 47%;
     height: 100%; }
+    #blogroll .pagination .prev-page .page-numbers {
+      margin: 0px 6px 12px 6px; }
     #blogroll .pagination .prev-page .prev {
       text-indent: -9999px;
       display: block;
@@ -987,7 +1016,7 @@ header {
         top: 0;
         right: 0%;
         overflow: hidden;
-        margin: 2% 2% 4% 2%;
+        margin: 0;
         box-shadow: 17px 0px 10px -17px rgba(0, 0, 0, 0.6); }
         #blogroll .pagination .prev-page .prev .triangle-left:after {
           content: "";
@@ -1030,7 +1059,7 @@ header {
       color: #c62b2e; }
     .single .entry-content .featuredImage {
       width: 100%;
-      height: 75vh;
+      height: 70vh;
       position: relative; }
       .single .entry-content .featuredImage img {
         object-fit: cover;
@@ -1104,7 +1133,8 @@ header {
         height: 100%; }
       .single .entry-content .entry-author .authorCategoryInfo {
         text-align: left;
-        margin-left: 8px; }
+        margin-left: 8px;
+        font-size: 14px; }
         .single .entry-content .entry-author .authorCategoryInfo .author {
           text-transform: uppercase;
           text-shadow: 0px 0px 1px rgba(10, 10, 10, 0.05), 0px 0px 8px rgba(50, 50, 50, 0.05);
@@ -1148,7 +1178,7 @@ header {
       line-height: 1.6em; }
     .single .entry-content .text {
       padding: 2% 12% 4%;
-      font-size: 1.2em; }
+      font-size: 16px; }
       @media (max-width: 768px) {
         .single .entry-content .text {
           padding: 2% 16% 4% 6%; } }
@@ -1158,6 +1188,8 @@ header {
         @media (max-width: 768px) {
           .single .entry-content .text p {
             text-align: left; } }
+        .single .entry-content .text p:first-child {
+          font-size: 18px; }
       .single .entry-content .text h3 {
         font-size: 1.2em;
         margin-bottom: 0.8em; }
@@ -1418,7 +1450,7 @@ header {
     color: #fff;
     text-decoration: none;
     padding: 2% 8%;
-    font-family: "RepublikSerifW01-03Alt", serif;
+    font-family: "RepublikSerifW01-03Alt", sans-serif;
     width: 84%;
     font-size: 1.4em; }
 
@@ -1462,7 +1494,7 @@ header {
       position: absolute;
       width: 25px;
       height: 25px;
-      font-family: "RepublikSerifW01-03Alt", serif; }
+      font-family: "RepublikSerifW01-03Alt", sans-serif; }
   #comments .comment-list .comment-body {
     background: rgba(255, 255, 255, 0.8);
     border-radius: 2px;
@@ -1886,7 +1918,7 @@ object {
     flex-wrap: wrap;
     justify-content: center; }
     #sidebar aside h4 {
-      font-family: "RepublikSerifW01-03Alt", serif;
+      font-family: "RepublikSerifW01-03Alt", sans-serif;
       text-transform: uppercase;
       text-align: center;
       font-size: 1.1em;
@@ -2245,7 +2277,7 @@ footer {
           color: #fff;
           text-shadow: 0px 0px 4px rgba(250, 250, 250, 0.3);
           text-decoration: none;
-          font-family: "RepublikSerifW01-03Alt", serif;
+          font-family: "RepublikSerifW01-03Alt", sans-serif;
           -webkit-font-smoothing: antialiased;
           font-size: 14px; }
           footer nav ul li a:hover {
@@ -2285,7 +2317,8 @@ footer {
  * @link https://github.com/jonsuh/hamburgers
  */
 body {
-  background: rgba(15, 14, 14, 0.99) !important; }
+  background: rgba(15, 14, 14, 0.99) !important;
+  font-family: arial sans-serif; }
 
 .hamburger {
   padding: 15px 15px;
@@ -2878,5 +2911,16 @@ body {
   .hamburger--vortex-r.is-active .hamburger-inner::after {
     bottom: 0;
     transform: rotate(-90deg); }
+
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/*--------------------------------------------- */
+/* EXTRAS - universal actions / states */
+/*--------------------------------------------- */
+.naturalHeight {
+  height: 100vh !important; }
 
 /*# sourceMappingURL=style.css.map */
